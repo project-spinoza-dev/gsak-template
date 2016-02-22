@@ -142,3 +142,27 @@ $(function () {
       $.jstree.reference('#jstree').select_node('child_node_3');
     });
   });
+  
+/*************************************layout dropdown*********************************************/
+
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="Rotate"){
+                $(".box").not(".Rotate").hide();
+                $(".Rotate").show();
+            }
+            else if($(this).attr("value")=="Scale"){
+                $(".box").not(".Scale").hide();
+                $(".Scale").show();
+            }
+            else if($(this).attr("value")=="blue"){
+                $(".box").not(".blue").hide();
+                $(".blue").show();
+            }
+            else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});

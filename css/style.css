@@ -162,7 +162,9 @@ label {
 .network_panel_body{ height:200px; overflow: auto;}
 /*************************Queries_panel*********************************/
 .Queries_panel{ height:250px; overflow:auto; padding:5px;}
-
+/**********************************layout panel**************************************/
+.layout_panel select{ background:#3b3b3b; border: 1px solid #3b3b3b; height:30px; color:#bababa;margin: 10px 10px 0px; width: 90%;}
+.layout_panel .input_layout{ color:#bababa; background:#434343; border:none;}
 /*************************************directory folder tree widget *******************/
 #mCSB_2_container{ }
 .mCSB_container_wrapper {

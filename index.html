@@ -130,21 +130,56 @@
                 </h4>
               </div>
               <div id="collapse2" class="panel-collapse collapse in">
-                <div class="panel-body">
+                <div class="panel-body layout_panel">
+                	<select class=" col-xs-10 col-sm-10 col-md-10 col-lg-10">
+           				 <option>Select LayOut</option>
+			            <option value="Scale">Scale</option>
+			            <option value="Rotate">Rotate</option>			           
+			        </select>
                 	<div class="dropdown attributes_dropdown margintop10 col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	                  <button class="btn gery-color dropdown-toggle text-left  col-xs-12 col-sm-12 col-md-12 col-lg-12" type="button" data-toggle="dropdown">Clockwise Rotation
-	                  <span class="caret text_align_right_10"></span></button>
-	                  <ul class="dropdown-menu grey-menu position_absolute col-xs-12 col-sm-12 col-md-12 col-lg-12"  >
+	                  <!--<button class="btn gery-color dropdown-toggle text-left  col-xs-12 col-sm-12 col-md-12 col-lg-12" type="button" data-toggle="dropdown">Clockwise Rotation
+	                  <span class="caret text_align_right_10"></span></button>-->
+	                  <!--<ul   >
 	                    <li><a href="#">Clockwise Rotation</a></li>
 	                    <li><a href="#">Clockwise Rotation</a></li>				    
-	                  </ul>
-	                </div>
+	                  </ul>-->
+                      	
+	                
+                    </div>
+                     <!--scale options-->
                     
-                    
-                    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 border_none margintop10">
+                    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 border_none margintop10 box Scale">
 					  <div class="panel-heading">PROPERTIES</div>
 					  <div class="panel-body ">
-					  	 <div class="table-responsive">          
+                      	 <form action="">
+					  	 <div class="table-responsive ">          
+						 	 <table class=" table table-bordered">
+						    <thead>
+						      <tr>       
+						        <th>Property</th>
+						        <th>Value</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>       
+						        <td>Scale Factor</td>
+						        <td><input type="text"  name="angle" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" placeholder="1.0" value="1.0"></td>
+						      </tr>
+						    </tbody>
+						  </table>
+						  </div>
+                         <input type="submit" class="btn btn-primary  marginbottom10 pull-right" value="Run"></input>
+                         </form>
+					  </div>
+					</div>
+                    <!--end scale Option--> 
+                    <!--rotate options-->
+                    
+                    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 border_none margintop10 box Rotate">
+					  <div class="panel-heading">PROPERTIES</div>
+					  <div class="panel-body ">
+                      	 <form action="">
+					  	 <div class="table-responsive ">          
 						 	 <table class=" table table-bordered">
 						    <thead>
 						      <tr>       
@@ -155,16 +190,18 @@
 						    <tbody>
 						      <tr>       
 						        <td>Angel</td>
-						        <td>90</td>
+						        <td><input type="text"  name="angle" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" placeholder="90" value="90"></td>
 						      </tr>
 						    </tbody>
 						  </table>
 						  </div>
+                         <input type="submit" class="btn btn-primary  marginbottom10 pull-right" value="Run"></input>
+                         </form>
 					  </div>
 					</div>
-                    
+                    <!--end rotate Option-->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    	<button class="btn btn-primary  marginbottom10 pull-right">Run</button>
+                    	
                     </div>
                     
                     
