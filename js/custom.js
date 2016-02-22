@@ -7,12 +7,12 @@ $(document).ready(function(){
 	$("#sidebar_left").css("background","#000");	
 	
 	if($("#sidebar_right").hasClass("showing")){
-		  $("#collapse_sidebar_left").css("width","5%");	
-	 	  $("#center_content").css("width","78%");	
+		  $("#collapse_sidebar_left").css("width","0%");	
+	 	  $("#center_content").css("width","82%");	
 		  $("#sidebar_left").removeClass( "showing" ).addClass( "hidding" );
 		}else {
-		  $("#collapse_sidebar_left").css("width","5%");	
-	 	  $("#center_content").css("width","88%");	
+		  $("#collapse_sidebar_left").css("width","0%");	
+	 	  $("#center_content").css("width","98%");	
 		  $("#sidebar_left").removeClass( "showing" ).addClass( "hidding" );
 			}	
 	})
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		  $("#sidebar_left").removeClass( "hidding" ).addClass( "showing" ); //hidding 
 		}else {
 		  $("#collapse_sidebar_left").css("width","16.5%");		
-		  $("#center_content").css("width","78%");	
+		  $("#center_content").css("width","82%");	
 		  $("#sidebar_left").removeClass( "hidding" ).addClass( "showing" ); //hidding 
 			}
 	
@@ -48,12 +48,12 @@ $(document).ready(function(){
 	$("#sidebar_right").css("background","#000");	
 	
 	if($("#sidebar_left").hasClass("showing")){
-		  $("#collapse_sidebar_right").css("width","5%");	
-	 	  $("#center_content").css("width","78%");	
+		  $("#collapse_sidebar_right").css("width","0%");	
+	 	  $("#center_content").css("width","82%");	
 		  $("#sidebar_right").removeClass( "showing" ).addClass( "hidding" );
 		}else {
-		  $("#collapse_sidebar_right").css("width","5%");	
-	 	  $("#center_content").css("width","88%");	
+		  $("#collapse_sidebar_right").css("width","0%");	
+	 	  $("#center_content").css("width","98%");	
 		  $("#sidebar_right").removeClass( "showing" ).addClass( "hidding" );
 			}
 	
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		  $("#sidebar_right").removeClass( "hidding" ).addClass( "showing" );//hidding
 		}else {
 		  $("#collapse_sidebar_right").css("width","16.5%");	
-	 	  $("#center_content").css("width","78%");	
+	 	  $("#center_content").css("width","82%");	
 		  $("#sidebar_right").removeClass( "hidding" ).addClass( "showing" );
 			}
 	
@@ -96,11 +96,13 @@ $(document).ready(function(){
 			$(window).load(function(){
 				
 				$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
-				$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default
+				$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default				
 				
 				$("#content-l").mCustomScrollbar();	//jstree_demo_div			
 				$("#jstree_demo_div").mCustomScrollbar();//Queries_panel
-				$("#Queries_panel").mCustomScrollbar();//Queries_panel
+				$("#Queries_panel").mCustomScrollbar();//center_content
+				
+				$(".height_fix").mCustomScrollbar();//center_content
 				
 				$(".all-themes-switch a").click(function(e){
 					e.preventDefault();
@@ -115,9 +117,7 @@ $(document).ready(function(){
 				});
 				
 			});
-		})(jQuery);
-		
-		
+		})(jQuery);		
 		
 		
 $(function () {

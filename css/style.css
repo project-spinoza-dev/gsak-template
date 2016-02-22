@@ -5,6 +5,19 @@ a {
 	text-decoration: none;
 }
  ul{border-left: none !important;}
+ .position_absolute{ position:absolute;}
+ body {
+	font-family: Century Gothic;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: #333;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
 /********************drop down menu******************/
 .dropdown-menu {
 	position: absolute;
@@ -31,6 +44,8 @@ a {
 .margin10{margin:10px 0px 10px;}
 .margin5{margin:5px 0px 0px;}
 .margin2{margin:2px 0px 0px;}
+.margintop10{ margin-top:10px;}
+.marginbottom10{ margin-bottom:10px;}
 .marginright10{ margin:0px 10px 0px 10px;}
 /************hovers******************************/
 a:hover{color:rgb(235,235,235); text-decoration:none;}
@@ -50,19 +65,20 @@ input.btn:hover{ color:rgb(35,35,35);}
 .positioning_relatively{ position:relative; left:0px;}
 .gery-color, .grey-menu{background:#3B3B3B;color:#bababa;  text-align: left; }
 .text_align_right{ position: relative;left: 55%; }
-.text_align_right_10{ position: relative;left: 6%; }
+.text_align_right_10{ position: relative;left: 22%; }
 /**************************possitioning right****************/
-.position_right{ position: absolute; right:-35px; top:10px; width:20px; height:34px; z-index:10; cursor:pointer;}
-.position_left{ position: absolute; left:-35px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
+.position_right{ position: absolute; right:-26px; top:10px; width:20px; height:34px; z-index:10; cursor:pointer;}
+.position_left{ position: absolute; left:-25px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
 
 
 
 #sidebar_right, #sidebar_left{  height:500px;}
 
 
-.position_right_hide{ visibility: hidden; position: absolute; right:-35px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
-.position_left_hide{visibility: hidden; position: absolute; left:-35px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
-
+.position_right_hide{ visibility: hidden; position: absolute; right:-26px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
+.position_left_hide{visibility: hidden; position: absolute; left:-25px; top:10px; width:20px; height:34px; z-index:10;cursor:pointer;}
+/*************************center content area*******************/
+.height_fix{ height:860px; overflow:auto;}
 /*****************panel setting*************/
 .border_none{ border:none;}
 .panel-heading{ background:rgb(40,40,40);}
@@ -115,7 +131,7 @@ input.btn:hover{ color:rgb(35,35,35);}
 	 margin-right: 0px; 
 	line-height: 1.42857;
 	/* border: 1px solid transparent; */
-	border-radius: 4px 4px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
 	background: #3b3b3b;
 	color: #bababa;
 }
@@ -123,6 +139,7 @@ input.btn:hover{ color:rgb(35,35,35);}
 /********************appearnce panel**************************/
 .attributes_dropdown{}
 /******************option panel*******************************/
+.option_h5{margin-left: 16px;width: 42%;}
 .color_3b{ background:#3b3b3b; border:#3b3b3b; height:30px; width:90px; text-align:justify;}
 .checkbox_bg{ background:#444;}
 input[type="checkbox"] {
@@ -145,3 +162,65 @@ label {
 .network_panel_body{ height:200px; overflow: auto;}
 /*************************Queries_panel*********************************/
 .Queries_panel{ height:250px; overflow:auto; padding:5px;}
+
+/*************************************directory folder tree widget *******************/
+#mCSB_2_container{ }
+.mCSB_container_wrapper {
+	position: absolute;
+	height: auto;
+	width: auto;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin-right: 0px !important; 
+	margin-bottom: 30px;
+}
+/*************************************lightweight plugin tree widget********************/
+
+
+#mCSB_3_container{ }
+.tree { background-color:#434343; margin-left: -23px; width:200px;}
+.tree li,
+.tree li > a,
+.tree li > span {
+    padding: 1pt;
+    border-radius: 4px;
+	margin-right:0px;
+}
+
+.tree li a {
+   
+    text-decoration: none;
+    line-height: 18pt;
+    border-radius: 4px;
+}
+
+.tree li a:hover {
+    background-color: #353535;
+    color: #fff;
+}
+
+.active {
+    background-color: #434343;
+    /*color: white;*/
+}
+
+.active a {
+    color: #fff;
+}
+
+.tree li a.active:hover {
+    background-color: #34BC9D;
+}
+/***********************************************************************/
+.panel-title {
+	font-size: 15px;
+	color: inherit;
+}
+/*******************************media queries**************************/
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+	
+	.position_right, .position_right_hide, .position_left , .position_left_hide { display:none;}
+	}

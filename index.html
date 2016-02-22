@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="css/default/style.min.css" />  
   
-  <link rel="stylesheet" href="tree/style.css">
-  <link href="tree/jquerysctipttop.css" rel="stylesheet" >
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+ <!--lightweight plugin start--> 
+ <link href="plugin/lightweight_tree/jquery.treemenu.css" rel="stylesheet" type="text/css">
+<link href="plugin/lightweight_tree/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+<!--lightweight plugin end-->
   
   
    <script src="js/jquery.min.js"></script>
@@ -60,8 +62,8 @@
 <div class="container-fluid">  
   
  <div class="content row">
- 	<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
-    	<div id="sidebar_left" class="showing ">
+ 	<div id="collapse_sidebar_left" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
+    	<div id="sidebar_left" class="showing">
         	<span class=" position_right"><img src="images/left_arrow.png" alt=""></span>
             <span class=" position_right_hide"><img src="images/right_arrow.png" alt=""></span>
             
@@ -93,7 +95,7 @@
 					          	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					        </div>
 					        <div id="attributes" class="tab-pane fade">
-					          <div class="dropdown attributes_dropdown margin20">
+					          <div class="dropdown attributes_dropdown margintop10">
 								  <button class="btn gery-color dropdown-toggle text-left col-xs-12 col-sm-12 col-md-12 col-lg-12" type="button" data-toggle="dropdown">Degree
 								  <span class="caret text_align_right"></span></button>
 								  <ul class="dropdown-menu grey-menu col-xs-12 col-sm-12 col-md-12 col-lg-12 "  >
@@ -129,19 +131,19 @@
               </div>
               <div id="collapse2" class="panel-collapse collapse in">
                 <div class="panel-body">
-                	<div class="dropdown attributes_dropdown margin20 col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	                  <button class="btn gery-color dropdown-toggle text-left col-xs-12 col-sm-12 col-md-12 col-lg-12" type="button" data-toggle="dropdown">Clockwise Rotation
+                	<div class="dropdown attributes_dropdown margintop10 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                  <button class="btn gery-color dropdown-toggle text-left  col-xs-12 col-sm-12 col-md-12 col-lg-12" type="button" data-toggle="dropdown">Clockwise Rotation
 	                  <span class="caret text_align_right_10"></span></button>
-	                  <ul class="dropdown-menu grey-menu positioning_relatively col-xs-12 col-sm-12 col-md-12 col-lg-12"  >
+	                  <ul class="dropdown-menu grey-menu position_absolute col-xs-12 col-sm-12 col-md-12 col-lg-12"  >
 	                    <li><a href="#">Clockwise Rotation</a></li>
 	                    <li><a href="#">Clockwise Rotation</a></li>				    
 	                  </ul>
 	                </div>
                     
                     
-                    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 border_none">
+                    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 border_none margintop10">
 					  <div class="panel-heading">PROPERTIES</div>
-					  <div class="panel-body">
+					  <div class="panel-body ">
 					  	 <div class="table-responsive">          
 						 	 <table class=" table table-bordered">
 						    <thead>
@@ -162,7 +164,7 @@
 					</div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    	<button class="btn btn-primary margin20 pull-right">Run</button>
+                    	<button class="btn btn-primary  marginbottom10 pull-right">Run</button>
                     </div>
                     
                     
@@ -186,10 +188,10 @@
                 <div class="panel-body option_panel_body_padding_60">
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!--col-xs-6 col-sm-6 col-md-6 col-lg-6-->
-                	<div class="row margin20">
-	                    <h5 class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Label Size</h5>
+                	<div class="row margintop10">
+	                    <h5 class="col-xs-6 col-sm-6 col-md-6 col-lg-6 option_h5">Label Size</h5>
                         <div class="dropdown attributes_dropdown col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		                  <button class="btn gery-color dropdown-toggle  " type="button" data-toggle="dropdown">13px
+		                  <button class="btn gery-color dropdown-toggle " type="button" data-toggle="dropdown">13px
 		                  <span class="caret text_align_right_10"></span></button>
 		                  <ul class="dropdown-menu grey-menu "  >
 		                    <li><a href="#">14px</a></li>
@@ -225,11 +227,16 @@
     	<div>
             
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 ">
-    	<img class="img-responsive" src="images/graph.png" alt="">
+    <div id="center_content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8 height_fix">
+    	<div >
+        <!--<h4>hello i am here</h4>-->
+          	
+        	<img class="" src="images/graph.png" alt="">
+        </div>
+    	
     </div>
-    <div  class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
-   		<div id="sidebar_right" class="showing ">
+    <div id="collapse_sidebar_right"  class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
+   		<div id="sidebar_right" class="showing">
         	<span class="position_left"><img src="images/right_arrow.png" alt=""></span>
             <span class="position_left_hide"><img src="images/left_arrow.png" alt=""></span>
             
@@ -293,54 +300,41 @@
               </div>
               <div id="collapse_Queries" class="panel-collapse collapse in">
                 <div id="Queries_panel" class="panel-body Queries_panel">
-                	<div class="">
-						<ul>
-						<li><a href="#">Manchester</a>
-						<ul>
-						<li><a href="#">Magazine</a>
-						<ul>
-						<li><a href="#">Spiral Scratch</a></li>
-						<li><a href="#">Real Life</a></li>
-						<li><a href="#">Secondhand Daylight</a></li>
-						<li><a href="#">The Correct Use</a></li>
-						</ul>
-						</li>
-						<li><a href="#">Buzzcocks</a>
-						<ul>
-						<li><a href="#">Time's Up</a></li>
-						<li><a href="#">Another Music in A Different Kitchen</a></li>
-						<li><a href="#">Love Bites</a></li>
-						<li><a href="#">A Different Kind Of Tension</a></li>
-						</ul>
-						</li>
-						<li><a href="#">Joy Division</a>
-						<ul>
-						<li><a href="#">Unknown Pleasures</a></li>
-						<li><a href="#">Closer</a></li>
-						<li><a href="#">Still</a></li>
-						</ul>
-						</li>
-						</ul>
-						</li>
-						<li><a href="#">Liverpool</a>
-						<ul>
-						<li><a href="#">OMD</a>
-						<ul>
-						<li><a href="#">OMD</a></li>
-						<li><a href="#">Organisation</a></li>
-						</ul>
-						</li>
-						<li><a href="#">Echo & the Bunnymen</a>
-						<ul>
-						<li><a href="#">Crocodiles</a></li>
-						<li><a href="#">Heaven Up Here</a></li>
-						<li><a href="#">Porcupine</a></li>
-						</ul>
-						</li>
-						</ul>
-						</li>
-						</ul>
-						</div>
+                	<ul id="tree_id" class="tree">
+					    <li><a href="">Home</a></li>
+					    <li><span>Category</span>
+					      <ul>
+					        <li><a href="#">jQuery</a>
+					          <ul>
+					            <li><a href="#">jQuery</a></li>
+					            <li><a href="#">jQuery UI</a></li>
+					            <li><a href="#">jQuery Mobile</a></li>
+					          </ul>
+					        </li>
+					        <li><a href="#">JavaScript</a>
+					          <ul>
+					            <li><a class="active" href="#">AngularJS</a></li>
+					            <li><a href="#">React</a></li>
+					            <li><a href="#">Backbone</a></li>
+					          </ul>
+					        </li>
+					        <li><a href="#suits">Golang</a></li>
+					      </ul>
+					    </li>
+					    <li><a href="#about">About</a>
+					      <ul>
+					        <li><a href="#">Contact</a></li>
+					        <li><a href="#">Blog</a></li>
+					        <li><a href="#">Jobs</a>
+					          <ul>
+					            <li><a href="#jobs1">Job 1</a></li>
+					            <li><a href="#jobs2">Job 2</a></li>
+					            <li><a href="#jobs3">Job 3</a></li>
+					          </ul>
+					        </li>
+					      </ul>
+					    </li>
+					  </ul>
                 </div>
                 
               </div>
@@ -388,92 +382,8 @@
     </div>
  </div>  
 </div>
-<script>
-
-$(document).ready(function(){
-	$("#sidebar_left .position_right ").click(function(){
-	$("#sidebar_left .position_right_hide").css("visibility","visible");	
-	$("#sidebar_left .position_right").css("visibility","hidden");	
-    $("#sidebar_left").css("width","50px");	
-	
-	$("#sidebar_left .panel-group").css("display","none");	
-	//$("#sidebar_left").css("height","300px");	
-	$("#sidebar_left").css("background","#000");	
-	
-	
-	})
-	
-	$("#sidebar_left .position_right_hide ").click(function(){
-	$("#sidebar_left .position_right_hide").css("visibility","hidden");	
-	$("#sidebar_left .position_right").css("visibility","visible");	
-    $("#sidebar_left").css("width","100%");
-	
-	$("#sidebar_left .panel-group").css("display","block");	
-	//$("#sidebar_left").css("height","100%");	
-	$("#sidebar_left").css("background","#353535");	
-	
-	})
-/************************************************************************************/	
-	$("#sidebar_right .position_left ").click(function(){
-	$("#sidebar_right .position_left_hide").css("visibility","visible");	
-	$("#sidebar_right .position_left").css("visibility","hidden");	
-    $("#sidebar_right").css("width","50px");	
-	
-	$("#sidebar_right .panel-group").css("display","none");	
-	$("#sidebar_right button").css("display","none");	
-	//$("#sidebar_left").css("height","300px");	
-	$("#sidebar_right").css("background","#000");	
-	
-	})
-	
-	$("#sidebar_right .position_left_hide ").click(function(){
-	$("#sidebar_right .position_left_hide").css("visibility","hidden");	
-	$("#sidebar_right .position_left").css("visibility","visible");	
-    $("#sidebar_right").css("width","100%");
-	
-	$("#sidebar_right .panel-group").css("display","block");
-	$("#sidebar_right button").css("display","block");	
-	//$("#sidebar_left").css("height","100%");	
-	$("#sidebar_right").css("background","#353535");
-	})
- /* $("#sidebar_left").on("hide.bs.collapse", function(){
-    $(".btn").html('<span class="glyphicon glyphicon-collapse-down"></span> Open');
-  });
-  $("#demo").on("show.bs.collapse", function(){
-    $(".btn").html('<span class="glyphicon glyphicon-collapse-up"></span> Close');
-  });*/
-});
-</script>
+<script src="js/custom.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
-<script>
-		(function($){
-			$(window).load(function(){
-				
-				$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
-				$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default
-				
-				$("#content-l").mCustomScrollbar();	//jstree_demo_div			
-				$("#jstree_demo_div").mCustomScrollbar();//Queries_panel
-				$("#Queries_panel").mCustomScrollbar();//Queries_panel
-				
-				$(".all-themes-switch a").click(function(e){
-					e.preventDefault();
-					var $this=$(this),
-						rel=$this.attr("rel"),
-						el=$(".content");
-					switch(rel){
-						case "toggle-content":
-							el.toggleClass("expanded-content");
-							break;
-					}
-				});
-				
-			});
-		})(jQuery);
-	
-  
-  </script>
-   
 <script type="text/javascript">
 
 $.noConflict(true);
@@ -484,30 +394,16 @@ $.noConflict(true);
  <script src="js/libs/jquery.js"></script>
  <script src="js/jstree.min.js"></script>
  <script type="text/javascript">
- $(function () {
-    // 6 create an instance when the DOM is ready
-    $('#jstree').jstree();
-    // 7 bind to events triggered on the tree
-    $('#jstree').on("changed.jstree", function (e, data) {
-      console.log(data.selected);
-    });
-    // 8 interact with the tree - either way is OK
-    $('#jstree button').on('click', function () {
-      $('#jstree').jstree(true).select_node('child_node_1');
-      $('#jstree').jstree('select_node', 'child_node_1');
-      $.jstree.reference('#jstree').select_node('child_node_1');
-	  
-	  $('#jstree').jstree(true).select_node('child_node_2');
-      $('#jstree').jstree('select_node', 'child_node_2');
-      $.jstree.reference('#jstree').select_node('child_node_2');
-	  
-	  $('#jstree').jstree(true).select_node('child_node_3');
-      $('#jstree').jstree('select_node', 'child_node_3');
-      $.jstree.reference('#jstree').select_node('child_node_3');
-    });
-  });
+ 
  </script>
-
+<!--lightweight tree plugin   plugin/lightweight_tree/-->
+ <!-- <script src="plugin/lightweight_tree/jquery-1.11.2.min.js"></script> -->
+<script src="plugin/lightweight_tree/jquery.treemenu.js"></script> 
+<script>
+$(function(){
+        $(".tree").treemenu({delay:300}).openActive();
+    });
+</script>
   
 </body>
 </html>
