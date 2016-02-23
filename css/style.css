@@ -1,14 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
+li,a,div,span,input,button,h5,p,th,td{font-size: 13px !important;}
 a {
 	color: #bababa !important;
 	text-decoration: none;
+	
 }
  ul{border-left: none !important;}
  .position_absolute{ position:absolute;}
  body {
 	font-family: Century Gothic;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 1.42857;
 	color: #333;
 }
@@ -163,8 +165,12 @@ label {
 /*************************Queries_panel*********************************/
 .Queries_panel{ height:250px; overflow:auto; padding:5px;}
 /**********************************layout panel**************************************/
-.layout_panel select{ background:#3b3b3b; border: 1px solid #3b3b3b; height:30px; color:#bababa;margin: 10px 10px 0px; width: 90%;}
+.layout_panel select{ background:#3b3b3b; border: 1px solid #3b3b3b; height:30px; color:#bababa;margin: 10px 10px 10px; width: 90%;}
 .layout_panel .input_layout{ color:#bababa; background:#434343; border:none;}
+
+.panel-group .panel + .panel {
+	 margin-top: 0px;
+}
 /*************************************directory folder tree widget *******************/
 #mCSB_2_container{ }
 .mCSB_container_wrapper {
