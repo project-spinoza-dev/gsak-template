@@ -304,14 +304,6 @@ select option{
 .rotation-container{
   margin-top:10px;
 }
-.rotation-container .rotate-label{
-  height: 31px;
-  background: #282828;
-  color: #ffffff;
-  text-transform:uppercase;
-  padding-left: 10px;
-  padding-top: 6px;
-}
 .panel #collapse2 .table-responsive table {
   border-collapse: collapse !important;
   background-color: #3b3b3b;
@@ -342,14 +334,6 @@ select option{
 }
 .scale-container {
   margin-top: 10px;
-}
-.scale-container .scale-label {
-  background: #282828 none repeat scroll 0 0;
-  color: #ffffff;
-  height: 31px;
-  padding-left: 10px;
-  padding-top: 6px;
-  text-transform: uppercase;
 }
 .table.table-bordered {
   margin-bottom:10px;
@@ -405,7 +389,7 @@ select option{
   line-height: 23px;
   vertical-align: top;
 }
-.rotation-container.Rotate .table input{
+#collapse2 .table input{
   border:0px;
   background:transparent;
 }
@@ -425,11 +409,23 @@ select option{
   height: 200px;
   overflow: auto;
 }
+#layout-contents{
+  height: 200px;
+  overflow:auto;
+}
 .gsak-home .panel-group:last-child{
   margin-bottom:0px;
 }
 #parameters_panel .parameters-contents{
   padding-left:10px;
+}
+#collapse2 .layout-label{
+  background: #282828 none repeat scroll 0 0;
+  color: #ffffff;
+  height: 31px;
+  padding-left: 10px;
+  padding-top: 6px;
+  text-transform: uppercase;
 }
 /********** Custom css for scrollbar **********/
 .gsak-home .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {

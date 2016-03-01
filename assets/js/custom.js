@@ -6,6 +6,7 @@
 		$("#jstree_demo_div").mCustomScrollbar();// Network operations.
 		$("#Queries_panel").mCustomScrollbar();// Queries_panel
 		$("#parameters_panel").mCustomScrollbar();// Parameters_panel
+		$("#layout-contents").mCustomScrollbar();// Layout contents
 	});
 })(jQuery);	
 // End of Window load function .
@@ -79,16 +80,126 @@ $( document ).ready(function() {
 	$(".layout_panel select").change(function(){
         $(this).find("option:selected").each(function(){
             if($(this).attr("value")=="rotation"){
-                //$(".box").not(".Rotate").hide();
                 $(".Rotate").show();
 				$(".Scale").hide();
+				$(".forceAtlas").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".labelAdjust").hide();
+				$(".noverLap").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
             }
             else if($(this).attr("value")=="scale"){
-                //$(".box").not(".Scale").hide();
-                //$(".Scale").show();
-				$(".Rotate").hide();
 				$(".Scale").show();
+				$(".Rotate").hide();
+				$(".forceAtlas").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".labelAdjust").hide();
+				$(".noverLap").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
             }
+			else if($(this).attr("value")=="forceatlas"){
+				$(".forceAtlas").show();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".labelAdjust").hide();
+				$(".noverLap").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="fruchtermanReigngold"){
+				$(".fruchtermanReigngold").show();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".labelAdjust").hide();
+				$(".noverLap").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="labelAdjust"){
+				$(".labelAdjust").show();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".noverLap").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="noverLap"){
+				$(".noverLap").show();
+				$(".labelAdjust").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".openOrd").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="openOrd"){
+				$(".openOrd").show();
+				$(".noverLap").hide();
+				$(".labelAdjust").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".randomLayout").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="randomLayout"){
+				$(".randomLayout").show();
+				$(".openOrd").hide();
+				$(".noverLap").hide();
+				$(".labelAdjust").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".yifanHu").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="yifanHu"){
+				$(".yifanHu").show();
+				$(".randomLayout").hide();
+				$(".openOrd").hide();
+				$(".noverLap").hide();
+				$(".labelAdjust").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+				$(".yifanhuProportional").hide();
+            }
+			else if($(this).attr("value")=="yifanhuProportional"){
+				$(".yifanhuProportional").show();
+				$(".yifanHu").hide();
+				$(".randomLayout").hide();
+				$(".openOrd").hide();
+				$(".noverLap").hide();
+				$(".labelAdjust").hide();
+				$(".fruchtermanReigngold").hide();
+				$(".forceAtlas").hide();
+				$(".Rotate").hide();
+				$(".Scale").hide();
+            }
+			
             else{
                 //$(".box").hide();
 				console.log("No value is selected");
