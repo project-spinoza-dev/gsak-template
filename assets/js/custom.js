@@ -30,6 +30,7 @@ $( document ).ready(function() {
 	// Nicescroll to whole page
 	$("html").niceScroll({
 		touchbehavior:false,
+		horizrailenabled:false,
 		cursorcolor:"#bababa",
 		zindex:9000,
 		cursoropacitymax:1,
@@ -48,20 +49,20 @@ $( document ).ready(function() {
     console.log( "ready!" );
 	$(".user-nav-slide").click(function () {
 		if ($(".user-menu-container").hasClass("closed")) {
-			$(".user-menu-container").animate({"margin-left": "0px"});
+			$(".user-menu-container").animate({"left": "0px"});
 			$(".user-menu-container").removeClass("closed");
 		} else {
-			$(".user-menu-container").animate({"margin-left": "-282px"});
+			$(".user-menu-container").animate({"left": "-282px"});
 			$(".user-menu-container").addClass("closed");
 		}
 	});
 		// Right sidebar
 	$(".user-nav-slide-right").click(function () {
 		if ($(".user-menu-container-right").hasClass("closed")) {
-			$(".user-menu-container-right").animate({"margin-right": "0px"});
+			$(".user-menu-container-right").animate({"right": "0px"});
 			$(".user-menu-container-right").removeClass("closed");
 		} else {
-				$(".user-menu-container-right").animate({"margin-right": "-282px"});
+				$(".user-menu-container-right").animate({"right": "-282px"});
 				$(".user-menu-container-right").addClass("closed");
 		}
 	});
