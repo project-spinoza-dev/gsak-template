@@ -16,6 +16,7 @@
 	<!-- lightweight tree -->
 	<link href="assets/css/lightweight_tree/jquery.treemenu.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/plugin/lightweight_tree/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link type="text/css" class="skins" rel="stylesheet" href="assets/css/easytree/ui.easytree.css">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -651,32 +652,110 @@
 					<div id="jstree_demo_div" class="panel-body network_panel_body">
 						<div id="jstree">
 					    <!-- in this example the tree is populated from inline HTML -->
+                         <div id="networkoperations-folder">
+    <ul>
+        <li class="isFolder isExpanded" title="Bookmarks">
+            Library
+            <ul>
+               <li class="isFolder" title="Bookmarks">
+			   Attributes
+				   <ul>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Equal
 							<ul>
-								<li>Root node 1
-									<ul>
-										<li id="child_node_1">Child node 1</li>
-										<li>Child node 2</li>
-										<li>Child node 2</li>
-										<li>Child node 2</li>
-										<li>Child node 2</li>
-									</ul>
-								</li>
-								<li>Root node 2
-								<ul>
-									<li id="child_node_2">Child node 1
-										<ul>
-											<li id="child_node_3">Child node 1</li>
-											<li>Child node 2</li>
-										</ul>
-									</li>
-									<li>Child node 2</li>
-									<li>Child node 2</li>
-									<li>Child node 2</li>
-									<li>Child node 2</li>
-									<li>Child node 2</li>
-								</ul>
-								</li>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
 							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Inter Edges
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Intra Edges
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Non-null
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Partition
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Partition Count
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+						<li class="isFolder isExpanded" title="Bookmarks">
+							Range
+							<ul>
+								<li><a href="http://www.google.com" target="_blank">Modularity class</a></li>
+							</ul>
+						</li>
+				   </ul>
+			   </li>
+			   <li class="isFolder isExpanded">
+				<ul>
+				Dynamic
+				</ul>
+			   
+			   </li>
+			   <li class="isFolder">
+				<ul>
+				Edges
+					<li><a href="http://www.google.com" target="_blank">Edge Type</a></li>
+					<li><a href="http://www.google.com" target="_blank">Edge Weight</a></li>
+					<li><a href="http://www.google.com" target="_blank">Mutual Edge</a></li>
+					<li><a href="http://www.google.com" target="_blank">Self Loop</a></li>
+				</ul>
+			   
+			   </li>
+			   <li class="isFolder">
+				<ul>
+				Operator
+					<li><a href="http://www.google.com" target="_blank">Intersection</a></li>
+					<li><a href="http://www.google.com" target="_blank">Mask (edges)</a></li>
+					<li><a href="http://www.google.com" target="_blank">Not (edges)</a></li>
+					<li><a href="http://www.google.com" target="_blank">Not (nodes)</a></li>
+					<li><a href="http://www.google.com" target="_blank">Union</a></li>
+				</ul>
+			   
+			   </li>
+			   <li class="isFolder">
+				<ul>
+				Topology
+					<li><a href="http://www.google.com" target="_blank">Degree Range</a></li>
+					<li><a href="http://www.google.com" target="_blank">Ego Network</a></li>
+					<li><a href="http://www.google.com" target="_blank">Giant Component</a></li>
+					<li><a href="http://www.google.com" target="_blank">Has Self-loop</a></li>
+					<li><a href="http://www.google.com" target="_blank">In Degree Range</a></li>
+					<li><a href="http://www.google.com" target="_blank">K-core</a></li>
+					<li><a href="http://www.google.com" target="_blank">Mutual Degree Range</a></li>
+					<li><a href="http://www.google.com" target="_blank">Neighbors Network</a></li>
+					<li><a href="http://www.google.com" target="_blank">Out Degree Range</a></li>
+				</ul>
+			   
+			   </li>
+			   <li class="isFolder">
+				<ul>
+				  Saved Queries
+				</ul>
+			   </li>
+			   
+            </ul>
+        </li>
+    </ul>
+</div>
 					  </div>
 				</div>
               </div>
@@ -840,6 +919,7 @@
 	<script src="assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- Dtree -->
 	<script src="assets/js/lightweight_tree/jquery.treemenu.js"></script> 
+	<script src="assets/js/easytree/jquery.easytree.js"></script>
 	
 			<!-- sigma libs -->
     <script src="assets/sigmajs/sigma.core.js"></script>

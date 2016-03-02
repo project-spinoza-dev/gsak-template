@@ -24,20 +24,9 @@ $( document ).ready(function() {
 						$( this ).parent().toggleClass( 'active' );
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
-	// Nicescroll to Network operations.
-	/*$("#collapse_network").niceScroll({
-		touchbehavior:false,
-		cursorcolor:"#bababa",
-		zindex:9000,
-		cursoropacitymax:1,
-		cursorwidth:7,
-		background:"#434343",
-		autohidemode:true,
-		cursorborderradius:"0px",
-		cursorborder:"0px",
-		}); */
-	// Dtree 
-	//$(".tree").treemenu({delay:300}).openActive();
+    // Easy tree
+	$('#networkoperations-folder').easytree();
+	
 	// Nicescroll to whole page
 	$("html").niceScroll({
 		touchbehavior:false,
