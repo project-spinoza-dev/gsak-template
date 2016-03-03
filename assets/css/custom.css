@@ -401,7 +401,7 @@ select option{
   background:transparent;
 }
 #jstree_demo_div{
-  height: 396px;
+  height: 250px;
   overflow: auto;
 }
 #Queries_panel{
@@ -409,7 +409,7 @@ select option{
   overflow: auto;
 }
 #parameters_panel{
-  height: 200px;
+  height: 113px;
   overflow: auto;
 }
 #layout-contents{

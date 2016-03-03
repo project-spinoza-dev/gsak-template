@@ -21,6 +21,25 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="assets/js/core-js/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.4 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <!-- <script src="assets/js/app.js"></script> -->
+	<script src="assets/js/custom.js"></script>
+	<!-- icheck -->
+	<script src="assets/js/icheck/icheck.js"></script>
+	<!-- Nicescroll -->
+	<script src="assets/js/nicescroll/jquery.nicescroll.js"></script>
+	<script src="assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!-- Dtree -->
+	<script src="assets/js/lightweight_tree/jquery.treemenu.js"></script> 
+	<script src="assets/js/easytree/jquery.easytree.js"></script>
+
   </head>
   <body class="skin-blue sidebar-mini gsak-home">
     <!-- Start of leftsidebar -->
@@ -107,7 +126,7 @@
 						<div id="layout-contents">
 						<!-- clockwise rotation container -->
 						<div class="rotation-container Rotate">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="rotate">
 								<div class="rotate-label layout-label">Rotate</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -121,7 +140,8 @@
 											<tr>       
 												<td>Rotate</td>
 												<td>
-													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="90" placeholder="90" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="hidden" value="rotate" name="layout">
 												</td>
 											</tr>
 										</tbody>
@@ -132,7 +152,7 @@
 						</div> <!-- end of clockwise rotation container -->
 						<!-- scale container -->
 						<div class="scale-container Scale">
-							<form action="">
+							<form action="" id="scale">
 								<div class="scale-label layout-label">Scale</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -152,13 +172,13 @@
 										</tbody>
 									</table>
 								</div>
-								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
+								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right ">
 							</form>
 						</div>
 						<!-- end of scale container -->
 						<!-- Force Atlas container -->
 						<div class="force-atlas-container forceAtlas">
-							<form action="">
+							<form action="/layout" method="get" class="layout_form" id="ForceAtlas">
 								<div class="force-atlas-label layout-label">Force Atlas</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -172,34 +192,34 @@
 											<tr>       
 												<td>Insertia</td>
 												<td>
-													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.1" placeholder="0.1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="intertia">
 												</td>
 											</tr>
 											<tr>       
 												<td>Repulsion strength</td>
 												<td>
-													<input type="text" value="1.0" placeholder="200.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="200.0" placeholder="200.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="repulsion_strength">
 												</td>
 											</tr>
 											<tr>       
 												<td>Attraction strength</td>
 												<td>
-													<input type="text" value="1.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="attraction_strength">
 												</td>
 											</tr>
 											<tr>       
 												<td>Maximum displacement</td>
 												<td>
-													<input type="text" value="1.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="max_displacement">
 												</td>
 											</tr>
-											<tr>       
-												<td>Auto stabalize function</td>
+											 <tr>       
+												<td>Adjust Sizes</td>
 												<td>
-													<input type="checkbox" name="autostabalizecheckbox" value="showlabel">
+													<input type="checkbox" name="adjust_sizes" value="true">
 												</td>
 											</tr>
-											<tr>       
+											<!--<tr>       
 												<td>Autostab Strength</td>
 												<td>
 													<input type="text" value="1.0" placeholder="80.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
@@ -210,14 +230,14 @@
 												<td>
 													<input type="text" value="1.0" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
 												</td>
-											</tr>
+											</tr> -->
 											<tr>       
 												<td>Gravity</td>
 												<td>
-													<input type="text" value="1.0" placeholder="30.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="30.0" placeholder="30.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="gravity">
 												</td>
 											</tr>
-											<tr>       
+<!-- 											<tr>       
 												<td>Attraction Distrib.</td>
 												<td>
 													<input type="checkbox" name="autostabalizecheckbox" value="showlabel">
@@ -228,23 +248,24 @@
 												<td>
 													<input type="checkbox" name="autostabalizecheckbox" value="showlabel">
 												</td>
-											</tr>
+											</tr> -->
 											<tr>       
 												<td>Speed</td>
 												<td>
-													<input type="text" value="1.0" placeholder="30.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="speed">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="ForceAtlas" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div>
 						<!-- End of Force Atlas container -->
 						<!-- Start of Fruchterman Reigngold -->
 						<div class="fruchterman-reigngold-container fruchtermanReigngold">
-							<form action="">
+							<form action="/layout" method="get" class="layout_form" id="FruchtermanReingoldLayout">
 								<div class="fruchterman-reigngold-label layout-label">Fruchterman Reigngold</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -258,32 +279,33 @@
 											<tr>       
 												<td>Area</td>
 												<td>
-													<input type="text" value="100000.0" placeholder="100000.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="100000.0" placeholder="100000.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="area">
 												</td>
 											</tr>
 											<tr>
 												<td>Gravity</td>
 												<td>
-													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="gravity">
 												</td>
 											
 											</tr>
 											<tr>
 												<td>Speed</td>
 												<td>
-													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="speed">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="FruchtermanReingold" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div>
 						<!-- End of Fruchterman Reigngold -->
 						<!-- Start of Label Adjust -->
 						<div class="label-adjust-container labelAdjust">
-							<form action="">
+							<form action="/layout" method="get" class="layout_form" id="LabelAdjust">
 								<div class="scale-label layout-label">Label Adjust</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -297,18 +319,19 @@
 											<tr>       
 												<td>Speed</td>
 												<td>
-													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="speed">
 												</td>
 											</tr>
 											<tr>       
 												<td>Include Node size</td>
 												<td>
-													<input type="checkbox" name="includenodesize" value="showlabel">
+													<input type="checkbox" name="includenodesize" value="true">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="LabelAdjust" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div>
@@ -836,16 +859,6 @@
 							<h5>2{1,298.7%}]</h5>                	
 							<h5>2{1,298.7%}]</h5>
 							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
-							<h5>2{1,298.7%}]</h5>
 						</div>                                    	
 					</div>
                 </div>
@@ -891,30 +904,12 @@
       </header>
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" style="height: 565px; display: block;" id ="container">
+      <div class="content-wrapper" style="height: 695px; display: block;" id ="container">
         <!-- Content Header (Page header) -->
          <img src="./images/loader1.gif" id="graphLoaderImg" style="width:30px;height:30px; display:block; margin:0 auto;">
       </div><!-- /.content-wrapper -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-
-    <!-- REQUIRED JS SCRIPTS -->
-
-    <!-- jQuery 2.1.4 -->
-    <script src="assets/js/core-js/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.4 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <!-- <script src="assets/js/app.js"></script> -->
-	<script src="assets/js/custom.js"></script>
-	<!-- icheck -->
-	<script src="assets/js/icheck/icheck.js"></script>
-	<!-- Nicescroll -->
-	<script src="assets/js/nicescroll/jquery.nicescroll.js"></script>
-	<script src="assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-	<!-- Dtree -->
-	<script src="assets/js/lightweight_tree/jquery.treemenu.js"></script> 
-	<script src="assets/js/easytree/jquery.easytree.js"></script>
 	
 			<!-- sigma libs -->
     <script src="assets/sigmajs/sigma.core.js"></script>
