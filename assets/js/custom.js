@@ -7,6 +7,11 @@
 		$("#Queries_panel").mCustomScrollbar();// Queries_panel
 		$("#parameters_panel").mCustomScrollbar();// Parameters_panel
 		$("#layout-contents").mCustomScrollbar();// Layout contents
+		$("#network_overview_panel").mCustomScrollbar();// Network Overview
+		$("#dynamic_panel").mCustomScrollbar();// Network Overview
+		$("#light-box-scroll").mCustomScrollbar();// Lightbox popup statistics
+
+
 	});
 })(jQuery);	
 // End of Window load function .
@@ -24,6 +29,10 @@ $( document ).ready(function() {
 						$( this ).parent().toggleClass( 'active' );
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
+				$(".td-wd-help").click(function () {
+				   // $(this).replaceWith("<img src='assets/css/images/spiffygif_30x30.gif'>");
+				});
+				
     // Easy tree
 	$('#networkoperations-folder').easytree();
 	
@@ -40,6 +49,7 @@ $( document ).ready(function() {
 		cursorborderradius:"0px",
 		cursorborder:"0px",
 		});
+
 	// Decorating Checkbox
 	$('#collapse3 input').iCheck({
 		radioClass: 'iradio_square-grey',
