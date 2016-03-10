@@ -10,7 +10,7 @@
 		$("#network_overview_panel").mCustomScrollbar();// Network Overview
 		$("#dynamic_panel").mCustomScrollbar();// Network Overview
 		$("#light-box-scroll").mCustomScrollbar();// Lightbox popup statistics
-
+		$(".popup-in").mCustomScrollbar();
 
 	});
 })(jQuery);	
@@ -30,8 +30,11 @@ $( document ).ready(function() {
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
 				$(".td-wd-help").click(function () {
-				   // $(this).replaceWith("<img src='assets/css/images/spiffygif_30x30.gif'>");
+				    //$(this).replaceWith("<img src='assets/css/images/loader.gif'>");
+				    //$('.btn-help-td').replaceWith('<div class="region">'+content+'</div>');
 				});
+
+
 				
     // Easy tree
 	$('#networkoperations-folder').easytree();
@@ -206,6 +209,19 @@ $( document ).ready(function() {
             }
         });
     }).change();
-	
+		//Jquery for custom Lightbox NNN ////
+			
+	    //----- OPEN
+	$('[data-popup-open]').on('click', function(e)  {
+		var targeted_popup_class = jQuery(this).attr('data-popup-open');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+        	e.preventDefault();
+	    });
+	    //----- CLOSE
+    $('[data-popup-close]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-close');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+	        e.preventDefault();
+	    });
 	
 });  // End of document ready function .
