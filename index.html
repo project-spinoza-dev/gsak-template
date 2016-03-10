@@ -17,8 +17,6 @@
 	<link href="assets/css/lightweight_tree/jquery.treemenu.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/plugin/lightweight_tree/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	<link type="text/css" class="skins" rel="stylesheet" href="assets/css/easytree/ui.easytree.css">
-	<!-- Lightbox css -->
-	<link href="assets/css/featherlightbox/featherlight.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -128,7 +126,7 @@
 						<div id="layout-contents">
 						<!-- clockwise rotation container -->
 						<div class="rotation-container Rotate">
-						    <form action="/layout" method="get" class="layout_form" id="rotate">
+						    <form action="/layout" method="get" class="layout_form" id="Rotation">
 								<div class="rotate-label layout-label">Rotate</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -143,18 +141,18 @@
 												<td>Rotate</td>
 												<td>
 													<input type="text" value="90" placeholder="90" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
-													<input type="hidden" value="rotate" name="layout">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="Rotation" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div> <!-- end of clockwise rotation container -->
 						<!-- scale container -->
 						<div class="scale-container Scale">
-							<form action="" id="scale">
+							<form action="/layout" method="get" class="layout_form" id="Scale">
 								<div class="scale-label layout-label">Scale</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -168,12 +166,13 @@
 											<tr>       
 												<td>Scale</td>
 												<td>
-													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="scale">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="Scale" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right ">
 							</form>
 						</div>
@@ -340,7 +339,7 @@
 						<!-- End of Label Adjust -->
 						<!-- Start of noverlap -->
 						<div class="noverlap-container noverLap">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="NoverLap">
 								<div class="noverlap-label layout-label">Noverlap</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -354,31 +353,32 @@
 											<tr>       
 												<td>Speed</td>
 												<td>
-													<input type="text" value="3.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="3.0" placeholder="3.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="speed">
 												</td>
 											</tr>
 											<tr>       
 												<td>Ratio</td>
 												<td>
-													<input type="text" value="1.2" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.2" placeholder="1.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="ratio">
 												</td>
 											</tr>
 											<tr>       
 												<td>Margin</td>
 												<td>
-													<input type="text" value="5.0" placeholder="1.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="5.0" placeholder="5.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="margin">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="NoverLap" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div>
 						<!-- End of noverlap -->
 						<!-- Start of OpenOrd -->
 						<div class="open-ord-container openOrd">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="OpenOrd">
 								<div class="open-ord-label layout-label">Stages</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -392,73 +392,74 @@
 											<tr>       
 												<td>Liquid (%)</td>
 												<td>
-													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="liquid">
 												</td>
 											</tr>
 											<tr>       
 												<td>Expansion (%)</td>
 												<td>
-													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="expansion">
 												</td>
 											</tr>
 											<tr>       
 												<td>Cooldown (%)</td>
 												<td>
-													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="cooldown">
 												</td>
 											</tr>
 											<tr>       
 												<td>Crunch (%)</td>
 												<td>
-													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10" placeholder="10" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="crunch">
 												</td>
 											</tr>
 											<tr>       
 												<td>Simmer (%)</td>
 												<td>
-													<input type="text" value="25" placeholder="25" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="15" placeholder="15" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="simmer">
 												</td>
 											</tr>
 											<tr>       
 												<td>Edge Cut</td>
 												<td>
-													<input type="text" value="0.8" placeholder="0.8" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.8" placeholder="0.8" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="edgeCut">
 												</td>
 											</tr>
 											<tr>       
 												<td>Num Threads</td>
 												<td>
-													<input type="text" value="3" placeholder="3" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="3" placeholder="3" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="numThreads">
 												</td>
 											</tr>
 											<tr>       
 												<td>Num Iterations</td>
 												<td>
-													<input type="text" value="750" placeholder="750" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="750" placeholder="750" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="numIterations">
 												</td>
 											</tr>
 											<tr>       
 												<td>Fixed time</td>
 												<td>
-													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="fixedTime">
 												</td>
 											</tr>
 											<tr>       
 												<td>Random seed</td>
 												<td>
-													<input type="text" value="-90976657116214861" placeholder="-90976657116214861" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="-90976657116214861" placeholder="-90976657116214861" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="randomSeed">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="OpenOrd" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div>
 						<!-- End of OpenOrd -->
 						<!-- Start of Random Layout -->
 						<div class="random-layout-container randomLayout">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="RandomLayout">
 								<div class="random-layout-label layout-label">Properties</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -472,19 +473,20 @@
 											<tr>       
 												<td>Space Size</td>
 												<td>
-													<input type="text" value="50.0" placeholder="5.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="500.0" placeholder="500.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="space_size">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="RandomLayout" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div> 
 						<!-- End of Random Layout -->
 						<!-- Start of Yifan Hu -->
 						<div class="yifan-hu-container yifanHu">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="YafinHu">
 								<div class="rotate-label layout-label">Yifan Hu</div>
 								<div class="table-responsive">          
 									<table class=" table table-bordered">
@@ -498,63 +500,64 @@
 											<tr>       
 												<td>Quadtree Max Level</td>
 												<td>
-													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="quadtreeMaxLevel">
 												</td>
 											</tr>
 											<tr>       
 												<td>Theta</td>
 												<td>
-													<input type="text" value="1.2" placeholder="1.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.2" placeholder="1.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="theta">
 												</td>
 											</tr>
 											<tr>       
-												<td>Optimal distance</td>
+												<td>Optimal Distance</td>
 												<td>
-													<input type="text" value="100.0" placeholder="100.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="100.0" placeholder="100.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="optimalDistance">
 												</td>
 											</tr>
 											<tr>       
 												<td>Relative Strength</td>
 												<td>
-													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="relativeStrength">
 												</td>
 											</tr>
 											<tr>       
 												<td>Initial Step size</td>
 												<td>
-													<input type="text" value="20.0" placeholder="20.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="20.0" placeholder="20.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="initialStepSize">
 												</td>
 											</tr>
 											<tr>       
 												<td>Step ratio</td>
 												<td>
-													<input type="text" value="0.95" placeholder="0.95" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.95" placeholder="0.95" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="stepRatio">
 												</td>
 											</tr>
 											<tr>       
 												<td>Adaptive Cooling</td>
 												<td>
-													<input type="checkbox" name="includenodesize" value="showlabel">
+													<input type="checkbox" name="adaptiveCooling" value="true">
 												</td>
 											</tr>
 											<tr>       
 												<td>Convergence Threshold</td>
 												<td>
-													<input type="text" value="1.0E-4" placeholder="1.0E-4" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0E-4" placeholder="1.0E-4" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="convergenceThreshold">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="YafinHu" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div> 
 						<!-- End of Yifan Hu -->
 						<!-- Start of Yifan Hu Proportional -->
 						<div class="yifan-hu-proportional-container yifanhuProportional">
-						    <form action="">
+						    <form action="/layout" method="get" class="layout_form" id="YafinHuProportional">
 								<div class="yifanhu-proportional-label layout-label">Yifan Hu Proportional</div>
-								<div class="table-responsive">          
+									<div class="table-responsive">          
 									<table class=" table table-bordered">
 										<thead>
 											<tr>       
@@ -566,54 +569,55 @@
 											<tr>       
 												<td>Quadtree Max Level</td>
 												<td>
-													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="10.0" placeholder="10.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="quadtreeMaxLevel">
 												</td>
 											</tr>
 											<tr>       
 												<td>Theta</td>
 												<td>
-													<input type="text" value="1.2" placeholder="1.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.2" placeholder="1.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="theta">
 												</td>
 											</tr>
 											<tr>       
-												<td>Optimal distance</td>
+												<td>Optimal Distance</td>
 												<td>
-													<input type="text" value="100.0" placeholder="100.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="100.0" placeholder="100.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="optimalDistance">
 												</td>
 											</tr>
 											<tr>       
 												<td>Relative Strength</td>
 												<td>
-													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.2" placeholder="0.2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="relativeStrength">
 												</td>
 											</tr>
 											<tr>       
 												<td>Initial Step size</td>
 												<td>
-													<input type="text" value="20.0" placeholder="20.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="20.0" placeholder="20.0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="initialStepSize">
 												</td>
 											</tr>
 											<tr>       
 												<td>Step ratio</td>
 												<td>
-													<input type="text" value="0.95" placeholder="0.95" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="0.95" placeholder="0.95" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="stepRatio">
 												</td>
 											</tr>
 											<tr>       
 												<td>Adaptive Cooling</td>
 												<td>
-													<input type="checkbox" name="includenodesize" value="showlabel">
+													<input type="checkbox" name="adaptiveCooling" value="true">
 												</td>
 											</tr>
 											<tr>       
 												<td>Convergence Threshold</td>
 												<td>
-													<input type="text" value="1.0E-4" placeholder="1.0E-4" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="angle">
+													<input type="text" value="1.0E-4" placeholder="1.0E-4" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input_layout" name="convergenceThreshold">
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<input type="hidden" value="YafinHuProportional" name="layout">
 								<input type="submit" value="Run" class="btn btn-primary  marginbottom10 pull-right">
 							</form>
 						</div> 
@@ -661,28 +665,19 @@
 		<div class="user-nav-slide"></div>
 	</div>
 	<!-- End of leftsidebar -->
-	    <!-- Start of Rightsidebar -->
+	    <!-- Start of leftsidebar -->
 	<div class="user-menu-container-right">
 		<div class="user-menu-left-container-right">
-		<!--Filters and statistics tabs-->
-		<div class="filstat">
-			<ul class="nav nav-tabs">
-				<li class=""><a href="#filters" data-toggle="tab" aria-expanded="true">Filters</a></li>
-				<li class="active"><a href="#statistics" data-toggle="tab" aria-expanded="false">Statistics</a></li>    
-			</ul>
-		</div>
-		<div class="tab-content">
-						<div class="tab-pane fade " id="filters">
-							<!--panel options-->
+			<!--panel options-->
             <div class="panel-group">
 				<div class="panel panel-default margin10">
-					<div class="panel-heading" >
+					<div class="panel-heading">
 						<h4 class="panel-title">
-						<a href="#collapse_filters" data-toggle="collapse" aria-expanded="true" class="">Libraries 
+						<a data-toggle="collapse" href="#collapse_network">Network Operations 
 						</a>
 						</h4>
 					</div>
-					<div id="collapse_filters" class="panel-collapse collapse in">
+					<div id="collapse_network" class="panel-collapse collapse in">
 					<div id="jstree_demo_div" class="panel-body network_panel_body">
 						<div id="jstree">
 					    <!-- in this example the tree is populated from inline HTML -->
@@ -876,230 +871,10 @@
             </div>
           </div>
 		  <!-- End of Panel parameters -->
-						</div>
-						<div class="tab-pane fade active in" id="statistics">
-						
-		  <div class="panel-group">
-			<div class="panel panel-default margin10">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse_network_overview">Network Overview 
-						</a>
-					</h4>
-				</div>
-				<div id="collapse_network_overview" class="panel-collapse collapse in">
-					<div id="network_overview_panel" class="panel-body parameter_panel">
-						<div class="statistics-contents">
-						<div class="table-responsive">          
-							<table class="table-responsive table-stat">
-								<div id="myModal" class="modal fade" role="dialog">
-  
-								<tr>       
-									<td class="td-wd-txt">Average Degree</td>
-									<td class="td-wd-button">
-										<input id="average_degree_stats" data-popup-open="popup-1" class="btn btn-primary" type="button" name="run" value="Run">
-										<div class="popup" data-popup="popup-1">
-
-										    <div class="popup-inner">
-										    <div class="popup-heading">Average Degree Graph<a class="popup-close" data-popup-close="popup-1" href="#">x</a></div>
-										    	<div class="popup-in">
-										        <h2>Wow! This is Awesome!</h2>
-										        
-										        <p>Donec in volutpat nisi. In quam lectus, aliquet rhoncus cursus a, congue et arcu. Vestibulum tincidunt neque id nisi pulvinar aliquam. Nulla luctus luctus ipsum at ultricies. Nullam nec velit dui. Nullam sem eros, pulvinar sed pellentesque ac, feugiat et turpis. Donec gravida ipsum cursus massa malesuada tincidunt. Nullam finibus nunc mauris, quis semper neque ultrices in. Ut ac risus eget eros imperdiet posuere nec eu lectus.
-										        content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</p>
-										        <p><a data-popup-close="popup-1" href="#">Close</a></p>
-										        
-										        </div>
-										    </div>
-										</div>
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-	
-								<tr>       
-									<td class="td-wd-txt">Avg. Weighted Degree</td>
-									<td class="td-wd-button">
-										<input id="avg_weight_degree_stats" data-popup-open="popup-2" class="btn btn-primary" type="button" name="run" value="Run">
-										<div class="popup" data-popup="popup-2">
-
-										    <div class="popup-inner">
-										    <div class="popup-heading">Average Weight Degree Graph<a class="popup-close" data-popup-close="popup-2" href="#">x</a></div>
-										    	<div class="popup-in">
-										        <h2>Wow! This is Awesome!</h2>
-										        
-										        <p>Donec in volutpat nisi. In quam lectus, aliquet rhoncus cursus a, congue et arcu. Vestibulum tincidunt neque id nisi pulvinar aliquam. Nulla luctus luctus ipsum at ultricies. Nullam nec velit dui. Nullam sem eros, pulvinar sed pellentesque ac, feugiat et turpis. Donec gravida ipsum cursus massa malesuada tincidunt. Nullam finibus nunc mauris, quis semper neque ultrices in. Ut ac risus eget eros imperdiet posuere nec eu lectus.
-										        content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposas their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</p>
-										        <p><a data-popup-close="popup-2" href="#">Close</a></p>
-										        
-										        </div>
-										    </div>
-										</div>
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Network Diameter</td>
-									<td class="td-wd-button">
-										<input id="network_diameter_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="load-help-td"><img src='assets/css/images/loader.gif'></div><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Graph Density</td>
-									<td class="td-wd-button">
-										<input id="graph_density_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Modularity</td>
-									<td class="td-wd-button">
-										<input id="modularity_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Page Rank</td>
-									<td class="td-wd-button">
-										<input id="page_rank_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Connected Components</td>
-									<td class="td-wd-button">
-										<input id="connected_comp_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-							</table>
-						</div>		
-						</div>                                    	
-					</div>
-                </div>
-            </div>
-          </div>
-		  <!-- End of Panel parameters -->
-		  <div class="panel-group">
-			<div class="panel panel-default margin10">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse_node_overview">Node Overview 
-						</a>
-					</h4>
-				</div>
-				<div id="collapse_node_overview" class="panel-collapse collapse in">
-					<div id="node_overview_panel" class="panel-body parameter_panel">
-						<div class="statistics-contents">
-							<div class="table-responsive">          
-								<table class="table-responsive table-stat">
-									
-									<tr>       
-										<td class="td-wd-txt">Avg. Clustering Coefficient</td>
-										<td class="td-wd-button">
-											<input id="avg_clustering_stats" class="btn btn-primary" type="button" name="run" value="Run">
-										</td>
-										<td class="td-wd-help"><div class="btn-help-td"></div></td>
-									</tr>
-									<tr>       
-										<td class="td-wd-txt">EigenVector Centrality</td>
-										<td class="td-wd-button">
-											<input id="eigenvector_centrality_stats" class="btn btn-primary" type="button" name="run" value="Run">
-										</td>
-										<td class="td-wd-help"><div class="btn-help-td"></div></td>
-									</tr>
-										
-								</table>
-							</div>
-						</div>                                    	
-					</div>
-                </div>
-            </div>
-          </div>
-		  <!-- End of Panel parameters -->
-		  <div class="panel-group">
-			<div class="panel panel-default margin10">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse_edge_overview">Edge Overview 
-						</a>
-					</h4>
-				</div>
-				<div id="collapse_edge_overview" class="panel-collapse collapse in">
-					<div id="edge_overview_panel" class="panel-body parameter_panel">
-						<div class="statistics-contents">
-							<table class="table-responsive table-stat">
-										
-								<tr>       
-									<td class="td-wd-txt">Avg. Path Length</td>
-									<td class="td-wd-button">
-										<input id="avg_path_length_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-											
-							</table>
-						</div>                                    	
-					</div>
-                </div>
-            </div>
-          </div>
-		  <!-- End of Panel parameters -->
-		  <div class="panel-group">
-			<div class="panel panel-default margin10">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse_dynamic">Dynamic 
-						</a>
-					</h4>
-				</div>
-				<div id="collapse_dynamic" class="panel-collapse collapse in">
-					<div id="dynamic_panel" class="panel-body parameter_panel">
-						<div class="statistics-contents">
-							<table class="table-responsive table-stat">
-								
-								<tr>       
-									<td class="td-wd-txt">#Nodes</td>
-									<td class="td-wd-button">
-										<input id="nodes_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">#Edges</td>
-									<td class="td-wd-button">
-										<input id="edges_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Degree</td>
-									<td class="td-wd-button">
-										<input id="degree_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Clustering Coefficient</td>
-									<td class="td-wd-button">
-										<input id="clustering_coeff_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-							</table>
-						</div>                                    	
-					</div>
-                </div>
-            </div>
-          </div>
-		  <!-- End of Panel parameters -->
-						</div>   
-					</div>
-			
 		</div>
 		<div class="user-nav-slide-right"></div>
 	</div>
-	<!-- End of Rightsidebar -->
+	<!-- End of leftsidebar -->
     <div class="wrapper">
     <!-- Main Header -->
     <header class="main-header">
@@ -1134,14 +909,10 @@
     </div>
       </header>
 
-       <!-- Content Wrapper. Contains page content -->
+      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper" style="height: 695px; display: block;" id ="container">
-      
- 
-
-
-        <!-- Content Header (Page header) 
-         <img src="./images/loader1.gif" id="graphLoaderImg" style="width:30px;height:30px; display:block; margin:0 auto;">-->
+        <!-- Content Header (Page header) -->
+         <img src="./images/loader1.gif" id="graphLoaderImg" style="width:30px;height:30px; display:block; margin:0 auto;">
       </div><!-- /.content-wrapper -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
@@ -1196,6 +967,5 @@
 
 	<!-- GSAK ajax-server script -->
 	<script src="assets/js/script.js"></script>
-	
   </body>
 </html>
