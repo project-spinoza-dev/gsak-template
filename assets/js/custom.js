@@ -27,6 +27,11 @@ $( document ).ready(function() {
 						$( this ).parent().toggleClass( 'active' );
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
+	//select box 
+	$("#selectdata").selectBoxIt();
+	$("#selectdeg").selectBoxIt();
+	$("#selectlayout-boxit").selectBoxIt();
+	$("#select-labelsizeboxit").selectBoxIt();
     // Easy tree
 	$('#networkoperations-folder').easytree();
 	
