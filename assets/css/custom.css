@@ -588,7 +588,8 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
  
 /* Inner */
 .popup-inner {
-  max-width:700px;
+  max-width:750px;
+  min-width:750px;
   width:90%;
   padding:10px;
   position:absolute;
@@ -602,7 +603,8 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 }
 .popup-in{
   overflow: auto;
-  height: 400px;
+  height: 500px;
+  width: 740px !important;
 }
 /* Close Button */
 .popup-close {
@@ -630,7 +632,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   z-index: 9999;
   top: 0;
   left: 0;
-  width: 700px;
+  width: 750px;
   height: 25px;
   /* dimensions: 25px x 25px */
   line-height: 25px;
