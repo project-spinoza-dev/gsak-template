@@ -220,6 +220,7 @@ $( document ).ready(function() {
         revert: 'invalid',
         opacity: "0.5"
     });
+	//$("#queries_panel").mCustomScrollbar();//queries panel
 	$("#queries_panel").mCustomScrollbar();//queries panel
     $("#filter_querycontainer").droppable({
         accept: $(".filterdrag"),
