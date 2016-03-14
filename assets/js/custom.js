@@ -4,12 +4,12 @@
 		$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
 		$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default						
 		$("#jstree_demo_div").mCustomScrollbar();// Network operations.
-		$("#Queries_panel").mCustomScrollbar();// Queries_panel
 		$("#parameters_panel").mCustomScrollbar();// Parameters_panel
 		$("#layout-contents").mCustomScrollbar();// Layout contents
 		$("#network_overview_panel").mCustomScrollbar();// Network Overview
 		$("#dynamic_panel").mCustomScrollbar();// Network Overview
-		$(".popup-in").mCustomScrollbar();//  popup-box statistics
+		$(".popup-in").mCustomScrollbar();//  popup-box statistics 
+	    //$("#queries_panel").mCustomScrollbar();//queries panel
 	});
 })(jQuery);	
 // End of Window load function .
@@ -220,7 +220,7 @@ $( document ).ready(function() {
         revert: 'invalid',
         opacity: "0.5"
     });
-
+	$("#queries_panel").mCustomScrollbar();//queries panel
     $("#filter_querycontainer").droppable({
         accept: $(".filterdrag"),
         hoverClass: "dropHover",
@@ -231,6 +231,7 @@ $( document ).ready(function() {
             me.appendTo(this)
                 .addClass("filternewClass");
         }
+
     });
 
 });  // End of document ready function .
