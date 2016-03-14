@@ -212,4 +212,25 @@ $( document ).ready(function() {
         $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
 	        e.preventDefault();
 	    });
+    //Drag and Drop filter queries
+
+    $(".filterdrag").draggable({
+        helper: "clone",
+        cursor: 'move',
+        revert: 'invalid',
+        opacity: "0.5"
+    });
+
+    $("#filter_querycontainer").droppable({
+        accept: $(".filterdrag"),
+        hoverClass: "dropHover",
+        drop: function (ev, ui) {
+        	$(this).find(".replace_me").remove();
+            var me = ui.draggable.clone()
+            ui.draggable.draggable("disable")
+            me.appendTo(this)
+                .addClass("filternewClass");
+        }
+    });
+
 });  // End of document ready function .

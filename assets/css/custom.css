@@ -731,6 +731,49 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   font-family:Century Gothic !important;
   font-size:13px;
 }
+
+/******************CSS for drag filter queries NNN************/
+#filter_querycontainer {
+  background-color: #434343;
+  border: 0 none;
+  float: left;
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  margin-top: 15px !important;
+}
+.filterdrag {
+  position: relative;
+}
+.filternewClass {
+  padding: 2px 0px 2px 0px; 
+  border:none;
+  background-color: none;
+}
+#filter_querycontainer span.easytree-node {
+  border:0 none;
+  display: inline-block;
+  width: 100%;;
+}
+#filter_querycontainer span.easytree-node:hover {
+    background-color: #434343;
+}
+#filter_querycontainer span.easytree-icon{
+  background-image: url("../../images/filter.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+#filter_querycontainer span.easytree-expander{
+  display: none;
+}
+#filter_querycontainer ul { 
+  list-style-type: none;
+  padding-left: 0px;
+}
+#filter_querycontainer .replace_me li {
+  left: 0;
+}
+
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;
