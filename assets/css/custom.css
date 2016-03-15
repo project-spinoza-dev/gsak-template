@@ -93,7 +93,7 @@ body .user-nav-slide-right {
 /************ New CSS ******************/
 .wrapper .main-header{
   background-color: #434343;
-  min-height: 88px;
+  height: 88px;
 }
 .main-header .site-name {
   color: #ffffff;
@@ -143,7 +143,34 @@ a {
   color: #bababa !important;
   text-decoration: none;
 }
-
+.header-select{
+  color: #bababa;
+  width: 242px;
+  height: 31px;
+  overflow: hidden;
+  background-color: #3b3b3b;
+  background-image: url("../../images/select.png");
+  background-repeat:no-repeat;
+  background-position:219px center;
+  line-height:32px;
+  padding-left:5px;
+  float:right;
+  margin-right:8px;
+  margin-top:3px;
+}
+.header-select select{
+  width:260px;
+  background: transparent;
+  border:0px;
+  -webkit-appearance: none;
+}
+.header-select select:hover{
+  cursor: pointer;
+}
+select option{
+  border: none;
+  margin-bottom:5px;
+}
 .main-header .header-logo {
   padding-left:10px;
 }
@@ -230,10 +257,21 @@ a {
 
 }
 .panel-group.panel-appearance  .degree-select {
-  
+  background-color: #3b3b3b;
+  background-image: url("../../images/select.png");
+  background-position: 219px center;
+  background-repeat: no-repeat;
+  color: #bababa;
+  height: 31px;
+  line-height: 32px;
+  overflow: hidden;
+  padding-left: 5px;
+  width: 242px;
 }
 .panel-group.panel-appearance  .degree-select select {
-  
+  background: transparent none repeat scroll 0 0;
+  border: 0 none;
+  width: 260px;
 }
 .panel-group.panel-appearance  #edegs{
   padding-left: 20px;
@@ -244,16 +282,28 @@ a {
   padding-left: 20px;
   padding-right: 10px;
 }
-
+.panel-group.panel-appearance  .degree-select select:hover{
+  cursor: pointer;
+}
 /****** CSS for layout select *********/
 .panel-group.panel-layout .layout-select {
-  
+  background-color: #3b3b3b;
+  background-image: url("../../images/select.png");
+  background-position: 219px center;
+  background-repeat: no-repeat;
+  color: #bababa;
+  height: 31px;
+  line-height: 32px;
+  overflow: hidden;
+  padding-left: 5px;
 }
 .panel-group.panel-layout .layout-select select {
-  
+  background: transparent none repeat scroll 0 0;
+  border: 0 none;
+  width: 260px;
 }
 .panel-group.panel-layout .layout-select select:hover{
-  
+  cursor: pointer;
 }
 .rotation-container{
   margin-top:10px;
@@ -532,7 +582,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   width: 30px;
 }
 #network_overview_panel{
-  height: 150px;
+  height: 230px;
   overflow: auto;
 }
 #node_overview_panel{
@@ -675,62 +725,111 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   .yifan-hu-proportional-container{
   margin-top: 10px;
  }
+ /*************************Css for dropdown NNN*************************************/
+ .dropcontainer {
+  position:relative;
+  font-size: 13px;
+  color: #bababa;
+  } 
 
-  /********Selectbox css ********/
-.gsak-home .selectboxit-container .selectboxit{
-  background-color:#3b3b3b !important;
-  color:#bababa !important;
-  background-image:none;
-  border-radius:0px;
-  border:0px;
-  width: 242px !important;
-}
-.gsak-home #select-labelsizeboxitSelectBoxItContainer #select-labelsizeboxitSelectBoxIt{
-  width: 92px !important;
-}
-.gsak-home .selectboxit-list {
-  background-color:#3b3b3b;
-  color:#ffffff;
-  border:0px;
-}
-.gsak-home .selectboxit-default-arrow {
-  border:0px;
-
-}
-.gsak-home .selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+.trigger {
+  color: #bababa;
+  font-size: 13px;
+  width: 50%;
+  height: 31px;
+  background: #fff url(../../images/select.png) 95% center no-repeat;
+  display: block;
+  border: 1px solid #3b3b3b;
   background-color: #3b3b3b;
-  background-image: none;
-  color: #ffffff;
-}
-.gsak-home .selectboxit-list .selectboxit-option-anchor {
-  color: #ffffff;
-}
-.gsak-home .selectboxit-container .selectboxit-options {
-  border-radius:0px;
-}
-.selectboxit-arrow-container{
-  background: url("../../images/select.png");
-  background-repeat: no-repeat;
-  background-position: center center; 
-}
-
-.gsak-home .setting-container-test{
-  padding-left:0px;
-  padding-right:5px;
-  text-align:right;
-}
-.gsak-home .setting-container-test img{
-  margin-right:6px;
-}
-.gsak-home .header-selecttest{
-  padding-right:0px;
-  margin-top:3px;
-}
-.gsak-home .select-container-test .selectboxit-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height:32px;
+  padding-left:5px;
   float:right;
-  font-family:Century Gothic !important;
-  font-size:13px;
-}
+  margin-right:8px;
+
+  }
+
+.trigger:hover {
+  color: #bababa;
+  background: #282828 url(../../images/select.png) 95% center no-repeat;
+  }
+
+.activetrigger {
+  color: #bababa;
+  padding: 5px;
+  font-size: 13px;
+  width: 50%;
+  background: #fff url(../../images/select.png) 95% center no-repeat;
+  display: block;
+  background-color: #3b3b3b;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 31px;
+  line-height:32px;
+    padding-left:5px;
+    float:right;
+    margin-right:8px;
+    margin-top:3px;
+  }
+
+.activetrigger:hover {
+  background: #282828 url(../../images/select.png) 95% center no-repeat;
+  color: #777;
+  }
+
+.activetrigger:active {
+  background: #282828 url(../../images/select.png) 95% center no-repeat;
+  color: #777;
+  }
+
+.dropcontainer ul {
+  font-size: 13px;
+  height: 31px;
+  border: 1px solid #3b3b3b;
+  border-top: none;
+  background-color: #3b3b3b;
+  list-style-type: none;
+  margin: 0;
+  width: 50%;
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height:32px;
+    padding-left:0;
+    float:right;
+    margin-right:8px;
+  }
+
+.dropcontainer ul li {
+  background-color: #3b3b3b;
+  padding: 5px;
+  height: 31px;
+  }
+
+.dropcontainer ul li:hover {
+  background: #282828;
+  outline: none;
+  }
+
+.dropcontainer ul li:first-child {
+  display: none;
+  }
+
+.dropcontainer ul li:last-child {
+  border-bottom: none;
+  }
+
+.dropdownhidden {
+  display: none;
+  }
+
+.dropdownvisible {
+  height: auto;
+  }
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;
@@ -752,79 +851,3 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   opacity: 1;
   filter: alpha(opacity=100); /* For IE8 and earlier */
 }
-/*************************************************************** Different Queries *******************************************************/
-/***************************************************************                  *******************************************************/
-@media only screen and (max-device-width: 1024px) and (min-device-width: 1100px) and (orientation: landscape) , 
-only screen and (max-width: 1024px)  and (min-width: 768px)  {
-.main-header{
-  /*border:1px solid red;*/
-}
-body .user-menu-container {
-  left: 0px;
-}
-body .user-menu-container-right {
-  right: 0px;
-}
-body .user-menu-container {
-  margin-top: 159px;
-}
-body .user-menu-container-right {
-  margin-top: 159px;
-}
-}
-@media only screen and (max-device-width: 767px) and (min-device-width: 420px)  and (orientation: landscape), 
-only screen and (max-width: 767px)  and (min-width: 320px)  {
-.main-header{
-  /*border:1px solid green;*/
-}
-.gsak-home .search-box{
-  width:190px;
-}
-.gsak-home .header-selecttest {
-  width: 100%;
-}
-.gsak-home .setting-container-test {
-  text-align: left;
-  width: 100%;
-}
-.main-header .margin30 {
-    margin: 10px 0;
-}
-.gsak-home .header-selecttest {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-}
-.gsak-home .selectboxit-container {
-  float:none;
-}
-body .user-menu-container{
-  margin-top:206px;
-}
-body .user-menu-container-right{
-  margin-top:206px;
-}
-.gsak-home .search-box{
-  width:190px;
-}
-.gsak-home .header-selecttest {
-  width: 100%;
-}
-.gsak-home .setting-container-test {
-  text-align: left;
-  width: 100%;
-}
-.main-header .margin30 {
-    margin: 10px 0;
-}
-.gsak-home .header-selecttest {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-}
-.gsak-home .selectboxit-container {
-  float:none;
-}
-}
-/***************************************************************                   ******************************************************/
-/*************************************************************** End of Queries  ****************************************
