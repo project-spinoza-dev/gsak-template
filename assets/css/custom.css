@@ -577,8 +577,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   text-transform: uppercase;
 }
 #network_overview_panel{
-  height: 230px;
-  overflow: auto;
+  height: 216px;
 }
 #node_overview_panel{
   height: 120px;
@@ -589,7 +588,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   overflow: auto;
 }
 #network_overview_panel .statistics-contents{
-  padding-left:10px;
+  
 }
 .gsak-home .mCSB_container_wrapper{
   margin-right: 15px;
