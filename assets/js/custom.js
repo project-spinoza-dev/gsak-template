@@ -234,5 +234,30 @@ $( document ).ready(function() {
         }
 
     });
+     ///////Range slider for range///////////
+  	$('.range-slider').jRange({
+        from: 0,
+        to: 8,
+        step: 1,
+        format: '%s',
+        width: 180,
+        showLabels: true,
+        isRange : true
+    });  
+  	  ///////////////
 
+    //Disable all links in filters
+    $("#jstree_demo_div a").click(function(e){ e.preventDefault(); });
+
+   	//$("#queries_panel").on('click', 'a', function(){
+   		//$("#contentwo").css({"display":"none"});
+	//});
+
+    //Parameter load 
+    $("#queries_panel").on('click', 'a', function() {
+  	  var content_id = $(this).attr('href');
+
+        $('#parameter_load').hide().html($(content_id).html()).show(500);
+    });
+   
 });  // End of document ready function .
