@@ -6,10 +6,11 @@
 		$("#jstree_demo_div").mCustomScrollbar();// Network operations.
 		$("#parameters_panel").mCustomScrollbar();// Parameters_panel
 		$("#layout-contents").mCustomScrollbar();// Layout contents
-		$("#network_overview_panel").mCustomScrollbar();// Network Overview
-		$("#dynamic_panel").mCustomScrollbar();// Network Overview
+		//$("#network_overview_panel").mCustomScrollbar();// Network Overview
+		//$("#dynamic_panel").mCustomScrollbar();// Network Overview
 		$(".popup-in").mCustomScrollbar();//  popup-box statistics 
 	    //$("#queries_panel").mCustomScrollbar();//queries panel
+	    $("#selectlayout-boxitSelectBoxItOptions").mCustomScrollbar();
 	});
 })(jQuery);	
 // End of Window load function .
