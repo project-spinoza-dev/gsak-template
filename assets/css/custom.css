@@ -38,7 +38,7 @@ body .user-menu-container {
   float: left;
   position: absolute;
   z-index: 100;
-  padding-top:88px;
+  margin-top:88px;
 }
 body .user-menu-left-container {
   background-color: #353535;
@@ -65,7 +65,7 @@ body .user-menu-left-container-right {
 }
 body .user-menu-container-right {
   float: right;
-  padding-top: 88px;
+  margin-top: 88px;
   position: absolute;
   right:0px;
   z-index: 100;
@@ -165,10 +165,10 @@ a {
   text-align: center;
 }
 .user-menu-container.closed .user-nav-slide{
-  background-image: url("../../images/slider_1.png");	
+  background-image: url("../../images/slider_1.png"); 
 }
 .user-menu-container-right.closed .user-nav-slide-right{
-  background-image: url("../../images/slider_1.png");	
+  background-image: url("../../images/slider_1.png"); 
 }
 .gsak-home .panel-group .panel{
   border:0px;
@@ -361,11 +361,11 @@ a {
   
 }
 #parameters_panel{
-  height: 200px;
+  height: 150px;
   overflow: auto;
 }
 #layout-contents{
-  height: 200px;
+  height: 160px;
   overflow:auto;
 }
 .gsak-home .panel-group:last-child{
@@ -577,7 +577,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   text-transform: uppercase;
 }
 #network_overview_panel{
-  height: 150px;
+  height: 230px;
   overflow: auto;
 }
 #node_overview_panel{

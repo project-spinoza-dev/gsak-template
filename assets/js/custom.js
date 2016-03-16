@@ -234,6 +234,7 @@ $( document ).ready(function() {
         }
 
     });
+
      ///////Range slider for range///////////
   	$('.range-slider').jRange({
         from: 0,
@@ -259,5 +260,5 @@ $( document ).ready(function() {
 
         $('#parameter_load').hide().html($(content_id).html()).show(500);
     });
-   
-});  // End of document ready function .
+
+});  // End of document ready function.

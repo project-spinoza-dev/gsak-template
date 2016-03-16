@@ -814,7 +814,7 @@
 					
 				</div>
 
-              <div id="collapse_Queries" class="panel-collapse collapse in">
+               <div id="collapse_Queries" class="panel-collapse collapse in">
               	<div id="queries_panel" class="panel-body parameter_panel">
 					<div class="parameters-contents">
                 	<div id="filter_querycontainer" class="ui-widget-content"><ul><li class="replace_me">Drag Filter here to run Queries</li></ul></div>
@@ -836,6 +836,7 @@
 				<div id="collapse_parameters" class="panel-collapse collapse in">
 					<div id="parameters_panel" class="panel-body parameter_panel">
 						<div class="parameters-contents">
+
 							<div id="parameter_load">Query Parameters will load here..</div>
 							<div id="equal_mod_class" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Equal Settings</h6></div>
@@ -913,37 +914,42 @@
 									<td class="td-wd-help"><div class="btn-help-td"></div></td>
 								</tr>
 								<tr>       
-									<td class="td-wd-txt">Network Diameter</td>
-									<td class="td-wd-button">
-										<input id="network_diameter_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="load-help-td"><img src='assets/css/images/loader.gif'></div><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
 									<td class="td-wd-txt">Graph Density</td>
 									<td class="td-wd-button">
-										<input id="graph_density_stats" class="btn btn-primary" type="button" name="run" value="Run">
+									<form action="/statistics" method="get" class="statistics_form" id="graphDensity">
+										<input id="graph_density_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<input type="hidden" value="graphDensity" name="statistics">
+									</form>
 									</td>
 									<td class="td-wd-help"><div class="btn-help-td"></div></td>
 								</tr>
 								<tr>       
 									<td class="td-wd-txt">Modularity</td>
 									<td class="td-wd-button">
-										<input id="modularity_stats" class="btn btn-primary" type="button" name="run" value="Run">
+									<form action="/statistics" method="get" class="statistics_form" id="Modularity">
+										<input id="modularity_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<input type="hidden" value="Modularity" name="statistics">
+									</form>
 									</td>
 									<td class="td-wd-help"><div class="btn-help-td"></div></td>
 								</tr>
 								<tr>       
 									<td class="td-wd-txt">Page Rank</td>
 									<td class="td-wd-button">
-										<input id="page_rank_stats" class="btn btn-primary" type="button" name="run" value="Run">
+									<form action="/statistics" method="get" class="statistics_form" id="pageRank">
+										<input id="page_rank_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<input type="hidden" value="pageRank" name="statistics">
+									</form>
 									</td>
 									<td class="td-wd-help"><div class="btn-help-td"></div></td>
 								</tr>
 								<tr>       
 									<td class="td-wd-txt">Connected Components</td>
 									<td class="td-wd-button">
-										<input id="connected_comp_stats" class="btn btn-primary" type="button" name="run" value="Run">
+									<form action="/statistics" method="get" class="statistics_form" id="connectedComponents">
+										<input id="connected_comp_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<input type="hidden" value="connectedComponents" name="statistics">
+									</form>
 									</td>
 									<td class="td-wd-help"><div class="btn-help-td"></div></td>
 								</tr>
@@ -972,7 +978,10 @@
 									<tr>       
 										<td class="td-wd-txt">Avg. Clustering Coefficient</td>
 										<td class="td-wd-button">
-											<input id="avg_clustering_stats" class="btn btn-primary" type="button" name="run" value="Run">
+									<form action="/statistics" method="get" class="statistics_form" id="avgClusterCoeficients">
+											<input id="avg_clustering_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+											<input type="hidden" value="avgClusterCoeficients" name="statistics">
+									</form>
 										</td>
 										<td class="td-wd-help"><div class="btn-help-td"></div></td>
 									</tr>
@@ -1020,56 +1029,8 @@
             </div>
           </div>
 		  <!-- End of Panel parameters -->
-		  <div class="panel-group">
-			<div class="panel panel-default margin10">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse_dynamic">Dynamic 
-						</a>
-					</h4>
-				</div>
-				<div id="collapse_dynamic" class="panel-collapse collapse in">
-					<div id="dynamic_panel" class="panel-body parameter_panel">
-						<div class="statistics-contents">
-							<table class="table-responsive table-stat">
-								
-								<tr>       
-									<td class="td-wd-txt">#Nodes</td>
-									<td class="td-wd-button">
-										<input id="nodes_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">#Edges</td>
-									<td class="td-wd-button">
-										<input id="edges_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Degree</td>
-									<td class="td-wd-button">
-										<input id="degree_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-								<tr>       
-									<td class="td-wd-txt">Clustering Coefficient</td>
-									<td class="td-wd-button">
-										<input id="clustering_coeff_stats" class="btn btn-primary" type="button" name="run" value="Run">
-									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-								</tr>
-							</table>
-						</div>                                    	
-					</div>
-                </div>
-            </div>
-          </div>
-		  <!-- End of Panel parameters -->
-						</div>   
-					</div>
+	</div>   
+  </div>
 			
 		</div>
 		<div class="user-nav-slide-right"></div>
@@ -1113,8 +1074,13 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper" style="height: 695px; display: block;" id ="container">
 
+
 	<!-- Content Header (Page header) -->
         <!--<img src="./images/loader1.gif" id="graphLoaderImg" style="width:30px;height:30px; display:block; margin:0 auto;">-->
+
+	<!-- Content Header (Page header) -->
+        <img src="./images/loader1.gif" id="graphLoaderImg" style="width:30px;height:30px; display:block; margin:0 auto;">
+
       </div><!-- /.content-wrapper -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
@@ -1171,10 +1137,6 @@
 	<script src="assets/js/canvasjs/jquery.canvasjs.min.js"></script>
 	<!-- GSAK ajax-server script -->
 	<script src="assets/js/script.js"></script>
-<<<<<<< HEAD
-	  
-=======
-
 	<script type="text/javascript">
 //$(function () {
 // 	//Better to construct options first and then pass it as a parameter
@@ -1203,9 +1165,7 @@
 // 	$("#chartContainer").CanvasJSChart(options);
 
 // });
- 
- 
+
 </script>
->>>>>>> origin/master
   </body>
 </html>
