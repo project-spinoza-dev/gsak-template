@@ -712,7 +712,10 @@
 						<li id="equal_filter" class="isFolder isExpanded" >
 							Equal
 							<ul>
-								<li id="" class="ui-widget-content filterdrag"><a href="#equal_mod_class" > Modularity class (Equal)</a></li>
+								<li id="" class="ui-widget-content filterdrag"><a href="#equal_mod_class" > Equal (Modularity class)</a></li>
+							</ul>
+							<ul>
+								<li id="" class="ui-widget-content filterdrag"><a href="#equal_degree_class" > Equal (Degree)</a></li>
 							</ul>
 						</li>
 						<li id="inter_edges_filter"  class="isFolder isExpanded">
@@ -779,7 +782,7 @@
 					<li id="" class="ui-widget-content filterdrag"><a href="#in_deg_topology_filter"> In Degree Range</a></li>
 					<li id="" class="ui-widget-content filterdrag"><a href="#kcore_topology_filter"> K-core</a></li>
 					<li id="" class="ui-widget-content filterdrag"><a  href="#mutualdeg_range_topology_filter"> Mutual Degree Range</a></li>
-					<li id="" class="ui-widget-content filterdrag"><a id="neighbrs_net_topology_filter_id" href="#neighbrs_net_topology_filter"> Neighbors Network</a></li>
+					<li id="" class="ui-widget-content filterdrag"><a id="" href="#neighbrs_net_topology_filter"> Neighbors Network</a></li>
 					<li id="" class="ui-widget-content filterdrag"><a href="#out_degree_range_topology_filter"> Out Degree Range</a></li>
 					
 				</ul>
@@ -789,8 +792,6 @@
 
 				<ul>
 				  Saved Queries
-				  <li id="test1" class="ui-widget-content filterdrag"><a href="#contentone" class="clicky">Test Filter 1</a></li>
-				  <li id="test2" class="ui-widget-content filterdrag"><a href="#contentwo" class="clicky">Test Filter 2</a></li>
 				</ul>
 			   </li>
 			   
@@ -838,11 +839,12 @@
 						<div class="parameters-contents">
 
 							<div id="parameter_load">Query Parameters will load here..</div>
+
 							<div id="equal_mod_class_cont" class="parameter_load_class">
-								<div class="heading_parameter"><h6>Equal Settings</h6></div>
-								<div class="">
+								<div class="heading_parameter"><h6>Equal (Modularity) Settings</h6></div>
+								<div class="class="table-responsive"">
 									<form>
-										<table class="table-responsive table-parameter">
+										<table class="table table-parameter">
 											<tr>
 												<td>Value</td>
 												<td><input type="number" max="8" min="0" value="0"></td>
@@ -856,14 +858,54 @@
 												<td>8</td>
 											</tr>
 										</table>
+										<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+									</form>
+								</div>
+							</div>
+							<div id="equal_degree_class_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Equal (Degree) Settings</h6></div>
+								<div class="table-responsive">
+									<form>
+										<table class="table table-parameter">
+											<tr>
+												<td>Value</td>
+												<td><input type="number" max="36" min="1" value="1"></td>
+											</tr>
+											<tr>
+												<td>Minimum</td>
+												<td>1</td>
+											</tr>
+											<tr>
+												<td>Maximum</td>
+												<td>36</td>
+											</tr>
+										</table>
+										<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
 									</form>
 								</div>
 							</div>
 
 							<div id="range_mod_class_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Range Modularity Class Settings</h6></div>
-								<div class="">
-									<form><input type="hidden" class="range-slider" value="8" /></form>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden"  id="range-slider-range" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div id="edge_weight_edges_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Edge Weight Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden" id="range-slider-edge" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
 								</div>
 							</div>
 
@@ -884,15 +926,28 @@
 								</form>
 								</div>
 							</div>
+
+							<div id="deg_range_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Degree Range Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden" id="range-slider-degree" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
+
 							<div id="ego_net_topology_filter_cont" class="parameter_load_class">
-								<div class="heading_parameter"><h6>Mask (Edges) Settings</h6></div>
+								<div class="heading_parameter"><h6>Ego Network Settings</h6></div>
 								<div>
 								<form action="">
 									<table class="table-responsive table-parameter">
 											<tr>
 												<td>Node ID:</td>
 												<td><input type="text" name="node_id_ego" value=""></td>
-												<td><input type="button" name="ok_ego" value="OK" class=""> </td>
+												<td><input type="button" name="ok_ego" value="OK" class="btn"> </td>
 											</tr>
 											<tr>
 												<td>Depth:</td>
@@ -915,7 +970,78 @@
 								</div>
 							</div>
 
-							<div id="contentwo_cont" class="parameter_load_class"></div>
+							<div id="in_deg_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>In Degree Range Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden" id="range-slider-in-degree" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div id="kcore_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>K core Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="number" id="kcore_id" class="" max="99" min="10" value="10" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div id="mutualdeg_range_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Mutual Degree Range Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden" id="range-slider-mutual-degree" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div id="neighbrs_net_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Neihbors Network Settings</h6></div>
+								<div>
+								<form action="">
+									<table class="table-responsive table-parameter">
+											<tr>
+												<td>Depth:</td>
+												<td><select id="select-depth_neighbor">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="">Max</option>
+								                   </select> 
+								                </td>
+											</tr>
+											<tr>
+												<td>Withself</td>
+												<td>
+													<input class="" type="checkbox" name="withself_neighbor" value="true">
+												</td>
+											</tr>
+									</table>
+								</form>
+								</div>
+							</div>
+							<div id="out_degree_range_topology_filter_cont" class="parameter_load_class">
+								<div class="heading_parameter"><h6>Out Degree Range Settings</h6></div>
+								<div>
+									<div class="parameter_content_range ">
+										<form>
+										 	<input type="hidden" id="range-slider-out-degree" class="range-slider" value="1" />
+											<input class="btn btn-primary marginbottom10 pull-right" type="submit" value="Filter">
+										</form>
+									</div>
+								</div>
+							</div>
 						</div>                                    	
 					</div>
                 </div>

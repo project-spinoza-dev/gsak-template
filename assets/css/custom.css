@@ -361,7 +361,7 @@ a {
   
 }
 #parameters_panel{
-  height: 160px;
+  height: 200px;
 }
 #layout-contents{
   height: 160px;
@@ -539,40 +539,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 .table-stat .td-wd-button{
   width: 30px;
 }
-.gsak-home .table-parameter td{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  border-left: 1px solid #434343;
-}
-.gsak-home .table-parameter{
-  background-color: #3d3d3d;
-  width: 100%;
-}
-.gsak-home .table-parameter tr{
-  background-color: #3d3d3d;
-  border-bottom: 1px solid #434343;
-  
-}
-.gsak-home .table-parameter input{
-  background-color: #434343;
-  border: none;
-}
-.gsak-home .table-parameter input[type=number] {-moz-appearance: textfield;}
-.parameter_load_class{
-  display: none;
-}
-.parameter_load_class2{
-  display: none;
-}
-.heading_parameter{
-  background: #282828 none repeat scroll 0 0;
-  color: #ffffff;
-  height: 31px;
-  padding-left: 10px;
-  padding-top: 1px;
-  text-transform: uppercase;
-}
+
 #network_overview_panel{
   height: 216px;
 }
@@ -735,9 +702,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   color:#ffffff;
   border:0px;
 }
-.gsak-home #select-depth_egoSelectBoxItContainer #select-depth_egoSelectBoxIt{
-  width: 92px !important;
-}
+
 .gsak-home .selectboxit-default-arrow {
   border:0px;
 
@@ -826,6 +791,87 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 #selectlayout-boxitSelectBoxItOptions{
   height: 100px;
   overflow: auto;
+}
+/****************parameter content***************/
+.gsak-home .table-parameter td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border-left: 1px solid #434343;
+  border-top: 1px solid #434343;
+}
+.gsak-home .table-parameter{
+  background-color: #3d3d3d;
+  width: 100%;
+}
+.gsak-home .table-parameter tr{
+  background-color: #3d3d3d;
+  border-bottom: 1px solid #434343;
+  
+}
+.gsak-home .table-parameter input{
+  background-color: #434343;
+  border: none;
+}
+.gsak-home .table-parameter input[type=number] {-moz-appearance: textfield;}
+.parameter_load_class{
+  display: none;
+}
+.parameter_load_class2{
+  display: none;
+}
+.heading_parameter{
+  background: #282828 none repeat scroll 0 0;
+  color: #ffffff;
+  height: 31px;
+  padding-left: 10px;
+  padding-top: 1px;
+  text-transform: uppercase;
+}
+.parameter_content_range{
+  height: 150px;
+  border: 1px solid #3b3b3b;
+  background-color: #3b3b3b;
+  padding: 20px 10px 20px 10px;
+}
+.gsak-home .parameter_content_range .slider-container {
+  margin: 20px auto 0;
+}
+.gsak-home .parameter_content_range .btn {
+  margin-top: 30px;
+}
+.gsak-home .parameter_content_range .theme-green .back-bar{
+  height: 3px;
+  border-radius: 0px;
+}
+.gsak-home .parameter_content_range .slider-container .scale{
+  top: 8px;
+}
+.gsak-home .parameter_content_range .theme-green .back-bar .pointer-label {
+  background-color: #434343;
+  color: #bababa;
+  top: -30px;
+}
+.gsak-home .parameter_content_range .theme-green .back-bar .pointer{
+  height: 25px;
+  top:-10px;
+  width: 4px;
+  border-radius: 0;
+  border: 1px solid #74c8f9;
+}
+.gsak-home #kcore_topology_filter_cont input[type=number] {}
+.gsak-home #kcore_topology_filter_cont #kcore_id input{
+  
+}
+.gsak-home #kcore_topology_filter_cont #kcore_id{width: 218px;
+  background-color: #434343;
+  border: none;
+}
+.gsak-home #select-depth_egoSelectBoxItContainer #select-depth_egoSelectBoxIt{
+  width: 92px !important;
+}
+.gsak-home #select-depth_neighborSelectBoxItContainer #select-depth_neighborSelectBoxIt{
+  width: 92px !important;
 }
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
