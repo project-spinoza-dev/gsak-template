@@ -645,7 +645,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 }
 .popup-in{
   overflow-y: scroll;
-  height: 250px;
+  height: 200px;
   width: 740px !important;
 }
 /* Close Button */
