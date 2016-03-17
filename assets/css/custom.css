@@ -352,17 +352,16 @@ a {
   background:transparent;
 }
 #jstree_demo_div{
-  height: 250px;
+  height: 220px;
   overflow: auto;
 }
 #queries_panel{
-  height: 150px;
+  height: 130px;
   overflow: auto;
   
 }
 #parameters_panel{
-  height: 150px;
-  overflow: auto;
+  height: 160px;
 }
 #layout-contents{
   height: 160px;
@@ -647,7 +646,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   background: #434343;
 }
 .popup-in{
-  overflow: auto;
+  overflow-y: scroll;
   height: 500px;
   width: 740px !important;
 }
@@ -731,12 +730,15 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   width: 242px !important;
 }
 .gsak-home #select-labelsizeboxitSelectBoxItContainer #select-labelsizeboxitSelectBoxIt{
-  width: 92px !important;
+  width: 100px !important;
 }
 .gsak-home .selectboxit-list {
   background-color:#3b3b3b;
   color:#ffffff;
   border:0px;
+}
+.gsak-home #select-depth_egoSelectBoxItContainer #select-depth_egoSelectBoxIt{
+  width: 92px !important;
 }
 .gsak-home .selectboxit-default-arrow {
   border:0px;
