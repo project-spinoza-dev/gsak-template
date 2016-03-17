@@ -44,7 +44,7 @@ $(".statistics_form").submit(function (e) {
 *
 *Load Test graph
 */
-requestAjax ("http://localhost:9090/ajax", {}, graphJsonHandler);
+//requestAjax ("http://localhost:9090/ajax", {}, graphJsonHandler);
 
 
 /*
