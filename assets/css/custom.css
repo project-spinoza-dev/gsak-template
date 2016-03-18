@@ -693,6 +693,11 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   border-radius:0px;
   border:0px;
   width: 242px !important;
+  
+}
+.gsak-home .selectboxit-container .selectboxit-text{
+  font-family:Century Gothic !important;
+  font-size:13px;
 }
 .gsak-home .selectboxit-container .selectboxit:hover{
   background-color:#282828 !important;
@@ -710,7 +715,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 
 .gsak-home #select-labelsizeboxitSelectBoxItContainer #select-labelsizeboxitSelectBoxIt{
   width: 100px !important;
-}
+}  
 .gsak-home .selectboxit-list {
   background-color:#3b3b3b;
   color:#ffffff;
@@ -801,6 +806,9 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 #filter_querycontainer .replace_me li {
   left: 0;
 }
+#filter_querycontainer .removedrop{
+  font-size: 0px !important;
+}
 /***********************/
 #selectlayout-boxitSelectBoxItOptions{
   height: 100px;
@@ -831,6 +839,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 .parameter_load_class{
   display: none;
 }
+
 .parameter_load_class2{
   display: none;
 }
@@ -890,6 +899,10 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 }
 .gsak-home #select-depth_neighborSelectBoxItContainer #select-depth_neighborSelectBoxIt{
   width: 92px !important;
+}
+/****************css for remove button*******************/
+#filter_querycontainer  span.easytree-node {
+  
 }
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

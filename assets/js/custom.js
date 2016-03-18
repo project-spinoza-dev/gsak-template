@@ -28,6 +28,8 @@ $( document ).ready(function() {
 						$( this ).parent().toggleClass( 'active' );
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
+
+
 	//select box 
 	$("#selectdata").selectBoxIt();
 	$("#selectdeg").selectBoxIt();
@@ -234,9 +236,16 @@ $( document ).ready(function() {
             ui.draggable.draggable("disable")
             me.appendTo(this)
                 .addClass("filternewClass");
+	        //Add remove icon
+			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn glyphicon glyphicon-remove'></span>");
+			//onclick remove  
+			$('.removebtn').on('click',function(){
+	   		  $(this).parents('.easytree-node').remove();
+	 	 	});  		
         }
 
     });
+   
 
      ///////Range slider for range///////////
      //Range slider for Attributes Range filter 
@@ -313,12 +322,19 @@ $( document ).ready(function() {
    	//$("#queries_panel").on('click', 'a', function(){
    		//$("#contentwo").css({"display":"none"});
 	//});
-
+	//$("#equal_mod_class").mousedown(function(ev){
+      //if(ev.which == 3)
+     // {
+          //  alert("Right mouse button clicked on element with id myId");
+     // }
+  	//});
     //Parameter load content
     $("#queries_panel").on('click', 'a', function() {
+    	
   	  //var content_id = $(this).attr('href');
       //$('#parameter_load').hide().html($(content_id).html()).show(500);
         if($(this).attr('href')=="#equal_mod_class"){
+        	
             $("#equal_mod_class_cont").show();
             $('#range_mod_class_cont, #parameter_load, #mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
