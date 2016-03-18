@@ -867,6 +867,10 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   background-color: #434343;
   border: none;
 }
+.gsak-home #ego_net_topology_filter_cont #ego_id{width: 110px;
+  background-color: #434343;
+  border: none;
+}
 .gsak-home #select-depth_egoSelectBoxItContainer #select-depth_egoSelectBoxIt{
   width: 92px !important;
 }
