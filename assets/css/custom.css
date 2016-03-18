@@ -694,6 +694,20 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   border:0px;
   width: 242px !important;
 }
+.gsak-home .selectboxit-container .selectboxit:hover{
+  background-color:#282828 !important;
+}
+.gsak-home .selectboxit-container .selectboxit:focus{
+  background-color:#282828 !important;
+}
+.gsak-home .selectboxit-container .selectboxit:active{
+  background-color:#282828 !important;
+}   
+
+.gsak-home .selectboxit-option .selectboxit-option-anchor:hover {
+  background-color:#282828 !important;
+}
+
 .gsak-home #select-labelsizeboxitSelectBoxItContainer #select-labelsizeboxitSelectBoxIt{
   width: 100px !important;
 }
