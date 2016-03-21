@@ -1066,12 +1066,10 @@
 						<div class="table-responsive">          
 							<table class="table-responsive table-stat">
 								<div id="myModal" class="modal fade" role="dialog">
-  
 								<tr>       
-									<td class="td-wd-txt">Average Degree</td>
 									<td class="td-wd-button">
 										<form action="/statistics" method="get" class="statistics_form" id="averageDegree">
-											<input type="submit" id="average_degree_stats" data-popup-open="popup-1" class="btn btn-primary" name="run" value="Run">
+											<div class="runbtn"><INPUT type="submit" id="average_degree_stats" data-popup-open="popup-1" name="run" value=""></div>
 											<input type="hidden" value="averageDegree" name="statistics">
 										</form>
 										<div class="popup" data-popup="popup-1">
@@ -1083,69 +1081,63 @@
 										    </div>
 										</div>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Average Degree</td>		
 								</tr>
-	
-								<tr>       
-									<td class="td-wd-txt">Avg. Weighted Degree</td>
+								<tr>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="averageWeightedDegree">
-										<input id="avg_weight_degree_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<div class="runbtn"><INPUT type="submit" id="avg_weight_degree_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="averageWeightedDegree" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Avg. Weighted Degree</td>
 								</tr>
-								<tr>       
-									<td class="td-wd-txt">Graph Density</td>
+								<tr>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="graphDensity">
-										<input id="graph_density_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<div class="runbtn"><INPUT type="submit" id="graph_density_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="graphDensity" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Graph Density</td>
 								</tr>
-								<tr>       
-									<td class="td-wd-txt">Modularity</td>
+								<tr>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="Modularity">
-										<input id="modularity_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<div class="runbtn"><INPUT type="submit" id="modularity_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="Modularity" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Modularity</td>
 								</tr>
-								<tr>       
-									<td class="td-wd-txt">Page Rank</td>
+								<tr>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="pageRank">
-										<input id="page_rank_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										
+										<div class="runbtn"><INPUT type="submit" id="page_rank_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="pageRank" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Page Rank</td>
 								</tr>
-								<tr>       
-									<td class="td-wd-txt">Connected Components</td>
+								<tr>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="connectedComponents">
-										<input id="connected_comp_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<div class="runbtn"><INPUT type="submit" id="connected_comp_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="connectedComponents" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Connected Components</td>
 								</tr>
-								<tr>       
-								 	<td class="td-wd-txt">HITS</td>
+								<tr> 	
 									<td class="td-wd-button">
-									<form action="/statistics" method="get" class="statistics_form" id="hits">
-											<input id="hits_centrality_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<form action="/statistics" method="get" class="statistics_form" id="hits">
+											<div class="runbtn"><INPUT type="submit" id="hits_centrality_stats" data-popup-open="popup-1" name="run" value=""></div>
 											<input type="hidden" value="hits" name="statistics">
-									</form>
+										</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
-									</tr>
+									<td class="td-wd-txt">HITS</td>
+								</tr>
 							</table>
 						</div>		
 						</div>                                    	
@@ -1167,29 +1159,24 @@
 						<div class="statistics-contents">
 							<div class="table-responsive">          
 								<table class="table-responsive table-stat">
-									
 									<tr>       
+										<td class="td-wd-button">
+											<form action="/statistics" method="get" class="statistics_form" id="avgClusterCoeficients">
+												<div class="runbtn"><INPUT type="submit" id="avg_clustering_stats" data-popup-open="popup-1" name="run" value=""></div>
+												<input type="hidden" value="avgClusterCoeficients" name="statistics">
+											</form>
+										</td>
 										<td class="td-wd-txt">Avg. Clustering Coefficient</td>
-										<td class="td-wd-button">
-									<form action="/statistics" method="get" class="statistics_form" id="avgClusterCoeficients">
-											<input id="avg_clustering_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
-											<input type="hidden" value="avgClusterCoeficients" name="statistics">
-									</form>
-										</td>
-										<td class="td-wd-help"><div class="btn-help-td"></div></td>
 									</tr>
-									<tr>       
+									<tr>
+										<td class="td-wd-button">
+											<form action="/statistics" method="get" class="statistics_form" id="eigenVectorCentrality">
+												<div class="runbtn"><INPUT type="submit" id="eigenvector_centrality_stats" data-popup-open="popup-1" name="run" value=""></div>
+												<input type="hidden" value="eigenVectorCentrality" name="statistics">
+											</form>
+										</td>       
 										<td class="td-wd-txt">EigenVector Centrality</td>
-										<td class="td-wd-button">
-									<form action="/statistics" method="get" class="statistics_form" id="eigenVectorCentrality">
-											<input id="eigenvector_centrality_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
-											<input type="hidden" value="eigenVectorCentrality" name="statistics">
-									</form>
-										</td>
-										<td class="td-wd-help"><div class="btn-help-td"></div></td>
-									</tr>
-
-										
+									</tr>	
 								</table>
 							</div>
 						</div>                                    	
@@ -1212,14 +1199,13 @@
 							<table class="table-responsive table-stat">
 										
 								<tr>       
-									<td class="td-wd-txt">Avg. Path Length</td>
 									<td class="td-wd-button">
 									<form action="/statistics" method="get" class="statistics_form" id="avgPathLength">
-										<input id="avg_path_length_stats" data-popup-open="popup-1" class="btn btn-primary" type="submit" name="run" value="Run">
+										<div class="runbtn"><INPUT type="submit" id="avg_path_length_stats" data-popup-open="popup-1" name="run" value=""></div>
 										<input type="hidden" value="avgPathLength" name="statistics">
 									</form>
 									</td>
-									<td class="td-wd-help"><div class="btn-help-td"></div></td>
+									<td class="td-wd-txt">Avg. Path Length</td>
 								</tr>
 											
 							</table>
