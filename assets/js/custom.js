@@ -232,8 +232,8 @@ $( document ).ready(function() {
         hoverClass: "dropHover",
         drop: function (ev, ui) {
         	$(this).find(".replace_me").remove();
-            var me = ui.draggable.clone()
-            ui.draggable.draggable("disable")
+            var me = ui.draggable.clone();
+            ui.draggable.draggable("disable");
             me.appendTo(this)
                 .addClass("filternewClass");
 	        //Add remove icon
@@ -241,6 +241,8 @@ $( document ).ready(function() {
 			//onclick remove  
 			$('.removebtn').on('click',function(){
 	   		  $(this).parents('.easytree-node').remove();
+	   		  ui.draggable.draggable("enable");
+
 	 	 	});  		
         }
 

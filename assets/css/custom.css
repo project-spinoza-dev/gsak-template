@@ -255,6 +255,10 @@ a {
 .panel-group.panel-layout .layout-select select:hover{
   
 }
+.layout_form input[type="checkbox"], input[type="radio"] {
+    line-height: normal;
+    margin: 4px 15px 0;
+}
 .rotation-container{
   margin-top:10px;
 }
@@ -901,8 +905,16 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   width: 92px !important;
 }
 /****************css for remove button*******************/
-#filter_querycontainer  span.easytree-node {
-  
+
+#filter_querycontainer span.easytree-title{
+  width: 160px;
+}
+#filter_querycontainer span.easytree-icon{
+  width: 10px;
+}
+#filter_querycontainer .removebtn{
+  cursor: pointer;
+  width: 20px;
 }
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
