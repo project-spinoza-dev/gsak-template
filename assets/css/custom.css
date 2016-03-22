@@ -365,7 +365,7 @@ a {
   
 }
 #parameters_panel{
-  height: 200px;
+  height: 180px;
 }
 #layout-contents{
   height: 160px;
@@ -855,7 +855,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   text-transform: uppercase;
 }
 .parameter_content_range{
-  height: 150px;
+  height: 130px;
   border: 1px solid #3b3b3b;
   background-color: #3b3b3b;
   padding: 20px 10px 20px 10px;
