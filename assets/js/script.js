@@ -24,7 +24,7 @@ var statistics_btn;
 */
 $(".layout_form").submit(function (e) {
     e.preventDefault();
-    requestAjax ("http://localhost:9090/layout", $("#" + this.id).serialize(), graphJsonHandler);
+    requestAjax ("http://52.5.222.145:9090/layout", $("#" + this.id).serialize(), graphJsonHandler);
 });
 
 /*
@@ -36,7 +36,7 @@ $(".statistics_form").submit(function (e) {
 //var temp = $("#" + this.id).serialize();
  //  alert(temp);
     statistics_btn = $(this).find("input[type=submit]").attr('id');
-    requestAjax ("http://localhost:9090/statistics", $("#" + this.id).serialize(), graphStatisticsHandler);
+    requestAjax ("http://52.5.222.145:9090/statistics", $("#" + this.id).serialize(), graphStatisticsHandler);
 });
 
 
@@ -44,7 +44,7 @@ $(".statistics_form").submit(function (e) {
 *
 *Load Test graph
 */
-//requestAjax ("http://localhost:9090/ajax", {}, graphJsonHandler);
+requestAjax ("http://52.5.222.145:9090/ajax", {}, graphJsonHandler);
 
 
 /*
@@ -55,7 +55,7 @@ function requestAjax (ajaxURL, formData, callBackFun) {
   /*<![CDATA[*/
    $.ajax({
       type: "get", url: ajaxURL, data:formData,
-      async : true, beforeSend: function(xhr) {},
+      async : true, timeout: 20*1000,  beforeSend: function(xhr) {},
       //on successfull ajax request
       success: function (graphData) {
         callBackFun(graphData, formData);
