@@ -371,6 +371,9 @@ a {
   height: 160px;
   overflow:auto;
 }
+.input_layout{
+  padding: 0;
+}
 .gsak-home .panel-group:last-child{
   margin-bottom:0px;
 }
@@ -545,15 +548,15 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 }
 
 #network_overview_panel{
-  height: 247px;
+  height: 227px;
 }
 #node_overview_panel{
-  height: 130px;
+  height: 80px;
 }
 #dynamic_panel{
 }
 #edge_overview_panel{
-  height: 130px;
+  height: 50px;
 }
 #network_overview_panel .statistics-contents{} 
 #statistics .runbtn{
