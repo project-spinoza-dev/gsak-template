@@ -79,6 +79,47 @@ $( document ).ready(function() {
 				$(".user-menu-container-right").addClass("closed");
 		}
 	});
+	/********************color picker jquery start********************************/
+
+var $left = $(".left-grad");
+					$("#ex1").gradientPicker({
+						change: function(points, styles) {
+							for (i = 0; i < styles.length; ++i) {
+								$left.css("background-image", styles[i]);
+								console.log(styles[i]);
+							}
+						},
+						fillDirection: "45deg",
+						controlPoints: ["white 10%", "grey 50%", "red 100%"]
+					});
+$(".degree-selectm #selectdeg").change(function(){
+	$(this).find("option:selected").each(function(){
+
+		if($(this).attr("value")=="degree_1"){
+					var $left = $(".left-grad");
+					$("#ex1").gradientPicker({
+						change: function(points, styles) {
+							for (i = 0; i < styles.length; ++i) {
+								$left.css("background-image", styles[i]);
+								console.log(styles[i]);
+							}
+						},
+						fillDirection: "45deg",
+						controlPoints: ["white 10%", "grey 50%", "red 100%"]
+					});
+					
+					$("#ex1").show();
+						}
+		else if($(this).attr("value")=="degree_2"){
+			$("#ex1").hide();
+		}
+		
+		else{
+			
+			console.log("No value is selected");
+		}
+	});
+});
  /*************************************layout dropdown*********************************************/
 	$(".layout_panel select").change(function(){
         $(this).find("option:selected").each(function(){
@@ -237,7 +278,7 @@ $( document ).ready(function() {
             me.appendTo(this)
                 .addClass("filternewClass");
 	        //Add remove icon
-			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn glyphicon glyphicon-remove'></span>");
+			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn'></span>");
 			//onclick remove  
 			$('.removebtn').on('click',function(){
 	   		  $(this).parents('.easytree-node').remove();
