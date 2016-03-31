@@ -1243,21 +1243,154 @@
     	 	<div class="margin30 select-container-test col-sm-12">
 				<div class="header-selecttest custom-select col-sm-8">
 					<select id="selectdata">
-						<option value="datasource1">Data Source 1</option>
+						<option value="config_pop_database">Data Source 1</option>
 						<option value="datasource2">Data Source 2</option>
 						<option value="datasource3">Data Source 3</option>
 						<option value="datasource4">Data Source 4</option>
                    </select> 
 				</div>
+				
 				<div class="setting-container-test col-sm-4">
 					<h5>
 						<img alt="" src="images/setting.png" class="setting-img">
-						<a href="" class="setting-text">Configure Sources</a>
+						<a href="#" class="setting-text" >Configure Sources</a>
 					</h5>
             </div>
             </div>
+            <!-- Datasource popups content -->
+            
    		 </div>	
     </div>
+    <div class="popup pop-custom" data-popup="popup-config-database" >
+		<div class="popup-inner">
+		    <div class="popup-heading"><span id="">Configure Database</span><a class="popup-close" data-popup-close="popup-config-database" href="#">x</a></div>
+		    <div class="popup-in">
+		       <div style="">
+		       		<div class="conf-db-pop">
+		       		<form>
+		       			<table class="popup-table table table-responsive">
+		       				<tr>
+			       				<td>
+			       				<label>Name</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       					<label>Select Save DB</label>
+			       					<select id="savedb_id">
+										<option value="database_1">Database 1</option>
+										<option value="database_2">Database 2</option>
+			                   		</select>
+			       				</td>
+			       				<td>
+			       					<label>Host</label>
+			       					<input type="text" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td>
+			       				<label>Database</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       				<label>Port &nbsp &nbsp</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       					<label>Database Table</label>
+			       					<input type="text" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td>
+			       				<label>Username</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				
+			       				<td>
+			       					<label>Column</label>
+			       					<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       					<label>Password</label>
+			       					<input type="password" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+				       			<td>
+				       			<div style="float: left; margin-right: 10px;"><input type="button" name="save" value="Save" class="btn btn-primary"></input></div>
+				       			<div><input type="button" name="connect" value="Connect" class="btn btn-primary"></input></div></td>
+		       				</tr>
+		       			</table>
+		       			</form>
+		       		</div>
+		       </div>
+		    </div>
+		</div>
+	</div>
+	<div class="popup pop-custom1" data-popup="popup-config" >
+		    <div class="popup-inner">
+		    <div class="popup-heading"><span id="">Configure Elasticsearch</span><a class="popup-close" data-popup-close="popup-config" href="#">x</a></div>
+		    <div class="popup-in">
+		       <div   style="">
+		       	<div class="conf-db-pop">
+		       		<form>
+		       			<table class="popup-table table table-responsive">
+		       				<tr>
+			       				<td>
+			       				<label>Name</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       					<label>Saved Host</label>
+			       					<select id="savehost_id">
+										<option value="host_1">Host 1</option>
+										<option value="host_2">Host 2</option>
+			                   		</select>
+			       				</td>
+			       				<td>
+			       					<label>Host</label>
+			       					<input type="text" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td>
+			       				<label>Index</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       				<label>Port &nbsp &nbsp</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td>
+			       					<label>Type</label>
+			       					<input type="text" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td>
+			       				<label>Cluster Name</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				
+			       				<td>
+			       					
+			       				</td>
+			       				<td>
+			       					
+			       				</td>
+		       				</tr>
+		       				<tr>
+				       			<td>
+				       			<div style="float: left; margin-right: 10px;"><input type="button" name="save" value="Save" class="btn btn-primary"></input></div>
+				       			<div><input type="button" name="connect" value="Connect" class="btn btn-primary"></input></div></td>
+		       				</tr>
+		       			</table>
+		       			</form>
+		       		</div>
+		       </div>
+		        </div>
+		    </div>
+		</div>
       </header>
 
       <!-- Content Wrapper. Contains page content -->

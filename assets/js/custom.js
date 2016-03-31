@@ -29,9 +29,39 @@ $( document ).ready(function() {
 						$( this ).parent().children( 'ul' ).slideToggle( 'fast' );
 				});
 
+	
 
+    $("#selectdata").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="config_pop_database"){
+            	//alert('this is datasource2');
+            	$(".setting-text").attr('data-popup-open','popup-config-database');
+            	
+            	//$("#selectdataSelectBoxItText").attr('data-popup-open','popup-database');
+            	//$(".pop-custom").show();
+            	//console.log($(this).attr('data-popup-open'));
+            	$(".setting-text" ).click( function( ){
+            		$(".pop-custom").css("display","block");
+            		$(".pop-custom1").css("display","none");
+            		//alert('teststs');
+            	});
+
+            }
+            else if ($(this).attr("value")=="datasource2") {
+            	$(".setting-text").attr('data-popup-open','popup-config');
+            	$(".setting-text" ).click( function( ){
+            		$(".pop-custom1").css("display","block");
+            		$(".pop-custom").css("display","none");
+            		//alert('teststs');
+            	});
+            }
+    	});
+	});
+	
 	//select box 
 	$("#selectdata").selectBoxIt();
+	$("#savedb_id").selectBoxIt();
+	$("#savehost_id").selectBoxIt();
 	$("#selectdeg").selectBoxIt();
 	$("#selectlayout-boxit").selectBoxIt();
 	$("#select-labelsizeboxit").selectBoxIt();

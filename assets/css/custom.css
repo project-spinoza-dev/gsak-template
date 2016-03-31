@@ -966,6 +966,48 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
       width: 500px;
       height: 200px;
     }
+/********************css for popup datasource***********/
+.conf-db-pop{
+  margin-top: 30px;
+}
+.conf-db-pop input[type="text"], textarea {
+  background-color: #3b3b3b !important;
+  border:0 !important;
+   width: 200px !important;
+  height: 31px;
+}
+.conf-db-pop input[type="password"], textarea {
+  background-color: #3b3b3b !important;
+  border:0 !important;
+   width: 200px !important;
+  height: 31px;
+}
+
+.gsak-home #savedb_idSelectBoxIt{
+  width: 200px !important;
+  height: 31px;
+}
+#savehost_id{width: 200px !important;
+  height: 31px;}
+.gsak-home #savehost_idSelectBoxItContainer{
+  width: 200px !important;
+  height: 31px;
+}
+.gsak-home #savedb_idSelectBoxItContainer{
+  width: 200px !important;
+  height: 31px;
+}
+.gsak-home #savedb_idSelectBoxIt #savedb_idSelectBoxIt:option {
+  width: 200px !important;
+  height: 31px;
+}.gsak-home #savehost_idSelectBoxIt #savehost_idSelectBoxIt:option{
+  width: 200px !important;
+  height: 31px;
+}
+.gsak-home .conf-db-pop table tr td{
+  border-top: none;
+}
+
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;
