@@ -1249,10 +1249,11 @@
     	 	<div class="margin30 select-container-test col-sm-12">
 				<div class="header-selecttest custom-select col-sm-8">
 					<select id="selectdata">
-						<option value="">Select DataSource</option>
-						<option value="config_pop_database">Configure Databases</option>
-						<option value="config_pop_elasticsearch">Configure ElasticSearch</option>
-						<option value="config_file_upload">Upload File</option>
+						<option value="" selected="selected" disabled="disabled">Select DataSource</option>
+						<option value="config_pop_elasticsearch">ElasticSearch</option>
+						<option value="config_pop_database">MySql</option>
+						<option value="config_pop_database">MongoDB</option>
+						<option value="config_file_upload">Graph File</option>
                    </select> 
 				</div>
 				
@@ -1276,13 +1277,10 @@
 		       		<div class="conf-db-pop">
 		       		<form>
 		       			<table class="popup-table table table-responsive">
+		       		
 		       				<tr>
 			       				<td class="popup-td-wd">
-			       				<label>Name</label>	
-			       				<input type="text" value="" id=""></input>
-			       				</td>
-			       				<td class="popup-td-wd">
-			       					<label>Select Save DB</label>
+			       					<label>Saved DB</label>
 			       					<select id="savedb_id">
 										<option value="database_1">Database 1</option>
 										<option value="database_2">Database 2</option>
@@ -1292,34 +1290,38 @@
 			       					<label>Host</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
+			       				<td class="popup-td-wd">
+			       				<label>Port </label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+		       					<td class="popup-td-wd">
+			       				<label>Name</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       				<label>Username</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       					<label>Password</label>
+			       					<input type="password" value="" id=""></input>
+			       				</td>
 		       				</tr>
 		       				<tr>
 			       				<td class="popup-td-wd">
 			       				<label>Database</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td class="popup-td-wd">
-			       				<label>Port </label>	
-			       				<input type="text" value="" id=""></input>
-			       				</td>
+			       				
 			       				<td class="popup-td-wd">
 			       					<label>Database Table</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
-		       				</tr>
-		       				<tr>
-			       				<td class="popup-td-wd">
-			       				<label>Username</label>	
-			       				<input type="text" value="" id=""></input>
-			       				</td>
-			       				
 			       				<td class="popup-td-wd">
 			       					<label>Column</label>
 			       					<input type="text" value="" id=""></input>
-			       				</td>
-			       				<td class="popup-td-wd">
-			       					<label>Password</label>
-			       					<input type="password" value="" id=""></input>
 			       				</td>
 		       				</tr>
 		       				<tr>
@@ -1345,10 +1347,6 @@
 		       			<table class="popup-table table table-responsive">
 		       				<tr>
 			       				<td class="popup-td-wd">
-			       				<label>Name</label>	
-			       				<input type="text" value="" id=""></input>
-			       				</td>
-			       				<td class="popup-td-wd">
 			       					<label>Saved Host</label>
 			       					<select id="savehost_id">
 										<option value="host_1">Host 1</option>
@@ -1359,16 +1357,21 @@
 			       					<label>Host</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
-		       				</tr>
-		       				<tr>
-			       				<td class="popup-td-wd">
-			       				<label>Index</label>	
-			       				<input type="text" value="" id=""></input>
-			       				</td>
 			       				<td class="popup-td-wd">
 			       				<label>Port</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
+		       				</tr>
+		       				<tr>
+		       					<td class="popup-td-wd">
+			       				<label>Name</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       				<label>Index</label>	
+			       				<input type="text" value="" id=""></input>
+			       				</td>
+			       				
 			       				<td class="popup-td-wd">
 			       					<label>Type</label>
 			       					<input type="text" value="" id=""></input>
