@@ -617,7 +617,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   background: #434343;
 }
 .popup-in{
-  overflow-y: scroll;
+ /* overflow-y: scroll;*/
   height: 450px;
   width: 740px !important;
 }
@@ -987,8 +987,10 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   width: 200px !important;
   height: 31px;
 }
-#savehost_id{width: 200px !important;
-  height: 31px;}
+.gsak-home #savehost_idSelectBoxIt{
+  width: 200px !important;
+  height: 31px;
+}
 .gsak-home #savehost_idSelectBoxItContainer{
   width: 200px !important;
   height: 31px;
@@ -1000,14 +1002,42 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 .gsak-home #savedb_idSelectBoxIt #savedb_idSelectBoxIt:option {
   width: 200px !important;
   height: 31px;
-}.gsak-home #savehost_idSelectBoxIt #savehost_idSelectBoxIt:option{
+}
+.gsak-home #savehost_idSelectBoxIt #savehost_idSelectBoxIt:option{
   width: 200px !important;
   height: 31px;
 }
 .gsak-home .conf-db-pop table tr td{
   border-top: none;
 }
+.gsak-home .popup-table label{
+  display: block;
+}
+.gsak-home .popup-table .popup-td-wd{
+  width: 200px !important;
+  
+}
+/**********css for fileupload***************/
+.gsak-home .conf-db-pop .jFiler-input-dragDrop{
+  background-color: #3b3b3b;
+}
+.gsak-home .conf-db-pop .jFiler-input-choose-btn{
+  background-color: #3c8dbc;
+}
+.gsak-home .jFiler-items-grid .jFiler-item .jFiler-item-container{
+  background-color: #3b3b3b;
+  border:none !important;
+  margin-left: 275px;
+}
+.gsak-home .jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-thumb{
+  border: 1px solid #434343;
+}
 
+.gsak-home  .jFiler-input-choose-btn {
+  color: #fff !important;
+  font-family: Century Gothic !important;
+  font-weight: normal;
+}
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;

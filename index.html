@@ -24,6 +24,9 @@
 	<!-- color gradient css -->
 	<link rel="stylesheet" href="assets/css/jquery.gradientPicker.css">
 	<link rel="stylesheet" href="assets/js/colorpicker/css/colorpicker.css">
+	<!-- file upload in popup css -->
+	<link rel="stylesheet" href="assets/css/jqueryfiler/jquery.filer.css">
+	<link rel="stylesheet" href="assets/css/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -36,6 +39,8 @@
 
     <!-- Bootstrap 3.3.4 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--jquery for file upload-->
+	<script src="assets/js/jqueryfiler/jquery.filer.min.js"></script>
     <!-- AdminLTE App -->
     <!-- <script src="assets/js/app.js"></script> -->
 	<script src="assets/js/custom.js"></script>
@@ -53,12 +58,13 @@
 	<!-- Jquery for Slider-->
 	<script src="assets/js/rangeSlide/jquery.range.js"></script>
 	<!--color gradient picker-->
-	
-	
 	<script src="assets/js/jqueryUI-custom.js"></script>
 	<script src="assets/js/colorpicker/js/colorpicker.js"></script>
 	<script src="assets/js/jquery.gradientPicker.js"></script>
+	
+
   </head>
+
   <body class="skin-blue sidebar-mini gsak-home">
     <!-- Start of leftsidebar -->
 	<div class="user-menu-container">
@@ -1243,10 +1249,10 @@
     	 	<div class="margin30 select-container-test col-sm-12">
 				<div class="header-selecttest custom-select col-sm-8">
 					<select id="selectdata">
-						<option value="config_pop_database">Data Source 1</option>
-						<option value="datasource2">Data Source 2</option>
-						<option value="datasource3">Data Source 3</option>
-						<option value="datasource4">Data Source 4</option>
+						<option value="">Select DataSource</option>
+						<option value="config_pop_database">Configure Databases</option>
+						<option value="config_pop_elasticsearch">Configure ElasticSearch</option>
+						<option value="config_file_upload">Upload File</option>
                    </select> 
 				</div>
 				
@@ -1261,7 +1267,8 @@
             
    		 </div>	
     </div>
-    <div class="popup pop-custom" data-popup="popup-config-database" >
+    <!-- Database popups content -->
+    <div class="popup pop-custom-db" data-popup="popup-config-database" >
 		<div class="popup-inner">
 		    <div class="popup-heading"><span id="">Configure Database</span><a class="popup-close" data-popup-close="popup-config-database" href="#">x</a></div>
 		    <div class="popup-in">
@@ -1270,47 +1277,47 @@
 		       		<form>
 		       			<table class="popup-table table table-responsive">
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Name</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Select Save DB</label>
 			       					<select id="savedb_id">
 										<option value="database_1">Database 1</option>
 										<option value="database_2">Database 2</option>
 			                   		</select>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Host</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
 		       				</tr>
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Database</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
-			       				<label>Port &nbsp &nbsp</label>	
+			       				<td class="popup-td-wd">
+			       				<label>Port </label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Database Table</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
 		       				</tr>
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Username</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
 			       				
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Column</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Password</label>
 			       					<input type="password" value="" id=""></input>
 			       				</td>
@@ -1327,55 +1334,56 @@
 		    </div>
 		</div>
 	</div>
-	<div class="popup pop-custom1" data-popup="popup-config" >
-		    <div class="popup-inner">
-		    <div class="popup-heading"><span id="">Configure Elasticsearch</span><a class="popup-close" data-popup-close="popup-config" href="#">x</a></div>
+	<!-- Elastic search popups content -->
+	<div  class="popup pop-custom-es" data-popup="popup-config-es" >
+		    <div class="popup-inner" >
+		    <div class="popup-heading"><span id="">Configure Elasticsearch</span><a class="popup-close" data-popup-close="popup-config-es" href="#">x</a></div>
 		    <div class="popup-in">
-		       <div   style="">
+		       <div   >
 		       	<div class="conf-db-pop">
 		       		<form>
 		       			<table class="popup-table table table-responsive">
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Name</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Saved Host</label>
 			       					<select id="savehost_id">
 										<option value="host_1">Host 1</option>
 										<option value="host_2">Host 2</option>
 			                   		</select>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Host</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
 		       				</tr>
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Index</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
-			       				<label>Port &nbsp &nbsp</label>	
+			       				<td class="popup-td-wd">
+			       				<label>Port</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					<label>Type</label>
 			       					<input type="text" value="" id=""></input>
 			       				</td>
 		       				</tr>
 		       				<tr>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       				<label>Cluster Name</label>	
 			       				<input type="text" value="" id=""></input>
 			       				</td>
 			       				
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					
 			       				</td>
-			       				<td>
+			       				<td class="popup-td-wd">
 			       					
 			       				</td>
 		       				</tr>
@@ -1391,11 +1399,27 @@
 		        </div>
 		    </div>
 		</div>
+		<!-- File Upload popups content -->
+		<div class="popup pop-custom-file" data-popup="popup-config-file" >
+		    <div class="popup-inner">
+			    <div class="popup-heading"><span id="">Upload File</span><a class="popup-close" data-popup-close="popup-config-file" href="#">x</a></div>
+			    <div class="popup-in">
+			       <div   style="">
+			       	<div class="conf-db-pop">
+			       		<form action="" method="post" enctype="multipart/form-data">
+			              <input type="file" name="files[]" id="filer_input" multiple="multiple">
+			              <input style="margin-left: 340px;" type="submit" value="Upload" class="btn btn-primary">
+				        </form>
+			       	</div>
+			       </div>
+			    </div>
+		    </div>
+		</div>
       </header>
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" style="height: 695px; display: block;" id ="container">
-		
+      <div class="content-wrapper" style="height: 695px; display: block;" id ="container">    
+    
 			<!--<div id="controlled-grad">
 				<div class="left-grad"></div>
 			</div>-->
