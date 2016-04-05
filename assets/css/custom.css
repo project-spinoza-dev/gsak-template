@@ -1072,7 +1072,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   min-width: 20px;
   margin: 0 auto;
   cursor: pointer !important;
-  margin-left: -10px !important;
+  margin-left: 5px !important;
   position: absolute !important;
 
    
@@ -1137,7 +1137,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   background-color: #434343;
 }
 .ui-slider-vertical {
-  left: -.3em;
+  left: 16px;
   margin-left: 0;
   margin-bottom: -.6em;
 
