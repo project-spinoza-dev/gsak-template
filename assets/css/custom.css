@@ -1046,10 +1046,13 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   height: 165px;
   padding: 5px 15px;
   right: 296px;
-  top: 100px;
+  top: 99px;
   z-index: 5;
 }
-.fullscreen_icon{
+.fullscreen_icon {
+    cursor: pointer;
+    padding: 0 3px;
+    
 }
 .scroll-btn-zoom{
 }
@@ -1155,7 +1158,19 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   top: 0;
   background-color: #3c8dbc;
 }
-
+/*********************** CSS for full screen *************************/
+.full-screen .user-menu-container{
+  display: none;
+}
+.full-screen .user-menu-container-right{
+  display: none;
+}
+.full-screen .main-header{
+  display: none;
+}
+.full-screen .zoom-container{
+  right: 10px;
+}
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;

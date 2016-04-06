@@ -611,5 +611,9 @@ $(".degree-selectm #selectdeg").change(function(){
     });
    // $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
   });
+  //full screen api
+  $(".fullscreen_icon").click(function(){
+  	$("body").toggleClass("full-screen");
+  });
 
 });  // End of document ready function.
