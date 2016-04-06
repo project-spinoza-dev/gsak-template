@@ -595,25 +595,4 @@ $(".degree-selectm #selectdeg").change(function(){
             }
             
     });
-//jquery for ui vertical zoom slider
-  $(function() {
-    $( "#slider-vertical" ).slider({
-      orientation: "vertical",
-      range: "min",
-      min: 0,
-      max: 5,
-      step: .2,
-      value: 1,
-      slide: function( event, ui ) {
-//        $( "#amount" ).val( ui.value );
-		console.log(ui.value);
-      }
-    });
-   // $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
-  });
-  //full screen api
-  $(".fullscreen_icon").click(function(){
-  	$("body").toggleClass("full-screen");
-  });
-
 });  // End of document ready function.
