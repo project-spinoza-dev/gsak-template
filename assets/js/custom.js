@@ -743,11 +743,14 @@ $(".degree-selectm #selectdeg").change(function(){
 $(".fullscreen_icon").click(function(){
 	$("body").toggleClass("full-screen");
 	if ($("body").hasClass("full-screen")) {
-		$(".zoom-container").css({"top":"10px","right":"30px"});	
+		$(".zoom-container").css({"top":"10px","right":"30px"});
 	}
 	else if (!$("body").hasClass("full-screen")){
 		$(".zoom-container").css({"top":"155px","right":"302px"});
-
+		$(".user-menu-container-right").animate({"right": "0px"},function(){
+				$(".user-menu-container-right").removeClass("closed");
+				$(".zoom-container").css("right","302px");	
+				});
 	}
 });
 
