@@ -261,6 +261,9 @@ $(".degree-selectm #selectdeg").change(function(){
     }).change();
 
 /**********************jquery for datasource popups*****************************************/
+	$('.setting-text').click(function(e){
+		e.preventDefault();
+	});
     $("#selectdata").change(function(){
         $(this).find("option:selected").each(function(){
             if($(this).attr("value")=="config_pop_database"){
@@ -314,6 +317,7 @@ $(".degree-selectm #selectdeg").change(function(){
     	});
 	});
 	 /*********************** file upload popup start****************/
+	$('#graphFileUploadForm input[type="submit"]').prop('disabled', true);
     $("#filer_input").filer({
         limit: 1,
         maxSize: null,
@@ -383,12 +387,13 @@ $(".degree-selectm #selectdeg").change(function(){
             drop: null,
         },
         uploadFile: {
-            url: "./php/upload.php",
+            url: "/fileUpload",
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
             beforeSend: function(){},
             success: function(data, el){
+            	$('#graphFileUploadForm input[type="submit"]').prop('disabled', false);
                 var parent = el.find(".jFiler-jProgressBar").parent();
                 el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
                     $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");    
@@ -415,8 +420,9 @@ $(".degree-selectm #selectdeg").change(function(){
         onSelect: null,
         afterShow: null,
         onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
+        	$('#graphFileUploadForm input[type="submit"]').prop('disabled', true);
             var file = file.name;
-            $.post('./php/remove_file.php', {file: file});
+            $.get('/removeUpload', {file: file});
         },
         onEmpty: null,
         options: null,
@@ -537,10 +543,7 @@ $(".degree-selectm #selectdeg").change(function(){
         beforeSelect: null,
         onSelect: null,
         afterShow: null,
-        onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
-            var file = file.name;
-            $.post('./php/remove_file.php', {file: file});
-        },
+        onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){},
         onEmpty: null,
         options: null,
         captions: {
