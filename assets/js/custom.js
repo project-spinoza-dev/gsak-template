@@ -269,6 +269,7 @@ $(".degree-selectm #selectdeg").change(function(){
             if($(this).attr("value")=="config_pop_database"){
             	$(".setting-text").attr('data-popup-open','popup-config-database');
             	$('#search-form input[type="text"]').prop('disabled', false);
+            	$('#search-form input[type="submit"]').removeAttr("disabled");
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","block");
             		$(".pop-custom-es").css("display","none");
@@ -280,6 +281,7 @@ $(".degree-selectm #selectdeg").change(function(){
             }
             else if ($(this).attr("value")=="config_pop_elasticsearch") {
             	$('#search-form input[type="text"]').prop('disabled', false);
+            	$('#search-form input[type="submit"]').removeAttr("disabled");
             	$(".setting-text").attr('data-popup-open','popup-config-es');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","none");
@@ -292,6 +294,7 @@ $(".degree-selectm #selectdeg").change(function(){
              else if ($(this).attr("value")=="file_upload_data") {
             	$(".setting-text").attr('data-popup-open','popup-config-file-up');
             	$('#search-form input[type="text"]').prop('disabled', false);
+            	$('#search-form input[type="submit"]').removeAttr("disabled");
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file-up").css("display","block");
             		$(".pop-custom-file").css("display","none");
@@ -301,6 +304,7 @@ $(".degree-selectm #selectdeg").change(function(){
             }
             else if ($(this).attr("value")=="config_file_upload") {
             	$('#search-form input[type="text"]').prop('disabled', true);
+            	$('#search-form input[type="submit"]').attr("disabled", "disabled"); 
             	$(".setting-text").attr('data-popup-open','popup-config-file');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file").css("display","block");
