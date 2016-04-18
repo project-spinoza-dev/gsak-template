@@ -303,8 +303,10 @@ $(".degree-selectm #selectdeg").change(function(){
             	});
             }
             else if ($(this).attr("value")=="config_file_upload") {
+
             	$('#search-form input[type="text"]').prop('disabled', true);
-            	$('#search-form input[type="submit"]').attr("disabled", "disabled"); 
+            	$('#search-form input[type="submit"]').attr("disabled", "disabled");
+            	$('#search-form input[type="submit"]').css("background-color","#f5ab28"); 
             	$(".setting-text").attr('data-popup-open','popup-config-file');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file").css("display","block");
