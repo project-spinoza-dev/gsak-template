@@ -24,7 +24,9 @@ var statistics_btn;
 */
 $(".layout_form").submit(function (e) {
     e.preventDefault();
+    $("#graphLoader-run").css('display','block');
     requestAjax ("/layout", $("#" + this.id).serialize(), graphJsonHandler);
+    $("#graphLoader-run").css('display','block');
 });
 
 /*
