@@ -269,6 +269,7 @@ $(".degree-selectm #selectdeg").change(function(){
             if($(this).attr("value")=="config_pop_database"){
             	$(".setting-text").attr('data-popup-open','popup-config-database');
             	$('#search-form input[type="text"]').prop('disabled', false);
+            	$('#search-form input[type="text"]').attr("placeholder", "Search: Database Keywords");
             	$('#search-form input[type="submit"]').removeAttr("disabled");
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","block");
@@ -282,6 +283,7 @@ $(".degree-selectm #selectdeg").change(function(){
             else if ($(this).attr("value")=="config_pop_elasticsearch") {
             	$('#search-form input[type="text"]').prop('disabled', false);
             	$('#search-form input[type="submit"]').removeAttr("disabled");
+            	$('#search-form input[type="text"]').attr("placeholder", "Search: ElasticSearch Keywords");
             	$(".setting-text").attr('data-popup-open','popup-config-es');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","none");
@@ -295,6 +297,7 @@ $(".degree-selectm #selectdeg").change(function(){
             	$(".setting-text").attr('data-popup-open','popup-config-file-up');
             	$('#search-form input[type="text"]').prop('disabled', false);
             	$('#search-form input[type="submit"]').removeAttr("disabled");
+            	$('#search-form input[type="text"]').attr("placeholder", "Search: File Keywords");
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file-up").css("display","block");
             		$(".pop-custom-file").css("display","none");
@@ -306,7 +309,8 @@ $(".degree-selectm #selectdeg").change(function(){
 
             	$('#search-form input[type="text"]').prop('disabled', true);
             	$('#search-form input[type="submit"]').attr("disabled", "disabled");
-            	$('#search-form input[type="submit"]').css("background-color","#f5ab28"); 
+            	$('#search-form input[type="submit"]').css("background-color","#f5ab28");
+            	$('#search-form input[type="text"]').attr("placeholder", "Search: Graph File Keywords"); 
             	$(".setting-text").attr('data-popup-open','popup-config-file');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file").css("display","block");
