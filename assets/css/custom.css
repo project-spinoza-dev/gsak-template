@@ -1172,7 +1172,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   margin:0 auto;
   margin-bottom: 5px;
 }
-#graphLoader-run{
+.graphLoader-run{
   width:20px;
   height:20px;
   display:none;
