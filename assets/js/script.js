@@ -68,11 +68,16 @@ $("#textfileUploadForm").submit(function (e) {
 *
 *Search Form Submit
 */
+$("img#searchLoader").css('visibility','hidden');
 $("#search-form").submit(function (e) {
   e.preventDefault();
+  $("img#searchLoader").css('visibility','visible');
   var searchVal = $('#search-form input[type=text]').val();
   var datasource = $('#datasources select#selectdata').val();
-  requestAjax ("/search","searchStr="+searchVal+"&datasource="+datasource+"", graphJsonHandler);
+  requestAjax ("/search","searchStr="+searchVal+"&datasource="+datasource+"", function(graphData) {
+    graphJsonHandler(graphData);
+    $("img#searchLoader").css('visibility','hidden');
+  });
 });
 /*
 *

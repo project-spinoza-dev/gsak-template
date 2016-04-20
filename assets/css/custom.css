@@ -1165,13 +1165,18 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
     height: 30px;
 }
 /*******************graphLoader**********/
-#graphLoader{
+#graphLoader, #searchLoader{
   width:20px;
   height:20px;
   display:none;
   margin:0 auto;
   margin-bottom: 5px;
 }
+
+#searchLoader {
+  display: inline;
+}
+
 .graphLoader-run{
   width:20px;
   height:20px;
