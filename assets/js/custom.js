@@ -387,7 +387,7 @@ $(".degree-selectm #selectdeg").change(function(){
             drop: null,
         },
         uploadFile: {
-            url: "/fileUpload",
+            url: "/graphFileUpload",
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
@@ -445,7 +445,7 @@ $(".degree-selectm #selectdeg").change(function(){
 	 /*********************** Graph file upload popup start****************/
     $("#filer_input_graph").filer({
         limit: 1,
-        maxSize:1,
+        maxSize: null,
         extensions: null,
         changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Drag&Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
         showThumbs: true,
@@ -512,7 +512,7 @@ $(".degree-selectm #selectdeg").change(function(){
             drop: null,
         },
         uploadFile: {
-            url: "./php/upload.php",
+            url: "/fileUpload",
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
@@ -543,7 +543,10 @@ $(".degree-selectm #selectdeg").change(function(){
         beforeSelect: null,
         onSelect: null,
         afterShow: null,
-        onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){},
+        onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
+            var file = file.name;
+            $.get('/removeUpload', {file: file});
+        },
         onEmpty: null,
         options: null,
         captions: {
