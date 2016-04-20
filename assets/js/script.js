@@ -43,7 +43,7 @@ $(".statistics_form").submit(function (e) {
 
 /*
 *
-*Statistics Submit Operations
+*Graph File Upload Options Operations
 */
 $("#graphFileUploadForm").submit(function (e) {
   e.preventDefault();
@@ -55,6 +55,30 @@ $("#graphFileUploadForm").submit(function (e) {
   });
 });
 
+/*
+*
+*Tweets File Upload Options Operations
+*/
+$("#textfileUploadForm").submit(function (e) {
+  e.preventDefault();
+  $(".popup-close").click();
+});
+
+/*
+*
+*Search Form Submit
+*/
+$("img#searchLoader").css('visibility','hidden');
+$("#search-form").submit(function (e) {
+  e.preventDefault();
+  $("img#searchLoader").css('visibility','visible');
+  var searchVal = $('#search-form input[type=text]').val();
+  var datasource = $('#datasources select#selectdata').val();
+  requestAjax ("/search","searchStr="+searchVal+"&datasource="+datasource+"", function(graphData) {
+    graphJsonHandler(graphData);
+    $("img#searchLoader").css('visibility','hidden');
+  });
+});
 /*
 *
 *Load Test graph
