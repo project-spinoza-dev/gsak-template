@@ -1311,7 +1311,7 @@
 		    <div class="popup-in">
 		       <div style="">
 		       		<div class="conf-db-pop">
-		       		<form>
+		       		<form id="mysqldbForm">
 		       			<table class="popup-table table table-responsive">
 		       		
 		       				<tr>
@@ -1348,9 +1348,13 @@
 			       					<input type="text" value="" name="dbtableCol"></input>
 			       				</td>
 			       				<td><input type="hidden" name="dBServer" value="mysql"/></td>
+			       				<td><input type="hidden" name="dbAction" id="mysqldbaction" value="connect"/></td>
 		       				</tr>
 		       			</table>
-		       			<div><input style="display: block; float:right; margin-right: 30px;" type="submit" name="connect" value="Connect" class="btn btn-primary"></input></div></td>
+		       			<div style="display: block; float:right; margin-right: 30px;">
+		       				<img src="./images/ringloader.gif" class="dbLoader" style="margin-right:3px; margin-top: 5px;">
+		       				<input id="mysqlFormSubmit" type="submit" name="connect" value="Connect" class="btn btn-primary"></input>
+		       			</div>
 		       			</form>
 		       		</div>
 		       </div>
@@ -1364,7 +1368,7 @@
 		    <div class="popup-in">
 		       <div style="">
 		       		<div class="conf-db-pop">
-		       		<form>
+		       		<form id="mongodbForm">
 		       			<table class="popup-table table table-responsive">
 		       		
 		       				<tr>
@@ -1383,8 +1387,8 @@
 		       				</tr>
 		       				<tr>
 			       				<td class="popup-td-wd">
-			       					<label>Database Table</label>
-			       					<input type="text" value="" name="dbtable"></input>
+			       					<label>Collection</label>
+			       					<input type="text" value="" name="dbcollection"></input>
 			       				</td>
 			       				<td class="popup-td-wd">
 			       				<label>Username</label>	
@@ -1397,13 +1401,17 @@
 		       				</tr>
 		       				<tr>
 			       				<td class="popup-td-wd">
-			       					<label>Column</label>
-			       					<input type="text" value="" name="dbtableCol"></input>
+			       					<label>Field</label>
+			       					<input type="text" value="" name="dbfield"></input>
 			       				</td>
-			       				<td><input type="hidden" name="dBServer" value="mysql"/></td>
+			       				<td><input type="hidden" name="dBServer" value="mongodb"/></td>
+			       				<td><input type="hidden" name="dbAction" id="mongodbaction" value="connect"/></td>
 		       				</tr>
 		       			</table>
-		       			<div><input style="display: block; float:right; margin-right: 30px;" type="submit" name="connect" value="Connect" class="btn btn-primary"></input></div></td>
+		       			<div style="display: block; float:right; margin-right: 30px;">
+		       				<img src="./images/ringloader.gif" class="dbLoader" style="margin-right:3px; margin-top: 5px;">
+		       				<input id="mongodbFormSubmit" type="submit" name="connect" value="Connect" class="btn btn-primary"></input>
+		       			</div>
 		       			</form>
 		       		</div>
 		       </div>

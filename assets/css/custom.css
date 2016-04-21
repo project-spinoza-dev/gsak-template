@@ -1170,7 +1170,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
     height: 30px;
 }
 /*******************graphLoader**********/
-#graphLoader, #searchLoader{
+#graphLoader, #searchLoader, .dbLoader{
   width:20px;
   height:20px;
   display:none;
@@ -1178,7 +1178,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   margin-bottom: 5px;
 }
 
-#searchLoader {
+#searchLoader, .dbLoader {
   display: inline;
 }
 
