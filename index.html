@@ -1307,7 +1307,60 @@
     <!-- Database (mysql) popups content -->
     <div class="popup pop-custom-db" data-popup="popup-config-database" >
 		<div class="popup-inner">
-		    <div class="popup-heading"><span id="">Configure Database</span><a class="popup-close" data-popup-close="popup-config-database" href="#">x</a></div>
+		    <div class="popup-heading"><span id="">Configure Mysql Database</span><a class="popup-close" data-popup-close="popup-config-database" href="#">x</a></div>
+		    <div class="popup-in">
+		       <div style="">
+		       		<div class="conf-db-pop">
+		       		<form>
+		       			<table class="popup-table table table-responsive">
+		       		
+		       				<tr>
+		       					<td class="popup-td-wd">
+			       				<label>Database</label>	
+			       				<input type="text" value="" name="database"></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       					<label>Host</label>
+			       					<input type="text" value="" name="dbhost"></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       				<label>Port </label>	
+			       				<input type="text" value="" name="dbport"></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td class="popup-td-wd">
+			       					<label>Database Table</label>
+			       					<input type="text" value="" name="dbtable"></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       				<label>Username</label>	
+			       				<input type="text" value="" name="dbuser"></input>
+			       				</td>
+			       				<td class="popup-td-wd">
+			       					<label>Password</label>
+			       					<input type="password" value="" name="dbpass"></input>
+			       				</td>
+		       				</tr>
+		       				<tr>
+			       				<td class="popup-td-wd">
+			       					<label>Column</label>
+			       					<input type="text" value="" name="dbtableCol"></input>
+			       				</td>
+			       				<td><input type="hidden" name="dBServer" value="mysql"/></td>
+		       				</tr>
+		       			</table>
+		       			<div><input style="display: block; float:right; margin-right: 30px;" type="submit" name="connect" value="Connect" class="btn btn-primary"></input></div></td>
+		       			</form>
+		       		</div>
+		       </div>
+		    </div>
+		</div>
+	</div>
+	<!-- Database (mongodb) popups content -->
+    <div class="popup pop-custom-mongodb" data-popup="popup-config-database-mongo" >
+		<div class="popup-inner">
+		    <div class="popup-heading"><span id="">Configure MongoDb Database</span><a class="popup-close" data-popup-close="popup-config-database-mongo" href="#">x</a></div>
 		    <div class="popup-in">
 		       <div style="">
 		       		<div class="conf-db-pop">
