@@ -718,54 +718,54 @@ $(".degree-selectm #selectdeg").change(function(){
     	
   	  //var content_id = $(this).attr('href');
       //$('#parameter_load').hide().html($(content_id).html()).show(500);
-        if($(this).attr('href')=="#equal_mod_class"){
+        if($(this).attr('href')=="#id_str_edge"){
         	
-            $("#equal_mod_class_cont").show();
-            $('#range_mod_class_cont, #parameter_load, #mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $("#id_str_edge_cont").show();
+            $('#id_str_node_cont, #parameter_load, #label_str_edge_cont,label_str_node_cont,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
-        else if($(this).attr('href')=="#range_mod_class"){
-			$("#range_mod_class_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #mask_edge_operator_filter_cont,#equal_degree_class_cont, #edge_weight_edges_filter_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+        else if($(this).attr('href')=="#id_str_node"){
+			$("#id_str_node_cont").show();
+            $('#id_str_edge_cont, #parameter_load, #label_str_edge_cont,label_str_node_cont ,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         } 
-        else if($(this).attr('href')=="#mask_edge_operator_filter"){
-			$("#mask_edge_operator_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #range_mod_class_cont,#equal_degree_class_cont, #edge_weight_edges_filter_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+        else if($(this).attr('href')=="#label_str_edge"){
+			$("#label_str_edge_cont").show();
+            $('#id_str_node_cont, #parameter_load, #id_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
-        else if($(this).attr('href')=="#equal_degree_class"){
-			$("#equal_degree_class_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #range_mod_class_cont,#mask_edge_operator_filter_cont, #edge_weight_edges_filter_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+        else if($(this).attr('href')=="#label_str_node"){
+			$("#label_str_node_cont").show();
+            $('#id_str_edge_cont, #parameter_load, #label_str_edge_cont,#id_str_node_cont,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
-        else if($(this).attr('href')=="#edge_weight_edges_filter"){
-			$("#edge_weight_edges_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+        else if($(this).attr('href')=="#weight_float_edge"){
+			$("#weight_float_edge_cont").show();
+            $('#id_str_node_cont, #parameter_load, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#deg_range_topology_filter"){
 			$("#deg_range_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load,#ego_net_topology_filter_cont, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load,#ego_net_topology_filter_cont, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont,  #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#ego_net_topology_filter"){
 			$("#ego_net_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont,#edge_weight_edges_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#in_deg_topology_filter"){
 			$("#in_deg_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load,#ego_net_topology_filter_cont, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #deg_range_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load,#ego_net_topology_filter_cont, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont, #deg_range_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#kcore_topology_filter"){
 			$("#kcore_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load,#ego_net_topology_filter_cont, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #mutualdeg_range_topology_filter_cont , #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load,#ego_net_topology_filter_cont, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont, #weight_float_edge_cont, #deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #mutualdeg_range_topology_filter_cont , #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#mutualdeg_range_topology_filter"){
 			$("#mutualdeg_range_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load,#ego_net_topology_filter_cont, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont, #edge_weight_edges_filter_cont, #deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #kcore_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load,#ego_net_topology_filter_cont,#id_str_edge_cont,#label_str_edge_cont, #label_str_node_cont,#weight_float_edge_cont,#deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #kcore_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#neighbrs_net_topology_filter"){
 			$("#neighbrs_net_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load,#ego_net_topology_filter_cont, #range_mod_class_cont,#mask_edge_operator_filter_cont, #equal_degree_class_cont,#edge_weight_edges_filter_cont, #deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load,#ego_net_topology_filter_cont, #id_str_edge_cont,#label_str_edge_cont,#label_str_node_cont, #weight_float_edge_cont,#deg_range_topology_filter_cont,#in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#out_degree_range_topology_filter"){
 			$("#out_degree_range_topology_filter_cont").show();
-            $('#equal_mod_class_cont, #parameter_load, #ego_net_topology_filter_cont, #range_mod_class_cont, #mask_edge_operator_filter_cont, #equal_degree_class_cont,#edge_weight_edges_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load, #ego_net_topology_filter_cont, #id_str_edge_cont, #label_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont').hide();
         }
         else{
               
