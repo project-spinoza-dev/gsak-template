@@ -18,7 +18,10 @@ var Gsetting = JSON.parse(sigmaSettings);
 var statistics_btn;
 var isMysqlConnected = false;
 var isMongoDbConnected = false;
-
+var isElasticsearchConnected = false;
+var isGraphExists = false;
+var zoomValCurrent;
+var zoomValPrevious = 3;
 
 
 /*
@@ -57,6 +60,23 @@ $("#graphFileUploadForm").submit(function (e) {
     $("#graphLoader").css('display','none');
   });
 });
+
+
+
+/*
+*
+*Loading original graph after different operations
+*/
+$('#original_graph_load_form input[type="submit"]').prop('disabled', true);
+$("#original_graph_load_form").submit(function (e) {
+  e.preventDefault();
+  $('.dbLoader').css('visibility','visible');
+  requestAjax ("/originalGraph", {}, function(graphData) {
+    graphJsonHandler(graphData);
+  $('.dbLoader').css('visibility','hidden');
+  });
+});
+
 
 /*
 *
@@ -117,6 +137,31 @@ $("#mongodbForm").submit(function (e) {
   });
 });
 
+
+/*
+*
+*Elasticsearch connecting form submit
+*/
+$("#elasticsearchForm").submit(function (e) {
+  $('.dbLoader').css('visibility','visible');
+  e.preventDefault();
+  requestAjax ("/connectDB", $("#" + this.id).serialize(), function (resp) {
+    isElasticsearchConnected = resp == "true" ? true : false;
+    if (isElasticsearchConnected) {
+      if ($('#elasticsearchFormSubmit').val() == 'Connect') {
+        $('#elasticsearchAction').val('disconnect');
+        $('#elasticsearchFormSubmit').val("Disconnect");  
+      }else {
+        $('#elasticsearchAction').val('connect');
+        $('#elasticsearchFormSubmit').val("Connect");
+      }
+    } else {
+      alert("Elasticsearch service is down.")
+    }
+    $('.dbLoader').css('visibility','hidden');
+  });
+});
+
 /*
 *
 *Search Form Submit
@@ -128,8 +173,8 @@ $("#search-form").submit(function (e) {
   var searchVal = $('#search-form input[type=text]').val();
   var datasource = $('#datasources select#selectdata').val();
   requestAjax ("/search","searchStr="+searchVal+"&datasource="+datasource+"", function(graphData) {
-    graphJsonHandler(graphData);
     $("img#searchLoader").css('visibility','hidden');
+    graphJsonHandler(graphData);
   });
 });
 /*
@@ -154,7 +199,8 @@ function requestAjax (ajaxURL, formData, callBackFun) {
       },
       //on error in ajax request
       error: function(a, b, c){
-        alert ('Error requested graph Operation.');
+        $("img#searchLoader , img.dbLoader, img#graphLoader").css('visibility','hidden');
+        alert ('Error completing request.');
         return false;
       }
    });
@@ -386,11 +432,17 @@ function canvasGraph (container, gtitle, data, xLabel, yLabel){
 */
 function graphJsonHandler (graphData){
   nodesObject = JSON.parse(graphData);
+//  alert(nodesObject);
+//  console.log(nodesObject);
   var nodesCount = nodesObject.nodes.nodes.length;
   if(nodesCount > 0){
+      $('#original_graph_load_form input[type="submit"]').prop('disabled', false);
+      isGraphExists = true;
+      $("#slider-vertical").slider("value", 3);
+      zoomValCurrent = 3;
       showGraph(nodesObject.nodes, document.getElementById('container'), Gsetting);
   } else {
-    alert ('no graph found data found');
+    alert ('No Graph Data found.!');
   }
 }
 
@@ -505,8 +557,6 @@ function waitUntilValChange(variable, value) {
 /*************************************************************
               VERTICAL SLIDER JS
 *************************************************************/
-var zoomValCurrent;
-var zoomValPrevious = 3;
 
   $(function() {
     $( "#slider-vertical" ).slider({
@@ -517,8 +567,10 @@ var zoomValPrevious = 3;
       step: 1,
       value: 3,
       slide: function( event, ui ) {
-          zoomValCurrent = ui.value;
-          zoomCalculator ();
+          if (isGraphExists){
+            zoomValCurrent = ui.value;
+            zoomCalculator ();
+          }
       }
     });
   });
@@ -544,43 +596,51 @@ function zoomCalculator () {
 
 $('#zoomin-btn').click (function (e){
   var sVal = parseInt($("#slider-vertical").slider("value"));
-  if (sVal < 10) {
-    $("#slider-vertical").slider("value", sVal+1)
-    zoomValCurrent = sVal+1;
-    zoomCalculator();
+  if (isGraphExists) {
+    if (sVal < 10) {
+      $("#slider-vertical").slider("value", sVal+1);
+        zoomValCurrent = sVal+1;
+        zoomCalculator();
+    }
   }
 });
 
 $('#zoomout-btn').click (function (e){
   var sVal = parseInt($("#slider-vertical").slider("value"));
-  if (sVal > 0) {
-    $("#slider-vertical").slider("value", sVal-1)
-    zoomValCurrent = sVal-1;
-    zoomCalculator();
+  if (isGraphExists) {
+    if (sVal > 0) {
+      $("#slider-vertical").slider("value", sVal-1);
+        zoomValCurrent = sVal-1;
+        zoomCalculator();
+    }
   }
 });
 
 
  //Firefox
  $('#container').bind('DOMMouseScroll', function(e){
-     if(e.originalEvent.detail > 0) {
-         $('#zoomout-btn').click();
-     }else {
-         //scroll up
-         $('#zoomin-btn').click();
-     }
+    if (isGraphExists) {
+       if(e.originalEvent.detail > 0) {
+           $('#zoomout-btn').click();
+       }else {
+           //scroll up
+           $('#zoomin-btn').click();
+       }
+    }
      return false;
  });
 
  //IE, Opera, Safari
  $('#container').bind('mousewheel', function(e){
-     if(e.originalEvent.deltaY > 0) {
-         //scroll down
-         $('#zoomout-btn').click();
-     }else {
-         //scroll up
-         $('#zoomin-btn').click();
-     }
+    if (isGraphExists) {
+       if(e.originalEvent.deltaY > 0) {
+           //scroll down
+           $('#zoomout-btn').click();
+       }else {
+           //scroll up
+           $('#zoomin-btn').click();
+       }
+    }
      return false;
  });
 
