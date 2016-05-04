@@ -1197,6 +1197,9 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   margin-left: 150px;
   margin-top: 5px;
 }
+.select_btn_div input{
+  margin-right: 5px;
+}
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;
