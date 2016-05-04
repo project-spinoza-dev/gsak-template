@@ -269,9 +269,15 @@ $(".degree-selectm #selectdeg").change(function(){
         $(this).find("option:selected").each(function(){
             if($(this).attr("value")=="mysql"){
             	$(".setting-text").attr('data-popup-open','popup-config-database');
-            	$('#search-form input[type="text"]').prop('disabled', false);
-            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: Mysql");
-            	$('#search-form input[type="submit"]').removeAttr("disabled");
+            	if (isMysqlConnected) {
+            		$('#search-form input[type="text"]').prop('disabled', false);
+            		$('#search-form input[type="submit"]').prop('disabled', false);
+            		$('#search-form input[type="text"]').attr("placeholder", "Search Source: Mysql");
+            	}else {
+            		$('#search-form input[type="text"]').prop('disabled', true);
+            		$('#search-form input[type="submit"]').prop('disabled', true);
+            		$('#search-form input[type="text"]').attr("placeholder", "Not connected to Mysql Server.");
+            	}
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","block");
             		$(".pop-custom-mongodb").css("display","none");
@@ -284,9 +290,15 @@ $(".degree-selectm #selectdeg").change(function(){
             }
             if($(this).attr("value")=="mongodb"){
             	$(".setting-text").attr('data-popup-open','popup-config-database-mongo');
-            	$('#search-form input[type="text"]').prop('disabled', false);
-            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: MongoDB");
-            	$('#search-form input[type="submit"]').removeAttr("disabled");
+            	if (isMongoDbConnected) {
+            		$('#search-form input[type="text"]').prop('disabled', false);
+            		$('#search-form input[type="submit"]').prop('disabled', false);
+            		$('#search-form input[type="text"]').attr("placeholder", "Search Source: MongoDB");
+            	}else {
+            		$('#search-form input[type="text"]').prop('disabled', true);
+            		$('#search-form input[type="submit"]').prop('disabled', true);
+            		$('#search-form input[type="text"]').attr("placeholder", "Not connected to MongoDb Server.");
+            	}
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-mongodb").css("display","block");
             		$(".pop-custom-db").css("display","none");
@@ -298,9 +310,15 @@ $(".degree-selectm #selectdeg").change(function(){
 
             }
             else if ($(this).attr("value")=="elasticsearch") {
-            	$('#search-form input[type="text"]').prop('disabled', false);
-            	$('#search-form input[type="submit"]').removeAttr("disabled");
-            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: ElasticSearch");
+            	if (isElasticsearchConnected) {
+            		$('#search-form input[type="text"]').prop('disabled', false);
+            		$('#search-form input[type="submit"]').prop('disabled', false);
+            		$('#search-form input[type="text"]').attr("placeholder", "Search Source: ElasticSearch");
+            	}else {
+            		$('#search-form input[type="text"]').prop('disabled', true);
+            		$('#search-form input[type="submit"]').prop('disabled', true);
+            		$('#search-form input[type="text"]').attr("placeholder", "Not connected to ES Server.");
+            	}
             	$(".setting-text").attr('data-popup-open','popup-config-es');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-db").css("display","none");
@@ -313,9 +331,11 @@ $(".degree-selectm #selectdeg").change(function(){
             }
              else if ($(this).attr("value")=="inputfile") {
             	$(".setting-text").attr('data-popup-open','popup-config-file-up');
-            	$('#search-form input[type="text"]').prop('disabled', false);
-            	$('#search-form input[type="submit"]').removeAttr("disabled");
-            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: File");
+            	if (!isFileUploaded) {
+					$('#search-form input[type="text"]').prop('disabled', true);
+            		$('#search-form input[type="submit"]').prop('disabled', true);
+	            	$('#search-form input[type="text"]').attr("placeholder", "No File Uploaded.");
+            	}
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file-up").css("display","block");
             		$(".pop-custom-mongodb").css("display","none");
@@ -329,7 +349,7 @@ $(".degree-selectm #selectdeg").change(function(){
             	$('#search-form input[type="text"]').prop('disabled', true);
             	$('#search-form input[type="submit"]').attr("disabled", "disabled");
             	$('#search-form input[type="submit"]').css("background-color","#f5ab28");
-            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: Graph File"); 
+            	$('#search-form input[type="text"]').attr("placeholder", "Graph Files are not searchable."); 
             	$(".setting-text").attr('data-popup-open','popup-config-file');
             	$(".setting-text" ).click( function( ){
             		$(".pop-custom-file").css("display","block");
@@ -550,12 +570,20 @@ $(".degree-selectm #selectdeg").change(function(){
                 el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
                     $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");    
                 });
+                $('#search-form input[type="text"]').prop('disabled', false);
+                $('#search-form input[type="submit"]').prop('disabled', false);
+            	$('#search-form input[type="text"]').attr("placeholder", "Search Source: File");
+            	isFileUploaded = true;
             },
             error: function(el){
                 	var parent = el.find(".jFiler-jProgressBar").parent();
                 	el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
                 	$("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");    
                 });
+                $('#search-form input[type="text"]').prop('disabled', true);
+                $('#search-form input[type="submit"]').prop('disabled', true);
+                $('#search-form input[type="text"]').attr("placeholder", "No File uploaded.");
+                isFileUploaded = false;
             },
             statusCode: null,
             onProgress: null,
@@ -574,6 +602,9 @@ $(".degree-selectm #selectdeg").change(function(){
         onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
             var file = file.name;
             $.get('/removeUpload', {file: file});
+            $('#search-form input[type="text"]').prop('disabled', true);
+            $('#search-form input[type="submit"]').prop('disabled', true);
+            isFileUploaded = false;
         },
         onEmpty: null,
         options: null,
