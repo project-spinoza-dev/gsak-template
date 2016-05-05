@@ -655,10 +655,10 @@ $(".degree-selectm #selectdeg").change(function(){
 			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn'></span>");
 			//onclick remove  
 			$('.removebtn').on('click',function(){
-	   		  $(this).parents('.easytree-node').remove();
 	   		  ui.draggable.draggable("enable");
-	   		  var href = $(this).prev('span.easytree-title a').attr('href');
-	   		 alert('href');
+	   		  var href = $(this).prev('span.easytree-title').find('a').attr('href');
+	   		  alert(href);
+	   		  $(this).parents('.easytree-node').remove();
 	 	 	});
 	 	 	$('#filter_querycontainer .easytree-title a').on('click',function(){
 	   		  $( this ).addClass( 'filterbold' );
