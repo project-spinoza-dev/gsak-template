@@ -664,11 +664,9 @@ $(".degree-selectm #selectdeg").change(function(){
 	 	 	});
 	 	 	$('#filter_querycontainer .easytree-title a').on('click',function(){
 	   		  $( this ).addClass( 'filterbold' );
-   			  $('#select_btn_id').prop("disabled", false); 
-
+   			  $('#select_btn_id').prop("disabled", false);
 	 	 	}); 	
         }
-
     });
 
      ///////Range slider for range///////////
