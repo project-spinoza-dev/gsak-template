@@ -657,11 +657,14 @@ $(".degree-selectm #selectdeg").change(function(){
 			$('.removebtn').on('click',function(){
 	   		  ui.draggable.draggable("enable");
 	   		  var href = $(this).prev('span.easytree-title').find('a').attr('href');
-	   		  alert(href);
+	   		  var href_cont = href+'_cont';
+	   		  $(href_cont).hide();
 	   		  $(this).parents('.easytree-node').remove();
+	   		  $('#select_btn_id').prop("disabled", true); 
 	 	 	});
 	 	 	$('#filter_querycontainer .easytree-title a').on('click',function(){
 	   		  $( this ).addClass( 'filterbold' );
+   			  $('#select_btn_id').prop("disabled", false); 
 
 	 	 	}); 	
         }
@@ -757,11 +760,11 @@ $(".degree-selectm #selectdeg").change(function(){
         if($(this).attr('href')=="#id_str_edge"){
         	
             $("#id_str_edge_cont").show();
-            $('#id_str_node_cont, #parameter_load, #label_str_edge_cont,label_str_node_cont,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_node_cont, #parameter_load, #label_str_edge_cont,#label_str_node_cont,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         }
         else if($(this).attr('href')=="#id_str_node"){
 			$("#id_str_node_cont").show();
-            $('#id_str_edge_cont, #parameter_load, #label_str_edge_cont,label_str_node_cont ,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
+            $('#id_str_edge_cont, #parameter_load, #label_str_edge_cont,#label_str_node_cont ,#weight_float_edge_cont, #ego_net_topology_filter_cont, #deg_range_topology_filter_cont, #in_deg_topology_filter_cont, #kcore_topology_filter_cont, #mutualdeg_range_topology_filter_cont, #neighbrs_net_topology_filter_cont, #out_degree_range_topology_filter_cont').hide();
         } 
         else if($(this).attr('href')=="#label_str_edge"){
 			$("#label_str_edge_cont").show();
