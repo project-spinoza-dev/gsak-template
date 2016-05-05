@@ -789,6 +789,14 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   border:none;
   background-color: none;
 }
+.filterbold {
+  font-weight: bold;
+  color: #ffffff !important;
+  font-style: italic;
+}
+#filter_querycontainer .easytree-title a{
+  
+}
 #filter_querycontainer span.easytree-node {
   border:0 none;
   display: inline-block;
