@@ -107,6 +107,7 @@ $(".degree-selectm #selectdeg").change(function(){
 
 		if($(this).attr("value")=="degree_1"){
 					var $left = $(".left-grad");
+					e.preventDefault();
 					$("#ex1").gradientPicker({
 						change: function(points, styles) {
 							for (i = 0; i < styles.length; ++i) {
@@ -649,19 +650,23 @@ $(".degree-selectm #selectdeg").change(function(){
             var me = ui.draggable.clone();
             ui.draggable.draggable("disable");
             me.appendTo(this)
-                .addClass("filternewClass");
+
 	        //Add remove icon
 			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn'></span>");
 			//onclick remove  
 			$('.removebtn').on('click',function(){
 	   		  $(this).parents('.easytree-node').remove();
 	   		  ui.draggable.draggable("enable");
+	   		  var href = $(this).prev('span.easytree-title a').attr('href');
+	   		 alert('href');
+	 	 	});
+	 	 	$('#filter_querycontainer .easytree-title a').on('click',function(){
+	   		  $( this ).addClass( 'filterbold' );
 
-	 	 	});  		
+	 	 	}); 	
         }
 
     });
-   
 
      ///////Range slider for range///////////
      //Range slider for Attributes Range filter 
