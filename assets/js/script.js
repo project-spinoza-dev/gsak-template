@@ -46,6 +46,7 @@ $(".layout_form").submit(function (e) {
 */
 $('#filter_querycontainer').selectable();
 $('#select_btn_id').on('click',function(e){
+  $('.filterLoader').css('display','block');
   e.preventDefault();
     $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
        var selected_filter = $(this).attr('href');
@@ -53,6 +54,7 @@ $('#select_btn_id').on('click',function(e){
         //send ajax request to see filter selection $("#" + this.id).serialize()
         requestAjax ("/selectFilter", $(selected_filter+'_form').serialize(), function(graphData){
           graphJsonHandler(graphData);
+          $('.filterLoader').css('display','none');
         });
   });
       
