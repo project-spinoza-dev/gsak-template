@@ -649,7 +649,6 @@ $(".degree-selectm #selectdeg").change(function(){
             var me = ui.draggable.clone();
             ui.draggable.draggable("disable");
             me.appendTo(this)
-
 	        //Add remove icon
 			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn'></span>");
 			$('#filter_btn_id').prop("disabled", false);
@@ -661,22 +660,34 @@ $(".degree-selectm #selectdeg").change(function(){
 	   		  $(href_cont).hide();
 	   		  $(this).parents('.easytree-node').remove();
 	   		  $('#select_btn_id').prop("disabled", true);
-	   		  //$('#filter_btn_id').prop("disabled", true);
 	 	 	});
-
-	 	 	$('#filter_querycontainer .easytree-title a').on('click',function(){
-   			  $('#select_btn_id').prop("disabled", false);
-	 	 	}); 
+	 	 	
+	 	 	/*$('#filter_querycontainer a').on('click',function(){
+		    	if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
+		    		$('#select_btn_id').prop("disabled", false);
+		    	}
+		    	else{
+		    		$('#select_btn_id').prop("disabled", true);
+		    	}     
+			});*/
 	 	 		
         }
-
     });
+    $("#filter_querycontainer").click(function(e) {
+        if($(e.target).is('a')){
+        	 e.preventDefault();
+        	$('#select_btn_id').prop("disabled", false);
+            return;
+        }
+        $('#select_btn_id').prop("disabled", true);
+    }); 
 	//Filter button operations
     $('#filter_btn_id').on('click',function(e){
     	e.preventDefault();
 		$('#filter_querycontainer').find('a').each(function() {	
 		    var filter_href = $(this).attr('href');
 		    console.log(filter_href);
+
 	  	});
 	  
 	});
