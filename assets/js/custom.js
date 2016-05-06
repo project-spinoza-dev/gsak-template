@@ -62,7 +62,6 @@ $( document ).ready(function() {
 		checkboxClass: 'icheckbox_square-grey',
 		increaseArea: '20%' // optional
    }); // End of checkbox.
-    console.log( "ready!" );
 	$(".user-nav-slide").click(function () {
 		if ($(".user-menu-container").hasClass("closed")) {
 			$(".user-menu-container").animate({"left": "0px"});
@@ -680,16 +679,6 @@ $(".degree-selectm #selectdeg").change(function(){
 		    console.log(filter_href);
 	  	});
 	  
-	});
-	//Selectable parameters
-	$('#filter_querycontainer').selectable();
-	$('#select_btn_id').on('click',function(e){
-		e.preventDefault();
-	    $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
-		     var selected_href = $(this).attr('href');
-			    console.log(selected_href);
-		});
-			  
 	});
 
      ///////Range slider for range///////////
