@@ -838,7 +838,7 @@
 							<div id="id_str_edge_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Equal (ID) Edge Settings</h6></div>
 								<div class="table-responsive equal_filter_div">
-									<form>
+									<form id="id_str_edge_form">
 										<table class="table table-parameter">
 											<tr>
 												<td>Pattren:</td>
@@ -847,7 +847,9 @@
 											<tr>
 												<td>Use Regex</td>
 												<td><input type="checkbox" placeholder="useregex"></td>
+												<td><input type="hidden" name="filterId" value="edgeIdStr"></td>
 											</tr>
+											
 										</table>
 									</form>
 								</div>
@@ -855,7 +857,7 @@
 							<div id="id_str_node_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Equal (ID) Node Settings</h6></div>
 								<div class="table-responsive equal_filter_div">
-									<form>
+									<form id="id_str_node_form">
 										<table class="table table-parameter">
 											<tr>
 												<td>Pattren:</td>
@@ -864,7 +866,9 @@
 											<tr>
 												<td>Use Regex</td>
 												<td><input type="checkbox" placeholder="useregex" value=""></td>
+												<td><input type="hidden" name="filterId" value="nodeIdStr"></td>
 											</tr>
+											
 										</table>
 									</form>
 								</div>
@@ -872,7 +876,7 @@
 							<div id="label_str_edge_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Equal (Label) Edge Settings</h6></div>
 								<div class="table-responsive equal_filter_div">
-									<form>
+									<form id="label_str_edge_form">
 										<table class="table table-parameter">
 											<tr>
 												<td>Pattren:</td>
@@ -881,7 +885,9 @@
 											<tr>
 												<td>Use Regex</td>
 												<td><input type="checkbox" placeholder="useregex" value=""></td>
+												<td><input type="hidden" name="filterId" value="edgeLabelStr"></td>
 											</tr>
+											
 										</table>
 									</form>
 								</div>
@@ -889,7 +895,7 @@
 							<div id="label_str_node_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Equal (Label) Node Settings</h6></div>
 								<div class="table-responsive equal_filter_div">
-									<form>
+									<form id="label_str_node_form">
 										<table class="table table-parameter">
 											<tr>
 												<td>Pattren:</td>
@@ -898,6 +904,7 @@
 											<tr>
 												<td>Use Regex</td>
 												<td><input type="checkbox" placeholder="useregex" value=""></td>
+												<td><input type="hidden" name="filterId" value="nodeLabelStr"></td>
 											</tr>
 										</table>
 									</form>
