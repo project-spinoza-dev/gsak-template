@@ -39,25 +39,6 @@ $(".layout_form").submit(function (e) {
     $(".graphLoader-run").css('display','none');
 });
 
-
-/*
-*
-* Select Filter Submit Operations
-*/
-$('#filter_querycontainer').selectable();
-$('#select_btn_id').on('click',function(e){
-  e.preventDefault();
-    $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
-       var selected_filter = $(this).attr('href');
-        console.log(selected_filter);
-        //send ajax request to see filter selection $("#" + this.id).serialize()
-        requestAjax ("/selectFilter", $(selected_filter+'_form').serialize(), function(graphData){
-
-        });
-  });
-      
-});
-
 /*
 *
 *Statistics Submit Operations
