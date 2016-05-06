@@ -1232,7 +1232,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   display: block;
 }
 /********************css for selectable***********/
-#filter_querycontainer .ui-selected { 
+#filter_querycontainer .ui-selected a{ 
   font-weight: bold;
   color: #ffffff !important;
   font-style: italic;
