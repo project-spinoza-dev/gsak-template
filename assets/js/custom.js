@@ -844,8 +844,7 @@ $(".degree-selectm #selectdeg").change(function(){
             });
   $('#spinner-kcore').spinner({
                step: 1, 
-               min: 1, 
-               max: 100
+               min: 1
             });
 //jquery for full screen
 $(".fullscreen_icon").click(function(){
