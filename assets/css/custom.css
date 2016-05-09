@@ -1246,17 +1246,7 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
   margin-left: 100px;
   margin-top: 5px;
 }
-/***************css for spinner ****************/
-.ui-spinner{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.ui-spinner-button{
-  
-}
-.ui-spinner-button .ui-spinner-up{
-  
-}
+
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;
