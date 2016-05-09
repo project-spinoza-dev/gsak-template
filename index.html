@@ -913,54 +913,14 @@
 								<div class="heading_parameter"><h6>Weight Float (Edge) Settings</h6></div>
 								<div class="table-responsive equal_filter_div">
 									<form id="weight_float_edge_form">
-									<table class="table table-parameter">
-										<tr>
-											<td>Value:</td>
-											<td><input  type="text" id="spinner-weight" placeholder="Weight Float Edge" value="1" name="WeightFloatEdge"></td>
+									<table class="table table-parameter spinner-table">
+										<tr class="tr-spinner-wd">
+											<td class="td-spinner-label">Value:</td>
+											<td class="td-spinner-val"><input  type="text" id="spinner-weight" placeholder="Weight Float Edge" value="1" name="WeightFloatEdge"></td>
 											<td><input type="hidden" name="filterId" value="weightFloatEdge"></td>
 										</tr>
 									</table>	
 									</form>
-								</div>
-							</div>
-
-							<div id="range_mod_class_cont" class="parameter_load_class">
-								<div class="heading_parameter"><h6>Range Modularity Class Settings</h6></div>
-								<div>
-									<div class="parameter_content_range ">
-										<form>
-										 	<input type="hidden"  id="range-slider-range" class="range-slider" value="1" />
-										</form>
-									</div>
-								</div>
-							</div>
-
-							<div id="edge_weight_edges_filter_cont" class="parameter_load_class">
-								<div class="heading_parameter"><h6>Edge Weight Settings</h6></div>
-								<div>
-									<div class="parameter_content_range ">
-										<form>
-										 	<input type="hidden" id="range-slider-edge" class="range-slider" value="1" />
-										</form>
-									</div>
-								</div>
-							</div>
-
-							<div id="mask_edge_operator_filter_cont" class="parameter_load_class">
-								<div class="heading_parameter"><h6>Mask (Edges) Settings</h6></div>
-								<div>
-								<form action="">
-									<table class="table-responsive table-parameter equal_filter_div">
-											<tr>
-												<td><input type="radio" name="any_mask" value="any_mask"> any</td>
-												<td><input type="radio" name="source_mask" value="source_mask"> source</td>
-											</tr>
-											<tr>
-												<td><input type="radio" name="both_mask" value="both_mask"> both</td>
-												<td><input type="radio" name="target_mask" value="target_mask"> target</td>
-											</tr>
-									</table>
-								</form>
 								</div>
 							</div>
 
@@ -1049,11 +1009,10 @@
 									<div class="parameter_content_range ">
 										<form>
 										 	
-											<table class="table table-parameter">
-										<tr>
-											<td>Value:</td>
-											<td><input  type="text" id="spinner-kcore" placeholder="Kcore"  value="1" name="Kcore"></td>
-
+											<table class="table table-parameter spinner-table">
+										<tr class="tr-spinner-wd">
+											<td class="td-spinner-label">Value:</td>
+											<td class="td-spinner-val"><input type="text"  id="spinner-kcore" placeholder="Kcore" value="1" name="Kcore"></td>
 										</tr>
 									</table>
 										</form>
