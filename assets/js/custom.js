@@ -728,7 +728,7 @@ $(".degree-selectm #selectdeg").change(function(){
     $('#range-slider-degree').jRange('setValue', '1,36');
     //Range slider for IN Degree Range Topology filter 
 	$('#range-slider-in-degree').jRange({
-	    from: 1,
+	    from: 5,
 	    to: 32,
 	    step: 1,
 	    format: '%s',

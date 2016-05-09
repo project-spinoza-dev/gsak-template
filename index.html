@@ -968,9 +968,9 @@
 								<div class="heading_parameter"><h6>Degree Range Settings</h6></div>
 								<div>
 									<div class="parameter_content_range ">
-										<form>
-										 	<input type="hidden" id="range-slider-degree" class="range-slider" value="1" />
-											
+										<form id="deg_range_topology_filter_form">
+										 	<input type="hidden" id="range-slider-degree" class="range-slider" name="degreeRange" value="1" />
+											<input type="hidden" name="filterId" value="degreeRange">
 										</form>
 									</div>
 								</div>
@@ -1035,9 +1035,9 @@
 								<div class="heading_parameter"><h6>In Degree Range Settings</h6></div>
 								<div>
 									<div class="parameter_content_range ">
-										<form>
-										 	<input type="hidden" id="range-slider-in-degree" class="range-slider" value="1" />
-											
+										<form id="in_deg_topology_filter_form">
+										 	<input type="hidden" id="range-slider-in-degree" class="range-slider" name="inDegreerange" value="1" />
+											<input type="hidden" name="filterId" value="indegreeRange">
 										</form>
 									</div>
 								</div>
@@ -1076,10 +1076,10 @@
 							<div id="out_degree_range_topology_filter_cont" class="parameter_load_class">
 								<div class="heading_parameter"><h6>Out Degree Range Settings</h6></div>
 								<div>
-									<div class="parameter_content_range ">
-										<form>
-										 	<input type="hidden" id="range-slider-out-degree" class="range-slider" value="1" />
-											
+									<div class="parameter_content_range">
+										<form id="out_degree_range_topology_filter_form">
+										 	<input type="hidden" id="range-slider-out-degree" class="range-slider" name="outDegreerange" value="1" />
+											<input type="hidden" name="filterId" value="outdegreeRange">
 										</form>
 									</div>
 								</div>
