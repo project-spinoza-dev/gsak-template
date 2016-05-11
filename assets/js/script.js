@@ -48,9 +48,6 @@ $('#select_btn_id').on('click',function(e){
   e.preventDefault();
     $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
        var selected_filter = $(this).attr('href');
-      //  console.log(selected_filter);
-        //send ajax request to see filter selection $("#" + this.id).serialize()
-        // alert($('#range-slider-degree').val());
         //alert($(selected_filter+'_form').serialize());
         requestAjax ("/selectFilter", $(selected_filter+'_form').serialize(), function(graphData){
           graphJsonHandler(graphData);
@@ -235,6 +232,8 @@ function getDegreeRanges(){
     var from = parseInt(resp.degree.split(',')[0]);
     var to = parseInt(resp.degree.split(',')[1]);
 
+    $('#maxDegree').val(to);
+    
     $('#deg_range_topology_filter_form').empty();
     $('#deg_range_topology_filter_form').append('<input type="hidden" id="range-slider-degree" class="range-slider" name="degreeRange"/>');
     $('#deg_range_topology_filter_form').append('<input type="hidden" name="filterId" value="degreeRange">');
