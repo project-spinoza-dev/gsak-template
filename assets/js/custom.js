@@ -700,22 +700,6 @@ $(".degree-selectm #selectdeg").change(function(){
 	    }
 	    $('#select_btn_id').prop("disabled", true);
 	}); 
-	//Filter button operations
-    $('#filter_btn_id').on('click',function(e){
-    	e.preventDefault();
-    	if ( $('input[name="filtercheck"]').is(':checked') ) {
-				$('#filter_querycontainer').find('a').each(function() {	
-			    	var filter_href = $(this).attr('href');
-			    	console.log(filter_href);
-	  		    });
-			} 
-		else {
-		    $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
-       			var selected_filter = $(this).attr('href');
-       			console.log(selected_filter);
-        	});
-		}
-	});
 
      ///////Range slider for range///////////
      //Range slider for Attributes Range filter 
