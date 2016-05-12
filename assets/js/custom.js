@@ -10,7 +10,7 @@
 		//$("#network_overview_panel").mCustomScrollbar();// Network Overview
 		//$("#dynamic_panel").mCustomScrollbar();// Network Overview
 		$(".popup-in").mCustomScrollbar();//  popup-box statistics 
-	    //$("#queries_panel").mCustomScrollbar();//queries panel
+	    $("#queries_panel").mCustomScrollbar();//queries panel
 	    $("#selectlayout-boxitSelectBoxItOptions").mCustomScrollbar();
 	});
 })(jQuery);	
@@ -645,7 +645,7 @@ $(".degree-selectm #selectdeg").change(function(){
         opacity: "0.5"
     });
 	//$("#queries_panel").mCustomScrollbar();//queries panel
-	$("#queries_panel").mCustomScrollbar();//queries panel
+	
     $("#filter_querycontainer").droppable({
         accept: $(".filterdrag"),
         hoverClass: "dropHover",
@@ -656,9 +656,8 @@ $(".degree-selectm #selectdeg").change(function(){
             me.appendTo(this)
 	        //Add remove icon
 			$("#filter_querycontainer span:last-child.easytree-node").append("<span class='removebtn'></span>");
-			$('#filter_btn_id').prop("disabled", false);
-			//queries all filter checkbox
-			
+			//
+
 			//onclick remove  
 			$('.removebtn').on('click',function(){
 	   		  ui.draggable.draggable("enable");
@@ -667,50 +666,55 @@ $(".degree-selectm #selectdeg").change(function(){
 	   		  $(href_cont).hide();
 	   		  $(this).parents('.easytree-node').remove();
 	   		  $('#select_btn_id').prop("disabled", true);
-	 	 	});
-
-	 	 	/*$('#filter_querycontainer a').on('click',function(){
-		    	if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
-		    		$('#select_btn_id').prop("disabled", false);
-		    	}
-		    	else{
-		    		$('#select_btn_id').prop("disabled", true);
-		    	}     
-			});*/
-	 	 		
+	 	 	});	
         }
     });
+	$('.filtercheckbox .iCheck-helper').click(function() {
+	        
+	    	if ( $('input[name="filtercheck"]').is(':checked') ) {
+				$('#filter_btn_id').prop("disabled", false);
+			}
+			else if (!$('input[name="filtercheck"]').is(':checked') ){
+					if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
+						$('#filter_btn_id').prop("disabled", false);
+					}
+					else{
+						$('#filter_btn_id').prop("disabled", true);
+					}
+			}
+	});
+	$('#filter_querycontainer ').click(function(a){
+		if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
+			$('#filter_btn_id').prop("disabled", false);
+		}
+		else{
+			$('#filter_btn_id').prop("disabled", true);
+		}   
+	});
 
-    $("#filter_querycontainer").click(function(e) {
-        if($(e.target).is('a')){
-        	 e.preventDefault();
-        	$('#select_btn_id').prop("disabled", false);
-            return;
-        }
-        $('#select_btn_id').prop("disabled", true);
-    }); 
+	$("#filter_querycontainer").click(function(e) {
+	    if($(e.target).is('a')){
+	    	 e.preventDefault();
+	    	$('#select_btn_id').prop("disabled", false);
+	        return;
+	    }
+	    $('#select_btn_id').prop("disabled", true);
+	}); 
 	//Filter button operations
     $('#filter_btn_id').on('click',function(e){
     	e.preventDefault();
     	if ( $('input[name="filtercheck"]').is(':checked') ) {
 				$('#filter_querycontainer').find('a').each(function() {	
-		    	var filter_href = $(this).attr('href');
-		    	console.log(filter_href);
-	  		   });
+			    	var filter_href = $(this).attr('href');
+			    	console.log(filter_href);
+	  		    });
 			} 
 		else {
-		   $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
-			   var selected_filter = $(this).attr('href');
-			    //alert($(selected_filter+'_form').serialize());
-			    requestAjax ("/selectFilter", $(selected_filter+'_form').serialize(), function(graphData){
-			      graphJsonHandler(graphData);
-			      $('.filterLoader').css('display','none');
-			      $('#filterUndo').prop('disabled', false);
-			    });
-			}); 
+		    $('#filter_querycontainer .ui-widget-content.ui-selected').find('a').each(function() {
+       			var selected_filter = $(this).attr('href');
+       			console.log(selected_filter);
+        	});
 		}
-		
-	  
 	});
 
      ///////Range slider for range///////////
