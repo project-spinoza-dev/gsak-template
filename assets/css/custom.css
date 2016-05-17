@@ -1286,6 +1286,23 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 .spinner-table .ui-spinner-button .ui-icon-triangle-1-s{
   margin-left: 0px;
 }
+/*****************graph information ******************/
+.graph-counts{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.nodescount{
+  padding: 5px;
+}
+.edgescount{
+  padding: 5px;
+}
+.colorpicker-edges{
+  
+}
+#colorSelector{
+  float: left;
+}
 /***************** CSS for placeholder **********************/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #bababa;

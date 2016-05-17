@@ -679,23 +679,23 @@ $(".degree-selectm #selectdeg").change(function(){
 
 	$('.filtercheckbox .iCheck-helper').click(function() {
 	        
-	    	if ( $('input[name="filtercheck"]').is(':checked') ) {
-				
-				if ($("#filter_querycontainer a").length==0) {
-	   		  		$('#filter_btn_id').prop("disabled", true);
-	   		  	}
-	   		  	else{
-	   		  		$('#filter_btn_id').prop("disabled", false);
-	   		  	}
-			}
-			else if (!$('input[name="filtercheck"]').is(':checked') ){
-					if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
-						$('#filter_btn_id').prop("disabled", false);
-					}
-					else{
-						$('#filter_btn_id').prop("disabled", true);
-					}
-			}
+    	if ( $('input[name="filtercheck"]').is(':checked') ) {
+			
+			if ($("#filter_querycontainer a").length==0) {
+   		  		$('#filter_btn_id').prop("disabled", true);
+   		  	}
+   		  	else{
+   		  		$('#filter_btn_id').prop("disabled", false);
+   		  	}
+		}
+		else if (!$('input[name="filtercheck"]').is(':checked') ){
+				if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
+					$('#filter_btn_id').prop("disabled", false);
+				}
+				else{
+					$('#filter_btn_id').prop("disabled", true);
+				}
+		}
 	});
 	$('#filter_querycontainer ').click(function(a){
 		if($('#filter_querycontainer .ui-widget-content').hasClass("ui-selected")){
@@ -787,7 +787,6 @@ $(".degree-selectm #selectdeg").change(function(){
     //Disable all links in filters
     $("#jstree_demo_div a").click(function(e){ e.preventDefault(); });
 
-   	
     //Parameter load content
     $("#filter_querycontainer").on('click', 'a', function() {
     	
@@ -876,4 +875,19 @@ $(".fullscreen_icon").click(function(){
 	}
 });
 
+//Color picker for edges
+$('#colorSelector').ColorPicker({
+	color: '#0000ff',
+	onShow: function (colpkr) {
+		$(colpkr).fadeIn(500);
+		return false;
+	},
+	onHide: function (colpkr) {
+		$(colpkr).fadeOut(500);
+		return false;
+	},
+	onChange: function (hsb, hex, rgb) {
+		$('#colorSelector div').css('backgroundColor', '#' + hex);
+	}
+});
 });  // End of document ready function.

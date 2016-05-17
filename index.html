@@ -27,7 +27,7 @@
 	<!-- file upload in popup css -->
 	<link rel="stylesheet" href="assets/css/jqueryfiler/jquery.filer.css">
 	<link rel="stylesheet" href="assets/css/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css">
-
+	 <!-- MiniColors css -->
 	
 
     <!--[if lt IE 9]>
@@ -72,55 +72,6 @@
     <!-- Start of leftsidebar -->
 	<div class="user-menu-container">
 		<div class="user-menu-left-container">
-			<div class="panel-group panel-appearance">
-				<div class="panel panel-default margin10">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-						<a href="#collapse1" data-toggle="collapse" aria-expanded="true" class="">Appearance 
-						</a>
-						</h4>
-					</div>
-					<div class="panel-collapse collapse in" id="collapse1" aria-expanded="true">
-						<div class="panel-body">
-							<ul class="nav nav-tabs">
-								<li class=""><a href="#nodes" data-toggle="tab" aria-expanded="false">Nodes</a></li>
-								<li class="active"><a href="#edegs" data-toggle="tab" aria-expanded="true">Edges</a></li>    
-							</ul>
-						<div class="tab-content">
-						<div class="tab-pane fade" id="nodes">
-							<ul class="nav nav-tabs">
-								<li class=""><a href="#unique" data-toggle="tab" aria-expanded="false">Unique</a></li>
-								<li class="active"><a href="#attributes" data-toggle="tab" aria-expanded="false">Attributes</a></li>    
-							</ul>
-							<div class="tab-content">
-								<div class="tab-pane fade" id="unique">
-									<div class="unique">Unique</div>
-								</div>
-								<div class="tab-pane fade active in" id="attributes">
-									<div class="margin30 degree-select-container">
-										<div class="degree-selectm" >
-											<select id="selectdeg">
-												<option value="degree_1" selected="selected">Degree1</option>
-												<option value="degree_2">Degree2</option>	
-											</select> 
-										</div>
-									</div>
-									<div>
-										<div class="grad_ex grad_ex_div" id="ex1"></div>
-									</div>
-								</div>   
-							</div>  
-						</div>
-						<div class="tab-pane fade active in" id="edegs">
-						  <div class="edges">Edegs</div>
-						</div>   
-					</div>
-                </div>
-                
-              </div>
-            </div>
-          </div> <!-- End of Panel group -->
-		  
 		  <!-- Start of Second panel -->
 		  <div class="panel-group panel-layout">
 			<div class="panel panel-default margin10">
@@ -727,18 +678,44 @@
 							<input type="checkbox" name="showlabel" value="showlabel"><span class="showlabel-title labelcheckbox">Show label</span><br>
 							<input type="checkbox" name="showedge" value="showedge"><span class="showedge-title labelcheckbox">Show edge</span><br>
 							<input type="checkbox" name="endablehover" value="enablehover"><span class="enablehover-title labelcheckbox">Enable hover</span><br>
+							<input type="checkbox" name="nodesrandomcolors" value="nodesrandomcolors"><span class="nodesrandomcolors-title labelcheckbox">Nodes Random Color's</span><br>
+							<div class="">
+							<div id="colorSelector" class="color-chooser"><div style="background-color: #434343"></div></div>
+                            <span class="edgesdefaultcolors-title labelcheckbox">Edges Default Color's</span>
+                            
+                        </div>
 						</form>
-						<br></br>
-						<form id="original_graph_load_form">
-						<input class="btn btn-primary marginbottom10" type="submit" value="Load Original Graph">
-						<img src="./images/ringloader.gif" class="dbLoader">
-						</form>
+						
 					</div>
                 </div>
               </div>
             </div>
           </div>
 		  <!-- End of Third panel -->
+		  <div class="panel-group panel-appearance">
+				<div class="panel panel-default margin10">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						<a href="#collapse1" data-toggle="collapse" aria-expanded="true" class="">Graph Information 
+						</a>
+						</h4>
+					</div>
+					<div class="panel-collapse collapse in" id="collapse1" aria-expanded="true">
+						<div class="panel-body">
+							<div class="graph-counts">
+								<span class="">Nodes Count:</span><span class="nodescount">0</span><br>
+	                			<span class="">Edges Count:</span><span class="edgescount">0</span>
+	                			<br></br>
+								<form id="original_graph_load_form">
+								<input class="btn btn-primary marginbottom10" type="submit" value="Load Original Graph">
+								<img src="./images/ringloader.gif" class="dbLoader">
+								</form>
+                			</div>
+
+                		</div>
+              		</div>
+            </div>
+          </div> <!-- End of Panel group -->
 		</div>
 		<div class="user-nav-slide"></div>
 	</div>
