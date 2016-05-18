@@ -36,6 +36,7 @@ $('#search-form input[type="submit"]').prop('disabled', true);
 *Local graph setting changer [Check boxes]
 */
 $("#localGraphSettingsChanger .iCheck-helper").click(function() {
+      var refreshgraph = false;
       $('#localGraphSettingsChanger input[type="checkbox"]').each(function() {
             var chk_name = $(this).attr("name");
             if (chk_name === "nodesrandomcolors") {
@@ -45,6 +46,7 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
                   //alert(chk_name+" is unchecked");
                 }
             }else {
+                refreshgraph = true;
                 switch (chk_name) {
                   case "showlabel":
                       if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
@@ -79,7 +81,9 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
                 }
             }
         });
-      showGraph(respGraphData, document.getElementById('container'), Gsetting);
+      if (refreshgraph) {
+        showGraph(respGraphData, document.getElementById('container'), Gsetting);        
+      }
 	});
 
 //Color picker for edges
