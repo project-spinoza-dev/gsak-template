@@ -3,9 +3,6 @@ var isMongoDbConnected = false;
 var isElasticsearchConnected = false;
 var isFileUploaded = false;
 var labelSize = "fixed";
-var labelThreshold = 2;
-var drawEdges = true;
-var drawNodes = true;
 var enableEdgeHovering = true;
 var respGraphData;
 
@@ -24,7 +21,7 @@ for (k in index)
 /*
 * GLOBAL variables/settings
 */
-var sigmaSettings = '{ "enableHovering":'+enableEdgeHovering+',"drawNodes":'+drawNodes+',"drawEdges":'+drawEdges+',"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": '+enableEdgeHovering+', "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "rgb(205, 220, 213)", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": '+labelThreshold+', "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true }';
+var sigmaSettings = '{"enableHovering": true,"drawNodes": true,"drawEdges": true,"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "rgb(205, 0, 0)", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true, "minArrowSize":5 }';
 var Gsetting = JSON.parse(sigmaSettings);
 var statistics_btn;
 var isGraphExists = false;
@@ -41,48 +38,48 @@ $('#search-form input[type="submit"]').prop('disabled', true);
 $("#localGraphSettingsChanger .iCheck-helper").click(function() {
       $('#localGraphSettingsChanger input[type="checkbox"]').each(function() {
             var chk_name = $(this).attr("name");
-
-            switch (chk_name) {
-              case "showlabel":
-                  if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
-                    labelThreshold = 2;
-                  }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
-                    labelThreshold = 100;
-                  }
-              break;
-             case "showedge":
-                  if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
-                    drawEdges = true;
-                  }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
-                    drawEdges = false;
-                  }
-              break;
-              case "shownodes":
-                  if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
-                    drawNodes = true;
-                  }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
-                    drawNodes = false;
-                  }
-              break;
-              case "endablehover":
-                  if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
-                    enableEdgeHovering = true;
-                  }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
-                    enableEdgeHovering = false;
-                  }
-              break;
-              case "nodesrandomcolors":
-                  if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
-                    //alert(chk_name+" is checked");
-                  }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
-                    //alert(chk_name+" is unchecked");
-                  }
-              break;
-              default:
-              break;  
+            if (chk_name === "nodesrandomcolors") {
+                if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                  //alert(chk_name+" is checked");
+                }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                  //alert(chk_name+" is unchecked");
+                }
+            }else {
+                switch (chk_name) {
+                  case "showlabel":
+                      if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                        Gsetting.labelThreshold = 2;
+                      }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                        Gsetting.labelThreshold = 100;
+                      }
+                  break;
+                 case "showedge":
+                      if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                        Gsetting.drawEdges = true;
+                      }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                        Gsetting.drawEdges = false;
+                      }
+                  break;
+                  case "shownodes":
+                      if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                        Gsetting.drawNodes = true;
+                      }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                        Gsetting.drawNodes = false;
+                      }
+                  break;
+                  case "endablehover":
+                      if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                        Gsetting.enableEdgeHovering = true;
+                      }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                        Gsetting.enableEdgeHovering = false;
+                      }
+                  break;
+                  default:
+                  break;  
+                }
             }
-
         });
+      showGraph(respGraphData, document.getElementById('container'), Gsetting);
 	});
 /*
 *
