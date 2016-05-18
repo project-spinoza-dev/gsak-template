@@ -667,23 +667,22 @@
 						<div class="label-size">Label Size</div>
 						<div class="labelsize-selectm">
 							<select id="select-labelsizeboxit">
-								<option value="13px">13px</option>
-								<option value="14px">14px</option>
-								<option value="15px">15px</option>
+								<option value="fixed">Fixed</option>
+								<option value="proportional">Proportional</option>
 						   </select> 
 						</div>
 					</div>
 					<div class="label-checkbox-container">
-						<form action="">
-							<input type="checkbox" name="showlabel" value="showlabel"><span class="showlabel-title labelcheckbox">Show label</span><br>
-							<input type="checkbox" name="showedge" value="showedge"><span class="showedge-title labelcheckbox">Show edge</span><br>
+						<form id="localGraphSettingsChanger">
+							<input type="checkbox" name="showlabel" value="showlabel" class="abc"><span class="showlabel-title labelcheckbox">Show label</span><br>
+							<input type="checkbox" name="showedge" value="showedge"><span class="showedge-title labelcheckbox">Show Edge</span><br>
+							<input type="checkbox" name="shownodes" value="shownodes"><span class="showedge-title labelcheckbox">Show Nodes</span><br>
 							<input type="checkbox" name="endablehover" value="enablehover"><span class="enablehover-title labelcheckbox">Enable hover</span><br>
 							<input type="checkbox" name="nodesrandomcolors" value="nodesrandomcolors"><span class="nodesrandomcolors-title labelcheckbox">Nodes Random Color's</span><br>
 							<div class="">
 							<div id="colorSelector" class="color-chooser"><div style="background-color: #434343"></div></div>
                             <span class="edgesdefaultcolors-title labelcheckbox">Edges Default Color's</span>
-                            
-                        </div>
+	                        </div>
 						</form>
 						
 					</div>

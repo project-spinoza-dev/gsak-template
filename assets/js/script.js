@@ -2,6 +2,10 @@ var isMysqlConnected = false;
 var isMongoDbConnected = false;
 var isElasticsearchConnected = false;
 var isFileUploaded = false;
+var labelSize = "fixed";
+var labelThreshold = 2;
+var drawEdges = true;
+var respGraphData;
 
 $( document ).ready(function() {
 
@@ -18,8 +22,7 @@ for (k in index)
 /*
 * GLOBAL variables/settings
 */
-var sigmaSettings = '{ "mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "rgb(205, 220, 213)", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true }';
-var Gsetting = JSON.parse(sigmaSettings);
+var sigmaSettings = '{ "drawEdges":'+drawEdges+',"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "rgb(205, 220, 213)", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": '+labelThreshold+', "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true }';
 var statistics_btn;
 var isGraphExists = false;
 var zoomValCurrent;
@@ -27,6 +30,18 @@ var zoomValPrevious = 3;
 
 //disable search button intially
 $('#search-form input[type="submit"]').prop('disabled', true);
+
+/*
+*
+*Local graph setting changer [Check boxes]
+*/
+$(".abc").click(function() {
+    var $this = $(this);
+    alert(""); 
+    if ($this.is(':checked')) {
+    } else {
+    }
+});
 
 /*
 *
@@ -616,6 +631,8 @@ function graphJsonHandler (graphData){
       isGraphExists = true;
       $("#slider-vertical").slider("value", 3);
       zoomValCurrent = 3;
+      respGraphData = nodesObject.nodes;
+      var Gsetting = JSON.parse(sigmaSettings);
       showGraph(nodesObject.nodes, document.getElementById('container'), Gsetting);
   } else {
     alert ('No Graph Data found.!');
