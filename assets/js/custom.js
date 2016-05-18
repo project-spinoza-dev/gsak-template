@@ -874,20 +874,4 @@ $(".fullscreen_icon").click(function(){
 				});
 	}
 });
-
-
-//Label size Select
-$(".labelsize-selectm #select-labelsizeboxit").change(function(){
-	$(this).find("option:selected").each(function(){
-		if($(this).attr("value")=="fixed"){
-			console.log("fixed value");		
-		}
-		else if($(this).attr("value")=="proportional"){
-			console.log("proportional value");	
-		}
-		else{
-			console.log("No value is selected");
-		}
-	});
-});
 });  // End of document ready function.

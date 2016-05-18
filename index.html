@@ -674,13 +674,14 @@
 					</div>
 					<div class="label-checkbox-container">
 						<form id="localGraphSettingsChanger">
-							<input type="checkbox" name="showlabel" value="showlabel" checked><span class="showlabel-title labelcheckbox">Show label</span><br>
-							<input type="checkbox" name="showedge" value="showedge" checked><span class="showedge-title labelcheckbox">Show Edge</span><br>
-							<input type="checkbox" name="shownodes" value="shownodes" checked><span class="showedge-title labelcheckbox">Show Nodes</span><br>
-							<input type="checkbox" name="endablehover" value="endablehover" checked><span class="enablehover-title labelcheckbox">Enable hover</span><br>
-							<input type="checkbox" name="nodesrandomcolors" value="nodesrandomcolors" checked><span class="nodesrandomcolors-title labelcheckbox">Nodes Random Color's</span><br>
+							<input type="checkbox" name="showlabel" value="showlabel" checked><span class="showlabel-title labelcheckbox">Nodes Labels</span><br>
+							<input type="checkbox" name="showedgesLabel" value="showedgesLabel"><span class="enablehover-title labelcheckbox">Edges Labels</span><br>
+							<input type="checkbox" name="showedge" value="showedge" checked><span class="showedge-title labelcheckbox">Edges</span><br>
+							<input type="checkbox" name="shownodes" value="shownodes" checked><span class="showedge-title labelcheckbox">Nodes</span><br>
+							<input type="checkbox" name="endablehover" value="endablehover" checked><span class="enablehover-title labelcheckbox">Enable hover (Nodes, Edges)</span><br>
+							<input type="checkbox" name="nodesrandomcolors" value="nodesrandomcolors" checked><span class="nodesrandomcolors-title labelcheckbox">Nodes Random Color</span><br>
 							<div class="">
-							<div id="colorSelector" class="color-chooser"><div style="background-color: #434343"></div></div>
+							<div id="colorSelector" class="color-chooser"><div style="background-color: rgb(205, 220, 213)"></div></div>
                             <span class="edgesdefaultcolors-title labelcheckbox">Edges Default Color's</span>
 	                        </div>
 						</form>
@@ -1519,6 +1520,10 @@
     <script src="assets/sigmajs/sigma.misc.bindEvents.js"></script>
     <script src="assets/sigmajs/sigma.misc.bindDOMEvents.js"></script>
     <script src="assets/sigmajs/sigma.misc.drawHovers.js"></script>
+	<script src="assets/sigmajs/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+	<script src="assets/sigmajs/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+	<script src="assets/sigmajs/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+	<script src="assets/sigmajs/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
 
 	<!-- canvasjs script -->
 	<script src="assets/js/canvasjs/jquery.canvasjs.min.js"></script>

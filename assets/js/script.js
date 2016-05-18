@@ -2,7 +2,6 @@ var isMysqlConnected = false;
 var isMongoDbConnected = false;
 var isElasticsearchConnected = false;
 var isFileUploaded = false;
-var labelSize = "fixed";
 var enableEdgeHovering = true;
 var respGraphData;
 
@@ -21,7 +20,7 @@ for (k in index)
 /*
 * GLOBAL variables/settings
 */
-var sigmaSettings = '{"enableHovering": true,"drawNodes": true,"drawEdges": true,"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "#00f", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true, "minArrowSize":5 }';
+var sigmaSettings = '{ "defaultEdgeLabelColor": "#f90", "drawEdgeLabels": false, "enableHovering": true,"drawNodes": true,"drawEdges": true,"labelSize":"fixed","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "#00f", "minEdgeSize": 0.5, "edgeLabelThreshold": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true, "minArrowSize":5 }';
 var Gsetting = JSON.parse(sigmaSettings);
 var statistics_btn;
 var isGraphExists = false;
@@ -76,6 +75,13 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
                         Gsetting.enableEdgeHovering = false;
                       }
                   break;
+                  case "showedgesLabel":
+                      if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+                        Gsetting.drawEdgeLabels = true;
+                      }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+                        Gsetting.drawEdgeLabels = false;
+                      }
+                  break;
                   default:
                   break;  
                 }
@@ -107,6 +113,20 @@ $('#colorSelector').ColorPicker({
     Gsetting.defaultEdgeColor = $('#colorSelector div').css('backgroundColor');
     showGraph(respGraphData, document.getElementById('container'), Gsetting);
   }
+});
+
+//Label size Select
+$(".labelsize-selectm #select-labelsizeboxit").change(function(){
+  $(this).find("option:selected").each(function(){
+    if($(this).attr("value")=="fixed"){
+         Gsetting.labelSize = "fixed";
+    }
+    else if($(this).attr("value")=="proportional"){
+        Gsetting.labelSize = "proportional";
+    }
+    else{}
+  });
+  showGraph(respGraphData, document.getElementById('container'), Gsetting);
 });
 
 /*
@@ -703,6 +723,7 @@ function graphJsonHandler (graphData){
       zoomValCurrent = 3;
       respGraphData = nodesObject.nodes;
       var Gsetting = JSON.parse(sigmaSettings);
+      console.log(nodesObject);
       showGraph(nodesObject.nodes, document.getElementById('container'), Gsetting);
   } else {
     alert ('No Graph Data found.!');
