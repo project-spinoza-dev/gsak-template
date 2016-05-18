@@ -35,14 +35,18 @@ $('#search-form input[type="submit"]').prop('disabled', true);
 *
 *Local graph setting changer [Check boxes]
 */
-$(".abc").click(function() {
-    var $this = $(this);
-    alert(""); 
-    if ($this.is(':checked')) {
-    } else {
-    }
-});
+$("#localGraphSettingsChanger .iCheck-helper").click(function() {
+        $('#localGraphSettingsChanger input[type="checkbox"]').each(function() {
+            var chk_name = $(this).attr("name");
+            if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
+				alert(chk_name+" is checked");
+			}
+			else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
+				alert(chk_name+" is unchecked");
+			}
+        });
 
+	});
 /*
 *
 *Layouts Submit Operations
