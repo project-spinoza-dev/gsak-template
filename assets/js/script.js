@@ -21,7 +21,7 @@ for (k in index)
 /*
 * GLOBAL variables/settings
 */
-var sigmaSettings = '{"enableHovering": true,"drawNodes": true,"drawEdges": true,"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "rgb(205, 0, 0)", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true, "minArrowSize":5 }';
+var sigmaSettings = '{"enableHovering": true,"drawNodes": true,"drawEdges": true,"labelSize":"'+labelSize+'","mouseWheelEnabled": false, "eventsEnabled": true, "doubleClickEnabled": false, "enableEdgeHovering": true, "singleHover": true, "edgeHoverColor" : "edge", "edgeHoverColor": "default", "defaultEdgeHoverColor": "#777", "edgeHoverSizeRatio": 10, "edgeColor": "default", "defaultHoverLabelBGColor": "#fff", "defaultEdgeColor": "#00f", "minEdgeSize": 0.5, "maxEdgeSize": 5, "minNodeSize": 3, "maxNodeSize": 25, "labelThreshold": 2, "defaultLabelColor": "#fff", "animationsTime": 1000, "borderSize": 2, "outerBorderSize": 3, "defaultNodeOuterBorderColor": "rgb(72,227,236)", "edgeHoverHighlightNodes": "circle", "sideMargin": 10, "edgeHoverExtremities": true, "scalingMode": "outside", "enableCamera": true, "minArrowSize":5 }';
 var Gsetting = JSON.parse(sigmaSettings);
 var statistics_btn;
 var isGraphExists = false;
@@ -81,6 +81,30 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
         });
       showGraph(respGraphData, document.getElementById('container'), Gsetting);
 	});
+
+//Color picker for edges
+$('#colorSelector').ColorPicker({
+  color: '#0000ff',
+  onShow: function (colpkr) {
+    $(colpkr).fadeIn(500);
+    return false;
+  },
+  onHide: function (colpkr) {
+    $(colpkr).fadeOut(500);
+    //alert($('#colorSelector div').css('backgroundColor'));
+    Gsetting.defaultEdgeColor = $('#colorSelector div').css('backgroundColor');
+    showGraph(respGraphData, document.getElementById('container'), Gsetting);
+    return false;
+  },
+  onChange: function (hsb, hex, rgb) {
+    $('#colorSelector div').css('backgroundColor', '#' + hex);
+  },
+  onSubmit: function(hsb, hex, rgb, el) {
+    Gsetting.defaultEdgeColor = $('#colorSelector div').css('backgroundColor');
+    showGraph(respGraphData, document.getElementById('container'), Gsetting);
+  }
+});
+
 /*
 *
 *Layouts Submit Operations
@@ -328,6 +352,10 @@ $("#search-form").submit(function (e) {
 function getDegreeRanges(){
   requestAjax ("/filterRanges", {}, function (ranges){
     resp = JSON.parse(ranges);
+
+    $('.nodescount').text(resp.numNodes);
+    $('.edgescount').text(resp.numEdges);
+
     var from = parseInt(resp.degree.split(',')[0]);
     var to = parseInt(resp.degree.split(',')[1]);
 

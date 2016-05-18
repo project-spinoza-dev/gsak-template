@@ -875,25 +875,7 @@ $(".fullscreen_icon").click(function(){
 	}
 });
 
-//Color picker for edges
-$('#colorSelector').ColorPicker({
-	color: '#0000ff',
-	onShow: function (colpkr) {
-		$(colpkr).fadeIn(500);
-		return false;
-	},
-	onHide: function (colpkr) {
-		$(colpkr).fadeOut(500);
-		alert($('#colorSelector div').css('backgroundColor'));
-		return false;
-	},
-	onChange: function (hsb, hex, rgb) {
-		$('#colorSelector div').css('backgroundColor', '#' + hex);
-	},
-	onSubmit: function(hsb, hex, rgb, el) {
-		alert("checked"+ hex);
-	}
-});
+
 //Label size Select
 $(".labelsize-selectm #select-labelsizeboxit").change(function(){
 	$(this).find("option:selected").each(function(){
