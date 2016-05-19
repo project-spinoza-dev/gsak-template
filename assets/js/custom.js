@@ -874,4 +874,7 @@ $(".fullscreen_icon").click(function(){
 				});
 	}
 });
+//Tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
 });  // End of document ready function.

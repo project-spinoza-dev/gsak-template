@@ -40,8 +40,7 @@
     <!-- jQuery 2.1.4 -->
     <script src="assets/js/core-js/jQuery-2.1.4.min.js"></script>
 
-    <!-- Bootstrap 3.3.4 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
     <!--jquery for file upload-->
 	<script src="assets/js/jqueryfiler/jquery.filer.min.js"></script>
     <!-- AdminLTE App -->
@@ -58,6 +57,8 @@
 	<!-- Jquery for Select -->
 	<script src="assets/js/selectBoxIt/jquery-ui.js"></script>
 	<script src="assets/js/selectBoxIt/jquery.selectBoxIt.js"></script>
+	<!-- Bootstrap 3.3.4 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 	<!-- Jquery for Slider-->
 	<script src="assets/js/rangeSlide/jquery.range.js"></script>
 	<!--color gradient picker-->
@@ -679,9 +680,10 @@
 							<input type="checkbox" name="showedge" value="showedge" checked><span class="showedge-title labelcheckbox">Edges</span><br>
 							<input type="checkbox" name="shownodes" value="shownodes" checked><span class="showedge-title labelcheckbox">Nodes</span><br>
 							<input type="checkbox" name="endablehover" value="endablehover" checked><span class="enablehover-title labelcheckbox">Enable hover (Nodes, Edges)</span><br>
-							<input type="checkbox" name="nodesrandomcolors" value="nodesrandomcolors" checked><span class="nodesrandomcolors-title labelcheckbox">Nodes Random Color</span><br>
-							<div class="">
-							<div id="colorSelector" class="color-chooser"><div style="background-color: rgb(205, 220, 213)"></div></div>
+							<div data-toggle="tooltip" data-placement="top" title="Applicable on New Graph!">
+							<input type="checkbox" name="nodesrandomcolors" id="nodesrandomcolors" value="nodesrandomcolors" checked><span class="nodesrandomcolors-title labelcheckbox" >Nodes Random Color</span><br></div>
+							<div class="" data-toggle="tooltip" data-placement="top" title="Applicable on New Graph!">
+							<div id="colorSelector" class="color-chooser" ><div style="background-color: rgb(205, 220, 213)" ></div></div>
                             <span class="edgesdefaultcolors-title labelcheckbox">Edges Default Color's</span>
 	                        </div>
 						</form>
