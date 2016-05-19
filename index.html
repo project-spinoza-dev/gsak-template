@@ -680,7 +680,7 @@
 							<input type="checkbox" name="showedge" value="showedge" checked><span class="showedge-title labelcheckbox">Edges</span><br>
 							<input type="checkbox" name="shownodes" value="shownodes" checked><span class="showedge-title labelcheckbox">Nodes</span><br>
 							<input type="checkbox" name="endablehover" value="endablehover" checked><span class="enablehover-title labelcheckbox">Enable hover (Nodes, Edges)</span><br>
-							<div data-toggle="tooltip" data-placement="top" title="Applicable on New Graph!">
+							<div class=""  data-toggle="tooltip" data-placement="top" title="Applicable on New Graph!">
 							<input type="checkbox" name="nodesrandomcolors" id="nodesrandomcolors" value="nodesrandomcolors" checked><span class="nodesrandomcolors-title labelcheckbox" >Nodes Random Color</span><br></div>
 							<div class="" data-toggle="tooltip" data-placement="top" title="Applicable on New Graph!">
 							<div id="colorSelector" class="color-chooser" ><div style="background-color: rgb(205, 220, 213)" ></div></div>
@@ -705,19 +705,21 @@
 					<div class="panel-collapse collapse in" id="collapse1" aria-expanded="true">
 						<div class="panel-body">
 							<div class="graph-counts">
-								<span class="">Nodes Count:</span><span class="nodescount">0</span><br>
-	                			<span class="">Edges Count:</span><span class="edgescount">0</span>
-	                			<br></br>
-								<form id="original_graph_load_form">
-								<input class="btn btn-primary marginbottom10" type="submit" value="Load Original Graph">
-								<img src="./images/ringloader.gif" class="dbLoader">
-								</form>
+								<span class="text-count-wd">Nodes Count:</span><span class="count-wd">0</span><br>
+	                			<span class="text-count-wd">Edges Count:</span><span class="count-wd">0</span>
+	                			
                 			</div>
 
                 		</div>
               		</div>
             </div>
           </div> <!-- End of Panel group -->
+          <div class="original_graph_load">
+          	<form id="original_graph_load_form">
+				<input class="btn btn-primary marginbottom10" type="submit" value="Load Original Graph">
+				<img src="./images/ringloader.gif" class="dbLoader">
+			</form>
+		  </div>
 		</div>
 		<div class="user-nav-slide"></div>
 	</div>
