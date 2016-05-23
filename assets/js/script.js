@@ -136,10 +136,10 @@ $(".labelsize-selectm #select-labelsizeboxit").change(function(){
 */
 $(".layout_form").submit(function (e) {
     e.preventDefault();
-    $(".graphLoader-run").css('display','block');
+    $(".graphLoader-run").css('visibility','visible');
     requestAjax ("/layout", $("#" + this.id).serialize(), function (graphData) {
       graphJsonHandler(graphData);
-      $(".graphLoader-run").css('display','none');
+      $(".graphLoader-run").css('visibility','hidden');
     });
 });
 /*

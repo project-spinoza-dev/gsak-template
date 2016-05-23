@@ -1216,10 +1216,9 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 .graphLoader-run{
   width:20px;
   height:20px;
-  display:none;
-  float: left;
-  margin-left: 150px;
+  visibility: hidden;
   margin-top: 5px;
+  margin-left: 5px;
 }
 
 .select_btn_div input{
