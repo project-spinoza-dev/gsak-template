@@ -34,19 +34,20 @@ $('#search-form input[type="submit"]').prop('disabled', true);
 *
 *Local graph setting changer [Check boxes]
 */
+var nodeRandomColorPState = true;
+var nodeRandomColorCState;
+
 $("#localGraphSettingsChanger .iCheck-helper").click(function() {
-      var refreshgraph = false;
+
       $('#localGraphSettingsChanger input[type="checkbox"]').each(function() {
             var chk_name = $(this).attr("name");
-            if (chk_name === "nodesrandomcolors") {
+            if (chk_name == "nodesrandomcolors") {
                 if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
                   requestAjax ("/autoColor", {'autoColor': 'true'}, function (resp) {});
                 }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
                   requestAjax ("/autoColor", {'autoColor': 'false'}, function (resp) {});
                 }
-              refreshgraph = false;
             }else {
-                refreshgraph = true;
                 switch (chk_name) {
                   case "showlabel":
                       if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
@@ -77,6 +78,7 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
                       }
                   break;
                   case "showedgesLabel":
+
                       if ( $('input[name="'+chk_name+'"]').is(':checked') ) {
                         Gsetting.drawEdgeLabels = true;
                       }else if (!$('input[name="'+chk_name+'"]').is(':checked') ){
@@ -88,9 +90,7 @@ $("#localGraphSettingsChanger .iCheck-helper").click(function() {
                 }
             }
         });
-      if (refreshgraph) {
-        showGraph(respGraphData, document.getElementById('container'), Gsetting);        
-      }
+        showGraph(respGraphData, document.getElementById('container'), Gsetting);
 	});
 
 //Color picker for edges
