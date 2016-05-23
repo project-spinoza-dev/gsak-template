@@ -1288,15 +1288,15 @@ body.gsak-home .mCSB_container_wrapper > .mCSB_container {
 }
 /*****************graph information ******************/
 .graph-counts{
-  margin: 10px 0px 30px 20px;
-  width: 250px; 
+  margin: 10px 0px 29px 20px;
+
 }
 .graph-counts .count-wd{
-  width: 80px;
+  
   margin-left: 5px;
 }
 .graph-counts .text-count-wd{
-  width: 150px;
+  
 }
 .colorpicker-edges{
   
